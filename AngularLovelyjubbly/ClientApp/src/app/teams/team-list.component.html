@@ -1,0 +1,30 @@
+﻿<div style="margin-bottom:20px;margin-top:-20px;">
+    <app-language-selector (languageChanged)='changeLanguage()'></app-language-selector>
+</div><br /><br />
+
+<div class='table-responsive' style="border:none;">
+    <div *ngIf="teams && teams.length">
+        <ejs-grid #grid id='Grid' [dataSource]="teams" [editSettings]='editSettings' [toolbar]='toolbar' [allowFiltering]='true'
+                  [allowPaging]='true' [allowSorting]='true' [sortSettings]='sortOptions' [allowMultiSorting]='true' 
+                  [allowPdfExport]='true' [allowExcelExport]='true' (toolbarClick)='toolbarClick($event)'
+                  width='100%' [pageSettings]='pageSettings' gridLines="Both">
+            <e-columns>
+                <e-column width="143">
+                    <ng-template #template let-data>
+                        <a class="gridlinks" [routerLink]="['/TeamUpdate', data.teamId]" style="color:#2796E1;">
+                            {{ 'FORM.EDIT' | translate }}
+                        </a>&nbsp;
+                        <a class="gridlinks" (click)="clicked($event, data.teamId)" style="color:red;">
+                            {{ 'FORM.DELETE' | translate }}
+                        </a>
+                    </ng-template>
+                </e-column>
+                <e-column field="teamId" headerText="{{ 'FORM.ID' | translate }}" width="108" textAlign="right"></e-column>
+                <e-column field="teamName" headerText="{{ 'TEAM.TEAM_NAME' | translate }}" width="192" textAlign="left"></e-column>
+                <e-column field="coach.coachName" headerText="{{ 'COACH.COACH_NAME' | translate }}" width="198" textAlign="left"></e-column>
+                <e-column field="division.divisionName" headerText="{{ 'DIVISION.DIVISION_NAME' | translate }}" 
+                          width="169" textAlign="left"></e-column>
+            </e-columns>
+        </ejs-grid>
+    </div><br />
+</div>

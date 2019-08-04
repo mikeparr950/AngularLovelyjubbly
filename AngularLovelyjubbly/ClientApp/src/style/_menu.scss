@@ -1,0 +1,83 @@
+﻿@import "_variables.scss";
+@import "_config.scss";
+
+.navbar {
+    font-family: $fontName;
+    background-color: $appBar;
+    font-size: 15px; 
+    font-weight: 300;
+    font-style: normal;
+}
+
+.navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 15px 15px;
+    font-size: 15px;
+    line-height: 20px;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #ffffff;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #ffffff;
+}
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+    color: #fff;
+    background-color: #0072C6;
+}
+
+.navbar-inverse .navbar-toggle:hover,
+.navbar-inverse .navbar-toggle:focus {
+  background-color: #0072C6;
+}
+
+.dropdown-menu {
+    background-color: #337ab7;
+}
+
+.dropdown-menu .divider {
+    height: 1px;
+    margin: 0px 0;
+    overflow: hidden;
+    background-color: #e5e5e5;
+}
+
+.dropdown-menu > li > a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: normal;
+    line-height: 1.42857143;
+    color: white;
+    background-color: #337ab7;
+    white-space: nowrap;
+    font-size:14px;
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/* Tablet landscape*/
+@media(max-width: 768px)
+{
+    .navbar-inverse .navbar-nav .open .dropdown-menu .divider {
+        background-color: #e5e5e5;
+    }
+    .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
+        color: $appBar;
+        font-family: $fontNameLight;
+        font-size: 14px;
+    }
+}

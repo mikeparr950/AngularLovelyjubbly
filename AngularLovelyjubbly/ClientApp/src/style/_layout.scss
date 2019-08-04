@@ -1,0 +1,563 @@
+﻿@import "_variables.scss";
+@import "_config.scss";
+
+.table > caption + thead > tr:first-child > td, .table > caption + thead > tr:first-child > th, .table > colgroup + thead > tr:first-child > td, .table > colgroup + thead > tr:first-child > th, .table > thead:first-child > tr:first-child > td, .table > thead:first-child > tr:first-child > th {
+    border-top: 0;
+    background-color: lightgrey;
+    color: black;
+    font-weight: normal;
+    font-family: $fontName;
+}
+
+td{
+    font-size:14px;
+}
+
+.row {
+    font-family: "Segoe UI Light", "Open Sans Light", sans-serif, serif;
+    font-size: 14px;
+}
+
+//anchors
+a.gridlinks {
+    text-decoration: none;
+}
+
+a.gridlinks:hover {
+    text-decoration: none;
+}
+
+//panel
+.panel-primary > .panel-heading {
+    padding: 4px 4px 4px 4px;
+    color: white;
+    width: 300px;
+    background-color: #3f51b5;
+    background-image: none;
+    font-size: 14px;
+}
+
+a:not([href]):not([tabindex]) {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+    font-size: 14px;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: .5rem;
+    font-size: 14px;
+}
+
+/*.e-grid .e-headercell, .e-grid .e-grouptopleftcell {
+    font-weight: bold;
+    text-align: center;
+}*/
+
+.turnoverdifferentiallist tbody tr td:nth-child(4),
+.turnoverdifferentiallist tbody tr td:nth-child(7) {
+    background-color: white;
+    font-family: $fontName;
+    font-size: 14px;
+    color: black !important;
+}
+
+.turnoverdifferentiallist tbody tr td:nth-child(1),
+.turnoverdifferentiallist tbody tr td:nth-child(2),
+.turnoverdifferentiallist tbody tr td:nth-child(3),
+.turnoverdifferentiallist tbody tr td:nth-child(5),
+.turnoverdifferentiallist tbody tr td:nth-child(6) {
+    background-color: darkgray;
+    font-family: $fontName;
+    font-size: 14px;
+    color: white;
+}
+
+.turnoverdifferentiallist tbody tr td:nth-child(8) {
+    background-color: wheat;
+    font-family: $fontName;
+    font-size: 14px;
+    color: black !important;
+    font-weight: bold !important;
+}
+
+.powerrankinglist tbody tr > td {
+    background-color: white;
+    color: black;
+    font-family: $fontName;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.powerrankinglist thead tr > th {
+    background-color: lightgray;
+    color: black;
+    font-family: $fontName;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+/*.afcstandings tbody tr > td {
+    background-color: red !important;
+    color: white;
+    font-family: $fontName;
+    font-weight: normal;
+    font-size: 14px;
+}*/
+
+.fixturelist tbody tr > td {
+    background-color: darkslategray;
+    color: white;
+    font-family: $fontName;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.fixturelist thead tr > th {
+    background-color: lightgray;
+    color: black;
+    font-family: $fontName;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.qbratings2026 tbody tr > td {
+    background-color: #418fde;
+    color: white;
+    font-family: $fontName;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.qbratings2026 thead tr > th {
+    background-color: lightgray;
+    color: black;
+    font-family: $fontName;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.qbratings2025 tbody tr > td {
+    background-color: #00573f;
+    color: white;
+    font-family: $fontName;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.qbratings2025 thead tr > th {
+    background-color: lightgray;
+    color: black;
+    font-family: $fontName;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.qbratings2024 tbody tr > td {
+    background-color: #fb4f14;
+    color: white;
+    font-family: $fontName;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.qbratings2024 thead tr > th {
+    background-color: lightgray;
+    color: black;
+    font-family: $fontName;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.qbratings2023 tbody tr > td {
+    background-color: #fb4f14;
+    color: white;
+    font-family: $fontName;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.qbratings2023 thead tr > th {
+    background-color: lightgray;
+    color: black;
+    font-family: $fontName;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.qbratings2022 tbody tr > td {
+    background-color: #fb4f14;
+    color: white;
+    font-family: $fontName;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.qbratings2022 thead tr > th {
+    background-color: lightgray;
+    color: black;
+    font-family: $fontName;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.qbratings2021 tbody tr > td {
+    background-color: black;
+    color: white;
+    font-family: $fontName;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.qbratings2021 thead tr > th {
+    background-color: lightgray;
+    color: black;
+    font-family: $fontName;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.qbratings2020 tbody tr > td {
+    background-color: #c9af74;
+    color: white;
+    font-family: $fontName;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.qbratings2020 thead tr > th {
+    background-color: lightgray;
+    color: black;
+    font-family: $fontName;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.qbratings2019 tbody tr > td {
+    background-color: #c9af74;
+    color: white;
+    font-family: $fontName;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.qbratings2019 thead tr > th {
+    background-color: lightgray;
+    color: black;
+    font-family: $fontName;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.qbratings2018 tbody tr > td {
+    background-color: #24423c;
+    color: white;
+    font-family: $fontName;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.qbratings2018 thead tr > th {
+    background-color: lightgray;
+    color: black;
+    font-family: $fontName;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.qbratings2017 tbody tr > td {
+    background-color: #c9af74;
+    color: white;
+    font-family: $fontName;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.qbratings2017 thead tr > th {
+    background-color: lightgray;
+    color: black;
+    font-family: $fontName;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.qbratings2016 tbody tr > td {
+    background-color: #9b2743;
+    color: white;
+    font-family: $fontName;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.qbratings2016 thead tr > th {
+    background-color: lightgray;
+    color: black;
+    font-family: $fontName;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.qbratings2015 tbody tr > td {
+    background-color: #008d97;
+    color: white;
+    font-family: $fontName;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.qbratings2015 thead tr > th {
+    background-color: lightgray;
+    color: black;
+    font-family: $fontName;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.qbratings2014 tbody tr > td {
+    background-color: #006db0;
+    color: white;
+    font-family: $fontName;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.qbratings2014 thead tr > th {
+    background-color: lightgray;
+    color: black;
+    font-family: $fontName;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.qbratings2013 tbody tr > td {
+    background-color: #9b2743;
+    color: white;
+    font-family: $fontName;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.qbratings2013 thead tr > th {
+    background-color: lightgray;
+    color: black;
+    font-family: $fontName;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.qbratings2012 tbody tr > td {
+    background-color: #0072ce;
+    color: white;
+    font-family: $fontName;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.qbratings2012 thead tr > th {
+    background-color: lightgray;
+    color: black;
+    font-family: $fontName;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.qbratings2011 tbody tr > td {
+    background-color: #773141;
+    color: white;
+    font-family: $fontName;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.qbratings2011 thead tr > th {
+    background-color: lightgray;
+    color: black;
+    font-family: $fontName;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.qbratings2010 tbody tr > td {
+    background-color: #0072ce;
+    color: white;
+    font-family: $fontName;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.qbratings2010 thead tr > th {
+    background-color: lightgray;
+    color: black;
+    font-family: $fontName;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.qbratings2009 tbody tr > td {
+    background-color: #00338d;
+    color: white;
+    font-family: $fontName;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.qbratings2009 thead tr > th {
+    background-color: lightgray;
+    color: black;
+    font-family: $fontName;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.qbratings1994 tbody tr > td {
+    background-color: #582c81;
+    color: white;
+    font-family: $fontName;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.qbratings1994 thead tr > th {
+    background-color: lightgray;
+    color: black;
+    font-family: $fontName;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.qbratings1993 tbody tr > td {
+    background-color: #87909b;
+    color: white;
+    font-family: $fontName;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.qbratings1993 thead tr > th {
+    background-color: lightgray;
+    color: black;
+    font-family: $fontName;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.qbratings1992 tbody tr > td {
+    background-color: #69be28;
+    color: white;
+    font-family: $fontName;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.qbratings1992 thead tr > th {
+    background-color: lightgray;
+    color: black;
+    font-family: $fontName;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.afctab div {
+    background-color: white;
+    font-family: $fontName;
+    color: black;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.afctab a {
+    font-family: $fontName;
+    color: black;
+}
+
+.nfctab div {
+    background-color: white;
+    font-family: $fontName;
+    color: black;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.nfctab a {
+    font-family: $fontName;
+    color: black;
+}
+
+.coachlist tbody tr > td {
+  background-color:#6a00ff;
+  color:white;
+}
+
+.divisionlist tbody tr > td {
+  background-color:darkcyan;
+  color:white;
+}
+
+.teamlist tbody tr > td {
+  background-color:darkslategray;
+  color:white;
+}
+
+.qbratinglist tbody tr > td {
+  background-color:indigo;
+  color:white;
+}
+
+.weeklist tbody tr > td {
+  background-color:red;
+  color:white;
+}
+
+.seasonlist tbody tr > td {
+  background-color:tan;
+  color:white;
+}
+
+.tournamentlist tbody tr > td {
+  background-color:darkorange;
+  color:white;
+}
+
+//added to provide image centring
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1200px;
+    }
+}
+
+
+// Hide short text by default (resolution > 700px)
+.short-text {
+    display: none;
+}
+
+// When resolution <= 700px, show short text and hide full text
+@media (max-width: 700px) {
+    .short-text {
+        display: inline-block;
+    }
+
+    .full-text {
+        display: none;
+    }
+}
+
+.panel-primary > .panel-heading {
+    color: white;
+    width: 300px;
+    background-color: #3f51b5;
+    background-image: none;
+}

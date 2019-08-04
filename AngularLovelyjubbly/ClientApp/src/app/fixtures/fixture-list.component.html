@@ -1,0 +1,36 @@
+﻿<div style="margin-bottom:20px;margin-top:-20px;">
+    <app-language-selector (languageChanged)='changeLanguage()'></app-language-selector>
+</div><br /><br />
+
+<div class='table-responsive' style="border:none;">
+    <div *ngIf="fixtures && fixtures.length">
+        <ejs-grid #grid id='Grid' [dataSource]="fixtures" [editSettings]='editSettings' [toolbar]='toolbar' [allowFiltering]='true'
+                  [allowPaging]='true' [allowSorting]='true' [sortSettings]='sortOptions' [allowMultiSorting]='true'
+                  [allowExcelExport]='true' (toolbarClick)='toolbarClick($event)'
+                  width='100%' [pageSettings]='pageSettings' gridLines="Both">
+            <e-columns>
+                <e-column width="143">
+                    <ng-template #template let-data>
+                        <a class="gridlinks" [routerLink]="['/FixtureUpdate', data.fixtureId]" style="color:#2796E1;">
+                            {{ 'FORM.EDIT' | translate }}
+                        </a>&nbsp;
+                        <a class="gridlinks" (click)="clicked($event, data.fixtureId)" style="color:red;">
+                            {{ 'FORM.DELETE' | translate }}
+                        </a>
+                    </ng-template>
+                </e-column>
+                <e-column field="fixtureId" headerText="{{ 'FORM.ID' | translate }}" width="106" textAlign="left"></e-column>
+                <e-column field="tournamentShort" headerText="{{ 'SEASON.SEASON' | translate }}" width="136" textAlign="right"></e-column>
+                <e-column field="week.weekId" headerText="{{ 'WEEK.WEEK' | translate }}" width="125" textAlign="right"></e-column>
+                <e-column field="awayTeam.teamName" headerText="{{ 'FIXTURE.AWAY_TEAM' | translate }}"
+                          width="216" textAlign="right"></e-column>
+                <e-column field="awayTeamScore" headerText="{{ 'FIXTURE.POINTS' | translate }}" width="108" textAlign="right"></e-column>
+                <e-column field="homeTeam.teamName" headerText="{{ 'FIXTURE.HOME_TEAM' | translate }}"
+                          width="216" textAlign="right"></e-column>
+                <e-column field="homeTeamScore" headerText="{{ 'FIXTURE.POINTS' | translate }}" width="108" textAlign="right"></e-column>
+                <e-column field="isOvertime" headerText="{{ 'FIXTURE.OVERTIME_SHORT' | translate }}" width="82" displayAsCheckBox="true" 
+                          textAlign="center"></e-column>
+            </e-columns>
+        </ejs-grid>
+    </div><br />
+</div>

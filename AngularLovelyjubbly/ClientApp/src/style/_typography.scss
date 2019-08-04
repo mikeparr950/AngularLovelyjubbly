@@ -1,0 +1,45 @@
+﻿@import "_variables.scss";
+@import "_config.scss";
+
+// Replace Segoe UI Light
+@font-face {
+    font-family: "Open Sans Light";
+    font-style: normal;
+    font-weight: 300;
+    src: local("Segoe UI Light"), local("Open Sans Light"), local("OpenSans-Light"), url(https://themes.googleusercontent.com/static/fonts/opensans/v8/DXI1ORHCpsQm3Vp6mXoaTZ1r3JsPcQLi8jytr04NNhU.woff) format('woff');
+}
+
+// Replace Segoe UI
+@font-face {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 300; //changed from 400
+    src: local("Segoe UI"), local("Open Sans"), local("OpenSans"), url(https://themes.googleusercontent.com/static/fonts/opensans/v8/K88pR3goAWT7BTt32Z01mz8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+
+// Replace Segoe UI Bold
+@font-face {
+    font-family: "Open Sans Bold";
+    font-style: normal;
+    font-weight: 700;
+    src: local("Segoe UI Bold"), local("Open Sans Bold"), local("OpenSans-Bold"), url(https://themes.googleusercontent.com/static/fonts/opensans/v8/k3k702ZOKiLJc3WVjuplzJ1r3JsPcQLi8jytr04NNhU.woff) format('woff');
+}
+
+body {
+    font-family: $fontName;
+}
+
+h1,h2,h3,h4 {
+    font-family: $fontName;
+}
+
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    font-family: $fontNameLight;
+    font-size: 14px;
+    background-color:#6a00ff;
+    color:white;
+}
+
+.languageselector {
+    font-size:14px;
+}

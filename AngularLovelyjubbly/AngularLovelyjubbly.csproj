@@ -1,0 +1,300 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <TypeScriptToolsVersion>3.4</TypeScriptToolsVersion>
+    <IsPackable>false</IsPackable>
+    <SpaRoot>ClientApp\</SpaRoot>
+    <DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**</DefaultItemExcludes>
+
+    <!-- Set this to true if you enable server-side prerendering -->
+    <BuildServerSideRenderer>false</BuildServerSideRenderer>
+    <AssemblyName>AngularLovelyjubbly</AssemblyName>
+    <RootNamespace>AngularLovelyjubbly</RootNamespace>
+    <Version>1.0.0</Version>
+    <Authors>Michael Parr</Authors>
+    <Company></Company>
+    <Product>Angular Lovelyjubbly</Product>
+    <PackageId>Angular Lovelyjubbly</PackageId>
+    <Description>Personal website</Description>
+    <PackageProjectUrl>https://github.com/mikeparr950/AngularLovelyjubbly</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/mikeparr950/AngularLovelyjubbly</RepositoryUrl>
+    <ApplicationInsightsResourceId>/subscriptions/acca7765-c822-4fba-83c2-ee8e67280dd6/resourcegroups/Default-Web-NorthEurope/providers/microsoft.insights/components/AngularLovelyjubbly</ApplicationInsightsResourceId>
+    <ApplicationInsightsAnnotationResourceId>/subscriptions/acca7765-c822-4fba-83c2-ee8e67280dd6/resourcegroups/Default-Web-NorthEurope/providers/microsoft.insights/components/AngularLovelyjubbly</ApplicationInsightsAnnotationResourceId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Don't publish the SPA source files, but do show them in the project files list -->
+    <Content Remove="$(SpaRoot)**" />
+    <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="compilerconfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="ClientApp\src\app\account\account-forgotpassword.component.ts" />
+    <None Remove="ClientApp\src\app\account\account-login.component.ts" />
+    <None Remove="ClientApp\src\app\account\account-register.component.ts" />
+    <None Remove="ClientApp\src\app\account\account.module.ts" />
+    <None Remove="ClientApp\src\app\fixtures\fixture-add.component.ts" />
+    <None Remove="ClientApp\src\app\fixtures\fixture-guard.service.ts" />
+    <None Remove="ClientApp\src\app\fixtures\fixture-list.component.ts" />
+    <None Remove="ClientApp\src\app\fixtures\fixture-update.component.ts" />
+    <None Remove="ClientApp\src\app\fixtures\fixture.module.ts" />
+    <None Remove="ClientApp\src\app\main\main-halloffame.component.ts" />
+    <None Remove="ClientApp\src\app\main\main-links.component.ts" />
+    <None Remove="ClientApp\src\app\main\main-seasonpredictions.component.ts" />
+    <None Remove="ClientApp\src\app\main\main.module.ts" />
+    <None Remove="ClientApp\src\app\playoffhistory\playoffhistory-view.component.ts" />
+    <None Remove="ClientApp\src\app\playoffhistory\playoffhistory.module.ts" />
+    <None Remove="ClientApp\src\app\powerrankings\powerranking-list.component.ts" />
+    <None Remove="ClientApp\src\app\powerrankings\powerranking-view.component.ts" />
+    <None Remove="ClientApp\src\app\powerrankings\powerranking.module.ts" />
+    <None Remove="ClientApp\src\app\qbratings\qbrating-add.component.ts" />
+    <None Remove="ClientApp\src\app\qbratings\qbrating-guard.service.ts" />
+    <None Remove="ClientApp\src\app\qbratings\qbrating-list.component.ts" />
+    <None Remove="ClientApp\src\app\qbratings\qbrating-update.component.ts" />
+    <None Remove="ClientApp\src\app\qbratings\qbrating-view.component.ts" />
+    <None Remove="ClientApp\src\app\qbratings\qbrating.module.ts" />
+    <None Remove="ClientApp\src\app\records\record-view.component.ts" />
+    <None Remove="ClientApp\src\app\records\record.module.ts" />
+    <None Remove="ClientApp\src\app\shared\components\language-selector\language-selector.component.ts" />
+    <None Remove="ClientApp\src\app\shared\components\score-ticker\score-ticker.component.ts" />
+    <None Remove="ClientApp\src\app\shared\components\social-media-buttons\social-media-buttons.component.ts" />
+    <None Remove="ClientApp\src\app\shared\guards\auth.guard.ts" />
+    <None Remove="ClientApp\src\app\shared\models\coach.ts" />
+    <None Remove="ClientApp\src\app\shared\models\country.ts" />
+    <None Remove="ClientApp\src\app\shared\models\division.ts" />
+    <None Remove="ClientApp\src\app\shared\models\fixture.ts" />
+    <None Remove="ClientApp\src\app\shared\models\fixturelist.ts" />
+    <None Remove="ClientApp\src\app\shared\models\powerranking.ts" />
+    <None Remove="ClientApp\src\app\shared\models\qbrating.ts" />
+    <None Remove="ClientApp\src\app\shared\models\record.ts" />
+    <None Remove="ClientApp\src\app\shared\models\recordcategory.ts" />
+    <None Remove="ClientApp\src\app\shared\models\refreshtoken.ts" />
+    <None Remove="ClientApp\src\app\shared\models\regularseasonwins.ts" />
+    <None Remove="ClientApp\src\app\shared\models\score.ts" />
+    <None Remove="ClientApp\src\app\shared\models\season.ts" />
+    <None Remove="ClientApp\src\app\shared\models\standing.ts" />
+    <None Remove="ClientApp\src\app\shared\models\superbowlodds.ts" />
+    <None Remove="ClientApp\src\app\shared\models\team.ts" />
+    <None Remove="ClientApp\src\app\shared\models\tournament.ts" />
+    <None Remove="ClientApp\src\app\shared\models\turnoverdifferential.ts" />
+    <None Remove="ClientApp\src\app\shared\models\week.ts" />
+    <None Remove="ClientApp\src\app\shared\models\yardage.ts" />
+    <None Remove="ClientApp\src\app\shared\modules\material.module.ts" />
+    <None Remove="ClientApp\src\app\shared\modules\shared.module.ts" />
+    <None Remove="ClientApp\src\app\shared\services\coach.service.ts" />
+    <None Remove="ClientApp\src\app\shared\services\country.service.ts" />
+    <None Remove="ClientApp\src\app\shared\services\division.service.ts" />
+    <None Remove="ClientApp\src\app\shared\services\fixture.service.ts" />
+    <None Remove="ClientApp\src\app\shared\services\powerranking.service.ts" />
+    <None Remove="ClientApp\src\app\shared\services\qbrating.service.ts" />
+    <None Remove="ClientApp\src\app\shared\services\record.service.ts" />
+    <None Remove="ClientApp\src\app\shared\services\refreshtoken.service.ts" />
+    <None Remove="ClientApp\src\app\shared\services\regularseasonwins.service.ts" />
+    <None Remove="ClientApp\src\app\shared\services\score.service.ts" />
+    <None Remove="ClientApp\src\app\shared\services\season.service.ts" />
+    <None Remove="ClientApp\src\app\shared\services\superbowlodds.service.ts" />
+    <None Remove="ClientApp\src\app\shared\services\team.service.ts" />
+    <None Remove="ClientApp\src\app\shared\services\tournament.service.ts" />
+    <None Remove="ClientApp\src\app\shared\services\turnoverdifferential.service.ts" />
+    <None Remove="ClientApp\src\app\shared\services\user.service.ts" />
+    <None Remove="ClientApp\src\app\shared\services\week.service.ts" />
+    <None Remove="ClientApp\src\app\shared\services\yardage.service.ts" />
+    <None Remove="ClientApp\src\app\shared\utils\common.service.ts" />
+    <None Remove="ClientApp\src\app\shared\utils\config.service.ts" />
+    <None Remove="ClientApp\src\app\shared\utils\log.service.ts" />
+    <None Remove="ClientApp\src\app\shared\validators\number.validator.ts" />
+    <None Remove="ClientApp\src\app\superbowlodds\superbowlodd-view.component.ts" />
+    <None Remove="ClientApp\src\app\superbowlodds\superbowlodd.module.ts" />
+    <None Remove="ClientApp\src\app\teams\team-add.component.ts" />
+    <None Remove="ClientApp\src\app\teams\team-guard.service.ts" />
+    <None Remove="ClientApp\src\app\teams\team-list.component.ts" />
+    <None Remove="ClientApp\src\app\teams\team-update.component.ts" />
+    <None Remove="ClientApp\src\app\teams\team-view.component.ts" />
+    <None Remove="ClientApp\src\app\teams\team.module.ts" />
+    <None Remove="ClientApp\src\app\turnoverdifferentials\turnoverdifferential-add.component.ts" />
+    <None Remove="ClientApp\src\app\turnoverdifferentials\turnoverdifferential-guard.service.ts" />
+    <None Remove="ClientApp\src\app\turnoverdifferentials\turnoverdifferential-list.component.ts" />
+    <None Remove="ClientApp\src\app\turnoverdifferentials\turnoverdifferential-update.component.ts" />
+    <None Remove="ClientApp\src\app\turnoverdifferentials\turnoverdifferential-view.component.ts" />
+    <None Remove="ClientApp\src\app\turnoverdifferentials\turnoverdifferential.module.ts" />
+    <None Remove="ClientApp\src\app\yardage\yardage-view.component.ts" />
+    <None Remove="ClientApp\src\app\yardage\yardage.module.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="compilerconfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AngularLovelyjubbly.Contracts\AngularLovelyjubbly.Contracts.csproj" />
+    <ProjectReference Include="..\AngularLovelyjubbly.Data.Sql.Contracts\AngularLovelyjubbly.Data.Sql.Contracts.csproj" />
+    <ProjectReference Include="..\AngularLovelyjubbly.Data.Sql.Repository\AngularLovelyjubbly.Data.Sql.Repository.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\account\account-forgotpassword.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\account\account-login.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\account\account-register.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\account\account.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\fixtures\fixture-add.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\fixtures\fixture-guard.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\fixtures\fixture-list.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\fixtures\fixture-update.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\fixtures\fixture.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\main\main-halloffame.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\main\main-links.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\main\main-seasonpredictions.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\main\main.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\playoffhistory\playoffhistory-view.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\playoffhistory\playoffhistory.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\powerrankings\powerranking-list.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\powerrankings\powerranking-view.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\powerrankings\powerranking.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\qbratings\qbrating-add.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\qbratings\qbrating-guard.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\qbratings\qbrating-list.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\qbratings\qbrating-update.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\qbratings\qbrating-view.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\qbratings\qbrating.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\records\record-view.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\records\record.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\components\language-selector\language-selector.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\components\score-ticker\score-ticker.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\components\social-media-buttons\social-media-buttons.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\guards\auth.guard.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\coach.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\country.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\division.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\fixture.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\fixturelist.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\powerranking.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\qbrating.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\record.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\recordcategory.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\refreshtoken.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\regularseasonwins.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\score.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\season.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\standing.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\superbowlodds.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\team.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\tournament.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\turnoverdifferential.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\week.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\yardage.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\modules\material.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\modules\shared.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\services\coach.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\services\country.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\services\division.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\services\fixture.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\services\powerranking.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\services\qbrating.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\services\record.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\services\refreshtoken.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\services\regularseasonwins.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\services\score.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\services\season.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\services\superbowlodds.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\services\team.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\services\tournament.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\services\turnoverdifferential.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\services\user.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\services\week.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\services\yardage.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\utils\common.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\utils\config.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\utils\log.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\validators\number.validator.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\superbowlodds\superbowlodd-view.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\superbowlodds\superbowlodd.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\teams\team-add.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\teams\team-guard.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\teams\team-list.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\teams\team-update.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\teams\team-view.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\teams\team.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\turnoverdifferentials\turnoverdifferential-add.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\turnoverdifferentials\turnoverdifferential-guard.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\turnoverdifferentials\turnoverdifferential-list.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\turnoverdifferentials\turnoverdifferential-update.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\turnoverdifferentials\turnoverdifferential-view.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\turnoverdifferentials\turnoverdifferential.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\yardage\yardage-view.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\yardage\yardage.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\icons.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="Auth\" />
+    <Folder Include="ViewModels\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.5.1" />
+    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.2.4" />
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.2.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services" />
+  </ItemGroup>
+
+  <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
+    <!-- Ensure Node.js is installed -->
+    <Exec Command="node --version" ContinueOnError="true">
+      <Output TaskParameter="ExitCode" PropertyName="ErrorCode" />
+    </Exec>
+    <Error Condition="'$(ErrorCode)' != '0'" Text="Node.js is required to build and run this project. To continue, please install Node.js from https://nodejs.org/, and then restart your command prompt or IDE." />
+    <Message Importance="high" Text="Restoring dependencies using 'npm'. This may take several minutes..." />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
+  </Target>
+
+  <Target Name="PublishRunWebpack" AfterTargets="ComputeFilesToPublish">
+    <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm run build -- --prod" />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm run build:ssr -- --prod" Condition=" '$(BuildServerSideRenderer)' == 'true' " />
+
+    <!-- Include the newly-built files in the publish output -->
+    <ItemGroup>
+      <DistFiles Include="$(SpaRoot)dist\**; $(SpaRoot)dist-server\**" />
+      <DistFiles Include="$(SpaRoot)node_modules\**" Condition="'$(BuildServerSideRenderer)' == 'true'" />
+      <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
+        <RelativePath>%(DistFiles.Identity)</RelativePath>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </ResolvedFileToPublish>
+    </ItemGroup>
+  </Target>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <TypeScriptTarget>ES2015</TypeScriptTarget>
+    <TypeScriptJSXEmit>None</TypeScriptJSXEmit>
+    <TypeScriptModuleKind>ES6</TypeScriptModuleKind>
+    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
+    <TypeScriptOutFile />
+    <TypeScriptOutDir />
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
+  </PropertyGroup>
+
+</Project>

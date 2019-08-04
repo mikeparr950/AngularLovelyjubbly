@@ -1,0 +1,261 @@
+<app-language-selector (languageChanged)='changeLanguage()'></app-language-selector><br/><br/>
+<app-social-media-buttons></app-social-media-buttons><br/>
+<app-score-ticker></app-score-ticker>
+<div *ngIf="standingsAFCEast && standingsAFCEast.length">
+    <div>
+        <h3 style="margin-bottom:20px;margin-top:0px;">AFC East</h3>
+    </div>
+    <ejs-grid #gridAFCEast id='GridAFCEast' [allowPaging]="false" [allowSorting]="true" [dataSource]="standingsAFCEast"
+              class="afcstandings full-text" width="100%" gridLines="Both">
+        <e-columns>
+            <e-column field="team.teamName" headerText="{{ 'TEAM.TEAM' | translate }}"
+                      width="168" textAlign="left"></e-column>
+            <e-column field="team.coach.coachName" headerText="{{ 'COACH.COACH' | translate }}"
+                      width="141" textAlign="left"></e-column>
+            <e-column field="won" headerText="{{ 'STANDING.WON_SHORT' | translate }}"
+                      width="56" textAlign="right"></e-column>
+            <e-column field="lost" headerText="{{ 'STANDING.LOST_SHORT' | translate }}"
+                      width="48" textAlign="right"></e-column>
+            <e-column field="tied" headerText="{{ 'STANDING.TIED_SHORT' | translate }}"
+                      width="44" textAlign="right"></e-column>
+            <e-column field="pointsFor" headerText="{{ 'STANDING.POINTS_FOR_SHORT' | translate }}"
+                      width="69" textAlign="right"></e-column>
+            <e-column field="pointsAgainst" headerText="{{ 'STANDING.POINTS_AGAINST_SHORT' | translate }}"
+                      width="65" textAlign="right"></e-column>
+            <e-column field="pointsDifference" headerText="{{ 'STANDING.POINTS_DIFFERENCE_SHORT' | translate }}"
+                      width="65" textAlign="right"></e-column>
+        </e-columns>
+    </ejs-grid>
+    <ejs-grid #gridAFCEastSmall id='GridAFCEastSmall' [allowPaging]="false" [allowSorting]="true" [dataSource]="standingsAFCEast"
+              class="afcstandings short-text" width="100%" style="margin-bottom:20px;" gridLines="Both">
+        <e-columns>
+            <e-column field="team.teamNameShort" headerText="{{ 'TEAM.TEAM' | translate }}"
+                      width="111" textAlign="left"></e-column>
+            <e-column field="team.coach.coachNameShort" headerText="{{ 'COACH.COACH' | translate }}"
+                      width="101" textAlign="left"></e-column>
+            <e-column field="won" headerText="{{ 'STANDING.WON_SHORT' | translate }}"
+                      width="43" textAlign="right"></e-column>
+            <e-column field="lost" headerText="{{ 'STANDING.LOST_SHORT' | translate }}"
+                      width="29" textAlign="right"></e-column>
+            <e-column field="tied" headerText="{{ 'STANDING.TIED_SHORT' | translate }}"
+                      width="28" textAlign="right"></e-column>
+            <e-column field="pointsDifference" headerText="{{ 'STANDING.POINTS_DIFFERENCE_SHORT' | translate }}"
+                      width="53" textAlign="right"></e-column>
+        </e-columns>
+    </ejs-grid>
+</div><br />
+<div *ngIf="standingsAFCCentral && standingsAFCCentral.length">
+    <div>
+        <h3 style="margin-bottom:20px;margin-top:0px;">AFC Central</h3>
+    </div>
+    <ejs-grid #gridAFCCentral id='GridAFCCentral' [allowPaging]="false" [allowSorting]="true" [dataSource]="standingsAFCCentral"
+              class="afcstandings full-text" width="100%" gridLines="Both">
+        <e-columns>
+            <e-column field="team.teamName" headerText="{{ 'TEAM.TEAM' | translate }}"
+                      width="160" textAlign="left"></e-column>
+            <e-column field="team.coach.coachName" headerText="{{ 'COACH.COACH' | translate }}"
+                      width="133" textAlign="left"></e-column>
+            <e-column field="won" headerText="{{ 'STANDING.WON_SHORT' | translate }}"
+                      width="58" textAlign="right"></e-column>
+            <e-column field="lost" headerText="{{ 'STANDING.LOST_SHORT' | translate }}"
+                      width="56" textAlign="right"></e-column>
+            <e-column field="tied" headerText="{{ 'STANDING.TIED_SHORT' | translate }}"
+                      width="44" textAlign="right"></e-column>
+            <e-column field="pointsFor" headerText="{{ 'STANDING.POINTS_FOR_SHORT' | translate }}"
+                      width="69" textAlign="right"></e-column>
+            <e-column field="pointsAgainst" headerText="{{ 'STANDING.POINTS_AGAINST_SHORT' | translate }}"
+                      width="67" textAlign="right"></e-column>
+            <e-column field="pointsDifference" headerText="{{ 'STANDING.POINTS_DIFFERENCE_SHORT' | translate }}"
+                      width="69" textAlign="right"></e-column>
+        </e-columns>
+    </ejs-grid>
+    <ejs-grid #gridAFCCentralSmall id='GridAFCCentralSmall' [allowPaging]="false" [allowSorting]="true" [dataSource]="standingsAFCCentral"
+              class="afcstandings short-text" width="100%" style="margin-bottom:20px;" gridLines="Both">
+        <e-columns>
+            <e-column field="team.teamNameShort" headerText="{{ 'TEAM.TEAM' | translate }}"
+                      width="106" textAlign="left"></e-column>
+            <e-column field="team.coach.coachNameShort" headerText="{{ 'COACH.COACH' | translate }}"
+                      width="96" textAlign="left"></e-column>
+            <e-column field="won" headerText="{{ 'STANDING.WON_SHORT' | translate }}"
+                      width="47" textAlign="right"></e-column>
+            <e-column field="lost" headerText="{{ 'STANDING.LOST_SHORT' | translate }}"
+                      width="41" textAlign="right"></e-column>
+            <e-column field="tied" headerText="{{ 'STANDING.TIED_SHORT' | translate }}"
+                      width="28" textAlign="right"></e-column>
+            <e-column field="pointsDifference" headerText="{{ 'STANDING.POINTS_DIFFERENCE_SHORT' | translate }}"
+                      width="59" textAlign="right"></e-column>
+        </e-columns>
+    </ejs-grid>
+</div><br />
+<div *ngIf="standingsAFCWest && standingsAFCWest.length">
+    <div>
+        <h3 style="margin-bottom:20px;margin-top:0px;">AFC West</h3>
+    </div>
+    <ejs-grid #gridAFCWest id='GridAFCWest' [allowPaging]="false" [allowSorting]="true" [dataSource]="standingsAFCWest"
+              class="afcstandings full-text" width="100%" gridLines="Both">
+        <e-columns>
+            <e-column field="team.teamName" headerText="{{ 'TEAM.TEAM' | translate }}"
+                      width="161" textAlign="left"></e-column>
+            <e-column field="team.coach.coachName" headerText="{{ 'COACH.COACH' | translate }}"
+                      width="142" textAlign="left"></e-column>
+            <e-column field="won" headerText="{{ 'STANDING.WON_SHORT' | translate }}"
+                      width="58" textAlign="right"></e-column>
+            <e-column field="lost" headerText="{{ 'STANDING.LOST_SHORT' | translate }}"
+                      width="56" textAlign="right"></e-column>
+            <e-column field="tied" headerText="{{ 'STANDING.TIED_SHORT' | translate }}"
+                      width="44" textAlign="right"></e-column>
+            <e-column field="pointsFor" headerText="{{ 'STANDING.POINTS_FOR_SHORT' | translate }}"
+                      width="69" textAlign="right"></e-column>
+            <e-column field="pointsAgainst" headerText="{{ 'STANDING.POINTS_AGAINST_SHORT' | translate }}"
+                      width="67" textAlign="right"></e-column>
+            <e-column field="pointsDifference" headerText="{{ 'STANDING.POINTS_DIFFERENCE_SHORT' | translate }}"
+                      width="69" textAlign="right"></e-column>
+        </e-columns>
+    </ejs-grid>
+    <ejs-grid #gridAFCWestSmall id='GridAFCWestSmall' [allowPaging]="false" [allowSorting]="true" [dataSource]="standingsAFCWest"
+              class="afcstandings short-text" width="100%" style="margin-bottom:20px;" gridLines="Both">
+        <e-columns>
+            <e-column field="team.teamNameShort" headerText="{{ 'TEAM.TEAM' | translate }}"
+                      width="106" textAlign="left"></e-column>
+            <e-column field="team.coach.coachNameShort" headerText="{{ 'COACH.COACH' | translate }}"
+                      width="99" textAlign="left"></e-column>
+            <e-column field="won" headerText="{{ 'STANDING.WON_SHORT' | translate }}"
+                      width="49" textAlign="right"></e-column>
+            <e-column field="lost" headerText="{{ 'STANDING.LOST_SHORT' | translate }}"
+                      width="48" textAlign="right"></e-column>
+            <e-column field="tied" headerText="{{ 'STANDING.TIED_SHORT' | translate }}"
+                      width="28" textAlign="right"></e-column>
+            <e-column field="pointsDifference" headerText="{{ 'STANDING.POINTS_DIFFERENCE_SHORT' | translate }}"
+                      width="59" textAlign="right"></e-column>
+        </e-columns>
+    </ejs-grid>
+</div><br />
+<div *ngIf="standingsNFCEast && standingsNFCEast.length">
+    <div>
+        <h3 style="margin-bottom:20px;margin-top:0px;">NFC East</h3>
+    </div>
+    <ejs-grid #gridNFCEast id='GridNFCEast' [allowPaging]="false" [allowSorting]="true" [dataSource]="standingsNFCEast"
+              class="nfcstandings full-text" width="100%" gridLines="Both">
+        <e-columns>
+            <e-column field="team.teamName" headerText="{{ 'TEAM.TEAM' | translate }}"
+                      width="166" textAlign="left"></e-column>
+            <e-column field="team.coach.coachName" headerText="{{ 'COACH.COACH' | translate }}"
+                      width="138" textAlign="left"></e-column>
+            <e-column field="won" headerText="{{ 'STANDING.WON_SHORT' | translate }}"
+                      width="58" textAlign="right"></e-column>
+            <e-column field="lost" headerText="{{ 'STANDING.LOST_SHORT' | translate }}"
+                      width="56" textAlign="right"></e-column>
+            <e-column field="tied" headerText="{{ 'STANDING.TIED_SHORT' | translate }}"
+                      width="44" textAlign="right"></e-column>
+            <e-column field="pointsFor" headerText="{{ 'STANDING.POINTS_FOR_SHORT' | translate }}"
+                      width="69" textAlign="right"></e-column>
+            <e-column field="pointsAgainst" headerText="{{ 'STANDING.POINTS_AGAINST_SHORT' | translate }}"
+                      width="67" textAlign="right"></e-column>
+            <e-column field="pointsDifference" headerText="{{ 'STANDING.POINTS_DIFFERENCE_SHORT' | translate }}"
+                      width="69" textAlign="right"></e-column>
+        </e-columns>
+    </ejs-grid>
+    <ejs-grid #gridNFCEastSmall id='GridNFCEastSmall' [allowPaging]="false" [allowSorting]="true" [dataSource]="standingsNFCEast"
+              class="nfcstandings short-text" width="100%" style="margin-bottom:20px;" gridLines="Both">
+        <e-columns>
+            <e-column field="team.teamNameShort" headerText="{{ 'TEAM.TEAM' | translate }}"
+                      width="106" textAlign="left"></e-column>
+            <e-column field="team.coach.coachNameShort" headerText="{{ 'COACH.COACH' | translate }}"
+                      width="99" textAlign="left"></e-column>
+            <e-column field="won" headerText="{{ 'STANDING.WON_SHORT' | translate }}"
+                      width="49" textAlign="right"></e-column>
+            <e-column field="lost" headerText="{{ 'STANDING.LOST_SHORT' | translate }}"
+                      width="48" textAlign="right"></e-column>
+            <e-column field="tied" headerText="{{ 'STANDING.TIED_SHORT' | translate }}"
+                      width="28" textAlign="right"></e-column>
+            <e-column field="pointsDifference" headerText="{{ 'STANDING.POINTS_DIFFERENCE_SHORT' | translate }}"
+                      width="59" textAlign="right"></e-column>
+        </e-columns>
+    </ejs-grid>
+</div><br />
+<div *ngIf="standingsNFCCentral && standingsNFCCentral.length">
+    <div>
+        <h3 style="margin-bottom:20px;margin-top:0px;">NFC Central</h3>
+    </div>
+    <ejs-grid #gridNFCCentral id='GridNFCCentral' [allowPaging]="false" [allowSorting]="true" [dataSource]="standingsNFCCentral"
+              class="nfcstandings full-text" width="100%" gridLines="Both">
+        <e-columns>
+            <e-column field="team.teamName" headerText="{{ 'TEAM.TEAM' | translate }}"
+                      width="177" textAlign="left"></e-column>
+            <e-column field="team.coach.coachName" headerText="{{ 'COACH.COACH' | translate }}"
+                      width="137" textAlign="left"></e-column>
+            <e-column field="won" headerText="{{ 'STANDING.WON_SHORT' | translate }}"
+                      width="58" textAlign="right"></e-column>
+            <e-column field="lost" headerText="{{ 'STANDING.LOST_SHORT' | translate }}"
+                      width="56" textAlign="right"></e-column>
+            <e-column field="tied" headerText="{{ 'STANDING.TIED_SHORT' | translate }}"
+                      width="44" textAlign="right"></e-column>
+            <e-column field="pointsFor" headerText="{{ 'STANDING.POINTS_FOR_SHORT' | translate }}"
+                      width="69" textAlign="right"></e-column>
+            <e-column field="pointsAgainst" headerText="{{ 'STANDING.POINTS_AGAINST_SHORT' | translate }}"
+                      width="67" textAlign="right"></e-column>
+            <e-column field="pointsDifference" headerText="{{ 'STANDING.POINTS_DIFFERENCE_SHORT' | translate }}"
+                      width="69" textAlign="right"></e-column>
+        </e-columns>
+    </ejs-grid>
+    <ejs-grid #gridNFCCentralSmall id='GridNFCCentralSmall' [allowPaging]="false" [allowSorting]="true" [dataSource]="standingsNFCCentral"
+              class="nfcstandings short-text" width="100%" style="margin-bottom:20px;" gridLines="Both">
+        <e-columns>
+            <e-column field="team.teamNameShort" headerText="{{ 'TEAM.TEAM' | translate }}"
+                      width="106" textAlign="left"></e-column>
+            <e-column field="team.coach.coachNameShort" headerText="{{ 'COACH.COACH' | translate }}"
+                      width="99" textAlign="left"></e-column>
+            <e-column field="won" headerText="{{ 'STANDING.WON_SHORT' | translate }}"
+                      width="49" textAlign="right"></e-column>
+            <e-column field="lost" headerText="{{ 'STANDING.LOST_SHORT' | translate }}"
+                      width="48" textAlign="right"></e-column>
+            <e-column field="tied" headerText="{{ 'STANDING.TIED_SHORT' | translate }}"
+                      width="28" textAlign="right"></e-column>
+            <e-column field="pointsDifference" headerText="{{ 'STANDING.POINTS_DIFFERENCE_SHORT' | translate }}"
+                      width="59" textAlign="right"></e-column>
+        </e-columns>
+    </ejs-grid>
+</div><br />
+<div *ngIf="standingsNFCWest && standingsNFCWest.length">
+    <div>
+        <h3 style="margin-bottom:20px;margin-top:0px;">NFC West</h3>
+    </div>
+    <ejs-grid #gridNFCWest id='GridNFCWest' [allowPaging]="false" [allowSorting]="true" [dataSource]="standingsNFCWest"
+              class="nfcstandings full-text" width="100%" gridLines="Both">
+        <e-columns>
+            <e-column field="team.teamName" headerText="{{ 'TEAM.TEAM' | translate }}"
+                      width="163" textAlign="left"></e-column>
+            <e-column field="team.coach.coachName" headerText="{{ 'COACH.COACH' | translate }}"
+                      width="166" textAlign="left"></e-column>
+            <e-column field="won" headerText="{{ 'STANDING.WON_SHORT' | translate }}"
+                      width="58" textAlign="right"></e-column>
+            <e-column field="lost" headerText="{{ 'STANDING.LOST_SHORT' | translate }}"
+                      width="56" textAlign="right"></e-column>
+            <e-column field="tied" headerText="{{ 'STANDING.TIED_SHORT' | translate }}"
+                      width="44" textAlign="right"></e-column>
+            <e-column field="pointsFor" headerText="{{ 'STANDING.POINTS_FOR_SHORT' | translate }}"
+                      width="69" textAlign="right"></e-column>
+            <e-column field="pointsAgainst" headerText="{{ 'STANDING.POINTS_AGAINST_SHORT' | translate }}"
+                      width="67" textAlign="right"></e-column>
+            <e-column field="pointsDifference" headerText="{{ 'STANDING.POINTS_DIFFERENCE_SHORT' | translate }}"
+                      width="69" textAlign="right"></e-column>
+        </e-columns>
+    </ejs-grid>
+    <ejs-grid #gridNFCWestSmall id='GridNFCWestSmall' [allowPaging]="false" [allowSorting]="true" [dataSource]="standingsNFCWest"
+              class="nfcstandings short-text" width="100%" style="margin-bottom:20px;" gridLines="Both">
+        <e-columns>
+            <e-column field="team.teamNameShort" headerText="{{ 'TEAM.TEAM' | translate }}"
+                      width="117" textAlign="left"></e-column>
+            <e-column field="team.coach.coachNameShort" headerText="{{ 'COACH.COACH' | translate }}"
+                      width="130" textAlign="left"></e-column>
+            <e-column field="won" headerText="{{ 'STANDING.WON_SHORT' | translate }}"
+                      width="54" textAlign="right"></e-column>
+            <e-column field="lost" headerText="{{ 'STANDING.LOST_SHORT' | translate }}"
+                      width="54" textAlign="right"></e-column>
+            <e-column field="tied" headerText="{{ 'STANDING.TIED_SHORT' | translate }}"
+                      width="28" textAlign="right"></e-column>
+            <e-column field="pointsDifference" headerText="{{ 'STANDING.POINTS_DIFFERENCE_SHORT' | translate }}"
+                      width="67" textAlign="right"></e-column>
+        </e-columns>
+    </ejs-grid>
+</div><br />

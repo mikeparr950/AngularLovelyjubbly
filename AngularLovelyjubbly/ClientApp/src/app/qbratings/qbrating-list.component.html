@@ -1,0 +1,36 @@
+﻿<div style="margin-bottom:20px;margin-top:-20px;">
+    <app-language-selector (languageChanged)='changeLanguage()'></app-language-selector>
+</div><br /><br />
+
+<div class='table-responsive' style="border:none;">
+    <div *ngIf="qbratings && qbratings.length">
+        <ejs-grid #grid id='Grid' [dataSource]="qbratings" [editSettings]='editSettings' [toolbar]='toolbar' [allowFiltering]='true'
+                  [allowPaging]='true' [allowSorting]='true' [sortSettings]='sortOptions' [allowMultiSorting]='true'
+                  [allowExcelExport]='true' (toolbarClick)='toolbarClick($event)'
+                  width='100%' [pageSettings]='pageSettings' gridLines="Both">
+            <e-columns>
+                <e-column width="143">
+                    <ng-template #template let-data>
+                        <a class="gridlinks" [routerLink]="['/QBRatingUpdate', data.qbRatingId]" style="color:#2796E1;">
+                            {{ 'FORM.EDIT' | translate }}
+                        </a>&nbsp;
+                        <a class="gridlinks" (click)="clicked($event, data.qbRatingId)" style="color:red;">
+                            {{ 'FORM.DELETE' | translate }}
+                        </a>
+                    </ng-template>
+                </e-column>
+                <e-column field="qbRatingId" headerText="{{ 'FORM.ID' | translate }}" width="104" textAlign="left"></e-column>
+                <e-column field="tournamentShort" headerText="{{ 'SEASON.SEASON' | translate }}" width="136" textAlign="right"></e-column>
+                <e-column field="team.teamName" headerText="{{ 'TEAM.TEAM_NAME' | translate }}" width="222" textAlign="right"></e-column>
+                <e-column field="completion" headerText="{{ 'QBRATING.COMPLETION_PERCENTAGE_SHORT' | translate }}"
+                          width="131" textAlign="right"></e-column>
+                <e-column field="gain" headerText="{{ 'QBRATING.AVERAGE_GAIN_SHORT' | translate }}" width="141" textAlign="right"></e-column>
+                <e-column field="touchdown" headerText="{{ 'QBRATING.TOUCHDOWN_PERCENTAGE_SHORT' | translate }}"
+                          width="131" textAlign="right"></e-column>
+                <e-column field="interception" headerText="{{ 'QBRATING.INTERCEPTION_PERCENTAGE_SHORT' | translate }}" 
+                          width="131" textAlign="right"></e-column>
+                <e-column field="rating" headerText="{{ 'QBRATING.RATING' | translate }}" width="141" textAlign="right"></e-column>
+            </e-columns>
+        </ejs-grid>
+    </div><br />
+</div>

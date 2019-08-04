@@ -1,0 +1,33 @@
+﻿<div style="margin-bottom:20px;margin-top:-20px;">
+    <app-language-selector></app-language-selector>
+</div><br /><br />
+
+<div class='table-responsive' style="border:none;">
+    <div class="panel-primary" style="border:none;">
+        <div class="panel-body" style="text-align:center;width:100%;">
+            <form novalidate
+                  #signupForm="ngForm"
+                  [formGroup]="playoffHistoryViewForm">
+                    <div class="form-group">
+                        <div style="width:100%;">
+                            <mat-form-field>
+                                <mat-select placeholder="{{ 'SEASON.SEASON' | translate }}" formControlName="season" id="seasonId" 
+                                            (selectionChange)="changePlayoffHistoryView()">
+                                    <mat-option *ngFor="let season of seasons" [value]="season">
+                                        {{ season.seasonName }}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                    </div>
+            </form>
+        </div>
+        <br />
+        <div *ngIf="historyImageUrl" class="container">
+            <h4 style="text-align: center;">
+                {{ 'PLAYOFF_HISTORY.HISTORY_IMAGE_TEXT' | translate:selectedSeason }}
+            </h4>
+            <img src={{historyImageUrl}} class="img-fluid center-block" />
+        </div><br />
+    </div>
+</div>

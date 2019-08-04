@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.156
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AngularLovelyjubbly", "AngularLovelyjubbly\AngularLovelyjubbly.csproj", "{D577361E-B7F8-4D5F-A436-511BC23B8044}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngularLovelyjubbly.Contracts", "AngularLovelyjubbly.Contracts\AngularLovelyjubbly.Contracts.csproj", "{AD5CCE24-7549-4048-8AD2-95C067904B12}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngularLovelyjubbly.Data.Sql.Contracts", "AngularLovelyjubbly.Data.Sql.Contracts\AngularLovelyjubbly.Data.Sql.Contracts.csproj", "{DAA1877F-2963-4DD2-8795-66F3752C0212}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngularLovelyjubbly.Data.Sql.Models", "AngularLovelyjubbly.Data.Sql.Models\AngularLovelyjubbly.Data.Sql.Models.csproj", "{2C996FD9-AA5A-46B6-8FFE-E61772F9C4C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngularLovelyjubbly.Data.Sql.Repository", "AngularLovelyjubbly.Data.Sql.Repository\AngularLovelyjubbly.Data.Sql.Repository.csproj", "{E0420E51-6BF8-432B-BB1A-4701E31CEA81}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D577361E-B7F8-4D5F-A436-511BC23B8044}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D577361E-B7F8-4D5F-A436-511BC23B8044}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D577361E-B7F8-4D5F-A436-511BC23B8044}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D577361E-B7F8-4D5F-A436-511BC23B8044}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD5CCE24-7549-4048-8AD2-95C067904B12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD5CCE24-7549-4048-8AD2-95C067904B12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD5CCE24-7549-4048-8AD2-95C067904B12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD5CCE24-7549-4048-8AD2-95C067904B12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAA1877F-2963-4DD2-8795-66F3752C0212}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAA1877F-2963-4DD2-8795-66F3752C0212}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAA1877F-2963-4DD2-8795-66F3752C0212}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAA1877F-2963-4DD2-8795-66F3752C0212}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C996FD9-AA5A-46B6-8FFE-E61772F9C4C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C996FD9-AA5A-46B6-8FFE-E61772F9C4C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C996FD9-AA5A-46B6-8FFE-E61772F9C4C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C996FD9-AA5A-46B6-8FFE-E61772F9C4C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0420E51-6BF8-432B-BB1A-4701E31CEA81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0420E51-6BF8-432B-BB1A-4701E31CEA81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0420E51-6BF8-432B-BB1A-4701E31CEA81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0420E51-6BF8-432B-BB1A-4701E31CEA81}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6B5C43EE-BF72-483B-877D-BE1F480F10F9}
+	EndGlobalSection
+EndGlobal

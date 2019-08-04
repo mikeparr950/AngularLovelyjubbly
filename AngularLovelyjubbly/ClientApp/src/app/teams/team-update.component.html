@@ -1,0 +1,204 @@
+﻿<div style="margin-bottom:20px;">
+    <button color="primary" class="mat-raised-button mat-primary" (click)='onBack()'>{{ 'FORM.BACK' | translate }}</button>
+    <app-language-selector></app-language-selector>
+</div>
+
+<div class='table-responsive' style="border:none;margin-left:0px;">
+    <div class="panel panel-primary" style="border:none;margin-left:0px;margin-bottom:10px;">
+        <div class="panel-heading" style="margin-bottom:15px;">
+            {{ 'TEAM.TEAM_UPDATE' | translate }} : {{team.teamId}}
+        </div>
+        <div class="panel-body" style="padding-left:0px;">
+            <form novalidate
+                  (ngSubmit)="save()"
+                  [formGroup]="teamForm">
+                <div class="form-group">
+                    <mat-form-field class="example-full-width">
+                        <input matInput id="teamNameId"
+                               type="text" tmFocus
+                               placeholder="{{ 'TEAM.TEAM_NAME' | translate }}"
+                               formControlName="teamName">
+                        <mat-error *ngIf="(teamForm.get('teamName').touched ||
+                                                         teamForm.get('teamName').dirty) &&
+                                                         teamForm.get('teamName').errors">
+                            <mat-error *ngIf="teamForm.get('teamName').errors.required">
+                                {{ 'TEAM.TEAM_NAME_REQUIRED' | translate }}
+                            </mat-error>
+                            <mat-error *ngIf="teamForm.get('teamName').errors.maxlength">
+                                {{ 'TEAM.TEAM_NAME_MAXCHAR' | translate }}
+                            </mat-error>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field class="example-full-width">
+                        <input matInput id="teamNameShortId"
+                               type="text"
+                               placeholder="{{ 'TEAM.TEAM_NAME_SHORT' | translate }}"
+                               formControlName="teamNameShort">
+                        <mat-error *ngIf="(teamForm.get('teamNameShort').touched ||
+                                                         teamForm.get('teamNameShort').dirty) &&
+                                                         teamForm.get('teamNameShort').errors">
+                            <mat-error *ngIf="teamForm.get('teamNameShort').errors.required">
+                                {{ 'TEAM.TEAM_NAME_SHORT_REQUIRED' | translate }}
+                            </mat-error>
+                            <mat-error *ngIf="teamForm.get('teamNameShort').errors.maxlength">
+                                {{ 'TEAM.TEAM_NAME_SHORT_MAXCHAR' | translate }}
+                            </mat-error>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field class="example-full-width">
+                        <input matInput id="cheerleaderImageId"
+                               type="text"
+                               placeholder="{{ 'TEAM.CHEERLEADER_IMAGE' | translate }}"
+                               formControlName="cheerleaderImage">
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field class="example-full-width">
+                        <input matInput id="coachImageId"
+                               type="text"
+                               placeholder="{{ 'TEAM.COACH_IMAGE' | translate }}"
+                               formControlName="coachImage">
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field class="example-full-width">
+                        <input matInput id="headerImageId"
+                               type="text"
+                               placeholder="{{ 'TEAM.HEADER_IMAGE' | translate }}"
+                               formControlName="headerImage">
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field>
+                        <mat-select placeholder="{{ 'TEAM.DIVISION_NAME' | translate }}" formControlName="division" id="divisionId">
+                            <mat-option *ngFor="let division of divisions" [value]="division">
+                                {{ division.divisionName }}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="(teamForm.get('division').touched ||
+                                                         teamForm.get('division').dirty) &&
+                                                         teamForm.get('division').errors">
+                            <mat-error *ngIf="teamForm.get('division').errors.required">
+                                {{ 'TEAM.DIVISION_NAME_REQUIRED' | translate }}
+                            </mat-error>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field>
+                        <mat-select placeholder="{{ 'TEAM.COACH_NAME' | translate }}" formControlName="coach" id="coachId">
+                            <mat-option *ngFor="let coach of coaches" [value]="coach">
+                                {{ coach.coachName }}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="(teamForm.get('coach').touched ||
+                                                         teamForm.get('coach').dirty) &&
+                                                         teamForm.get('coach').errors">
+                            <mat-error *ngIf="teamForm.get('coach').errors.required">
+                                {{ 'TEAM.COACH_NAME_REQUIRED' | translate }}
+                            </mat-error>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field class="example-full-width">
+                        <input matInput id="logoImageId"
+                               type="text"
+                               placeholder="{{ 'TEAM.LOGO_IMAGE' | translate }}"
+                               formControlName="logoImage">
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field class="example-full-width">
+                        <input matInput id="hexId"
+                               type="text"
+                               placeholder="{{ 'TEAM.HEX' | translate }}"
+                               formControlName="hex">
+                        <mat-error *ngIf="(teamForm.get('hex').touched ||
+                                                         teamForm.get('hex').dirty) &&
+                                                         teamForm.get('hex').errors">
+                            <mat-error *ngIf="teamForm.get('hex').errors.required">
+                                {{ 'TEAM.HEX_REQUIRED' | translate }}
+                            </mat-error>
+                            <mat-error *ngIf="teamForm.get('hex').errors.pattern">
+                                {{ 'TEAM.HEX_PATTERN' | translate }}
+                            </mat-error>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field class="example-full-width">
+                        <input matInput id="rId"
+                               type="text"
+                               placeholder="{{ 'TEAM.R' | translate }}"
+                               formControlName="r">
+                        <mat-error *ngIf="(teamForm.get('r').touched ||
+                                                         teamForm.get('r').dirty) &&
+                                                         teamForm.get('r').errors">
+                            <mat-error *ngIf="teamForm.get('r').errors.required">
+                                {{ 'TEAM.R_REQUIRED' | translate }}
+                            </mat-error>
+                            <mat-error *ngIf="teamForm.get('r').errors.range">
+                                {{ 'TEAM.R_PATTERN' | translate }}
+                            </mat-error>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field class="example-full-width">
+                        <input matInput id="gId"
+                               type="text"
+                               placeholder="{{ 'TEAM.G' | translate }}"
+                               formControlName="g">
+                        <mat-error *ngIf="(teamForm.get('g').touched ||
+                                                         teamForm.get('g').dirty) &&
+                                                         teamForm.get('g').errors">
+                            <mat-error *ngIf="teamForm.get('g').errors.required">
+                                {{ 'TEAM.G_REQUIRED' | translate }}
+                            </mat-error>
+                            <mat-error *ngIf="teamForm.get('g').errors.range">
+                                {{ 'TEAM.G_PATTERN' | translate }}
+                            </mat-error>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field class="example-full-width">
+                        <input matInput id="bId"
+                               type="text"
+                               placeholder="{{ 'TEAM.B' | translate }}"
+                               formControlName="b">
+                        <mat-error *ngIf="(teamForm.get('b').touched ||
+                                                         teamForm.get('b').dirty) &&
+                                                         teamForm.get('b').errors">
+                            <mat-error *ngIf="teamForm.get('b').errors.required">
+                                {{ 'TEAM.B_REQUIRED' | translate }}
+                            </mat-error>
+                            <mat-error *ngIf="teamForm.get('b').errors.range">
+                                {{ 'TEAM.B_PATTERN' | translate }}
+                            </mat-error>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-4" style="padding-left:0px;">
+                        <span>
+                            <button mat-raised-button color="primary" type="submit"
+                                    [disabled]="!teamForm.valid">
+                                {{ 'FORM.SAVE' | translate }}
+                            </button>
+                        </span><br />
+                        <div *ngIf="isRequesting" style="margin-top:10px;">
+                            <mat-progress-spinner [color]="color" [diameter]="48" [strokeWidth]="6.4" [mode]="mode" [value]="spinnerValue">
+                            </mat-progress-spinner>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

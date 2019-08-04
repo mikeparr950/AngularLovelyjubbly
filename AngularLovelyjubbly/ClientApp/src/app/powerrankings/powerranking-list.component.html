@@ -1,0 +1,19 @@
+﻿<div style="margin-bottom:20px;margin-top:-20px;">
+    <app-language-selector (languageChanged)='changeLanguage()'></app-language-selector>
+</div><br /><br />
+
+<div class='table-responsive' style="border:none;">
+    <div *ngIf="powerrankings && powerrankings.length">
+        <ejs-grid #grid id='Grid' [dataSource]="powerrankings" [editSettings]='editSettings' [toolbar]='toolbar'
+                  width='100%' [pageSettings]='pageSettings' gridLines="Both" (toolbarClick)='toolbarClick($event)'
+                  [allowRowDragAndDrop]='true' [selectionSettings]='selectOptions'>
+            <e-columns>
+                <e-column field="team.teamNameShort" headerText="{{ 'TEAM.TEAM_NAME' | translate }}" width="141" textAlign="right"></e-column>
+                <e-column field="previousRanking" headerText="{{ 'POWER_RANKING.PREVIOUS_RANKING_SHORT' | translate }}"
+                          width="131" textAlign="right"></e-column>
+                <e-column field="currentRanking" headerText="{{ 'POWER_RANKING.CURRENT_RANKING_SHORT' | translate }}" width="131" textAlign="right"></e-column>
+                <!--<e-column field="powerRankingId" headerText="{{ 'FORM.ID' | translate }}" width="104" textAlign="left" [visible]='false'></e-column>-->
+            </e-columns>
+        </ejs-grid>
+    </div><br />
+</div>

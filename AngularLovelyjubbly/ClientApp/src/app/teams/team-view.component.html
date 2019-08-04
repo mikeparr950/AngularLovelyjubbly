@@ -1,0 +1,48 @@
+﻿<div style="margin-bottom:20px;margin-top:-20px;">
+    <app-language-selector></app-language-selector>
+</div><br /><br />
+
+<div class='table-responsive' style="border:none;">
+    <div class="panel-primary" style="border:none;">
+        <div class="panel-body" style="text-align:center;width:100%;">
+            <form novalidate
+                  #signupForm="ngForm"
+                  [formGroup]="teamViewForm">
+                    <div class="form-group">
+                        <div style="width:100%;">
+                            <mat-form-field>
+                                <mat-select placeholder="{{ 'TEAM.TEAM' | translate }}" formControlName="team" id="teamId" 
+                                            (selectionChange)="changeTeamView()">
+                                    <mat-option *ngFor="let team of teams" [value]="team">
+                                        {{ team.teamName }}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                    </div>
+            </form>
+        </div>
+        <br />
+        <div *ngIf="regularSeasonWins && regularSeasonWins.length && selectedTeam !== ''">
+            <img class="img-fluid center-block" alt="Header" src={{headerImage}} /><br />
+            <img class="center-block" alt="Coach" src={{coachImage}} /><br />
+            <table style="margin: 0px auto;width:320px;">
+                <tr *ngFor='let fixture of fixtures'>
+                    <!-- property binding rather than interpolation-->
+                    <td style="padding-left:5px;padding-right:5px;">{{ fixture.week.weekNumber }}</td>
+                    <td style="padding-bottom:10px;"><img src={{fixture.opponent.logoImage}} /></td>
+                    <td>{{ fixture.opponent.teamName }}</td>
+                    <td>{{ fixture.score }}</td>
+                </tr>
+            </table><br />
+            <canvas baseChart [colors]="lineChartColors"
+                    [datasets]="lineChartData"
+                    [labels]="lineChartLabels"
+                    [options]="lineChartOptions"
+                    [chartType]="lineChartType"
+                    (chartHover)="chartHovered($event)"
+                    (chartClick)="chartClicked($event)"></canvas><br />
+            <img class="img-fluid center-block" alt="Cheerleader" src={{cheerleaderImage}} /><br />
+        </div>
+    </div>
+</div>

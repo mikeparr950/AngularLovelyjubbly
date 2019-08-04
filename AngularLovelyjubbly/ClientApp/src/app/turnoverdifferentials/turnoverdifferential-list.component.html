@@ -1,0 +1,35 @@
+﻿<div style="margin-bottom:20px;margin-top:-20px;">
+    <app-language-selector (languageChanged)='changeLanguage()'></app-language-selector>
+</div><br /><br />
+
+<div class='table-responsive' style="border:none;">
+    <div *ngIf="turnoverdifferentials && turnoverdifferentials.length">
+        <ejs-grid #grid id='Grid' [dataSource]="turnoverdifferentials" [editSettings]='editSettings' [toolbar]='toolbar' 
+                  [allowFiltering]='true' [allowPaging]='true' [allowSorting]='true' [sortSettings]='sortOptions' 
+                  [allowMultiSorting]='true' [allowExcelExport]='true' (toolbarClick)='toolbarClick($event)' 
+                  width='100%' [pageSettings]='pageSettings' gridLines="Both">
+            <e-columns>
+                <e-column width="143">
+                    <ng-template #template let-data>
+                        <a class="gridlinks" [routerLink]="['/TurnoverDifferentialUpdate', data.turnoverDifferentialId]"
+                           style="color:#2796E1;">
+                            {{ 'FORM.EDIT' | translate }}
+                        </a>&nbsp;
+                        <a class="gridlinks" (click)="clicked($event, data.turnoverDifferentialId)" style="color:red;">
+                            {{ 'FORM.DELETE' | translate }}
+                        </a>
+                    </ng-template>
+                </e-column>
+                <e-column field="turnoverDifferentialId" headerText="{{ 'FORM.ID' | translate }}" width="104" textAlign="right"></e-column>
+                <e-column field="tournamentShort" headerText="{{ 'SEASON.SEASON' | translate }}" width="136" textAlign="right"></e-column>
+                <e-column field="team.teamName" headerText="{{ 'TEAM.TEAM_NAME' | translate }}" width="222" textAlign="right"></e-column>
+                <e-column [columns]='takeawayColumns' headerText="Takeaways" width="131"
+                          textAlign="center"></e-column>
+                <e-column [columns]='giveawayColumns' headerText="Giveaways" width="131"
+                          textAlign="center"></e-column>
+                <e-column field="turnoverDifferential" headerText="{{ 'TURNOVERDIFFERENTIAL.TURNOVERDIFFERENTIAL' | translate }}"
+                          width="205" textAlign="right"></e-column>
+            </e-columns>
+        </ejs-grid>
+    </div><br />
+</div>

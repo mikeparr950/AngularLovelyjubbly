@@ -1,0 +1,25 @@
+﻿<div *ngIf="scores && scores.length">
+    <div class="ticker-wrap">
+        <div class="ticker">
+            <div class="ticker__item">{{ 'WEEK.WEEK' | translate }} {{ scores[0].week.weekId }} {{ 'TEAM.RESULTS' | translate }} :</div>
+            <div class="ticker__item">{{ scores[0].scoreDescription }}</div>
+            <div class="ticker__item">{{ scores[1].scoreDescription }}</div>
+            <div class="ticker__item">{{ scores[2].scoreDescription }}</div>
+            <div class="ticker__item">{{ scores[3].scoreDescription }}</div>
+            <div class="ticker__item">{{ scores[4].scoreDescription }}</div>
+            <div class="ticker__item">{{ scores[5].scoreDescription }}</div>
+            <div class="ticker__item">{{ scores[6].scoreDescription }}</div>
+            <div class="ticker__item">{{ scores[7].scoreDescription }}</div>
+            <div class="ticker__item">{{ scores[8].scoreDescription }}</div>
+            <div class="ticker__item">{{ scores[9].scoreDescription }}</div>
+            <div class="ticker__item">{{ scores[10].scoreDescription }}</div>
+            <div class="ticker__item">{{ scores[11].scoreDescription }}</div>
+        </div>
+    </div>
+    <div>
+        <img class="img-fluid center-block" src="assets/images/gotw/gotw.png" />
+    </div>
+    <div class="justify-content-center" style="background-color:cadetblue;color:white;padding:14px 14px 14px 14px;">
+        {{ 'GOTW.HEADLINE' | translate }}
+    </div><br />
+</div>

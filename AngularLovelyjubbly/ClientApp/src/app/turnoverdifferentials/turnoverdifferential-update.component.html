@@ -1,0 +1,144 @@
+﻿<div style="margin-bottom:20px;">
+    <button color="primary" class="mat-raised-button mat-primary" (click)='onBack()'>{{ 'FORM.BACK' | translate }}</button>
+    <app-language-selector></app-language-selector>
+</div>
+
+<div class='table-responsive' style="border:none;margin-left:0px;">
+    <div class="panel panel-primary" style="border:none;margin-left:0px;">
+        <div class="panel-heading" style="margin-bottom:15px;">
+            {{ 'TURNOVERDIFFERENTIAL.TURNOVERDIFFERENTIAL_UPDATE' | translate }}: {{turnoverdifferential.turnoverDifferentialId}}
+        </div>
+        <div class="panel-body" style="padding-left:0px;">
+            <form novalidate
+                  (ngSubmit)="save()"
+                  [formGroup]="turnoverdifferentialForm">
+                <div class="form-group">
+                    <mat-form-field>
+                        <mat-select placeholder="{{ 'TOURNAMENT.TOURNAMENT' | translate }}" formControlName="tournament" id="tournamentId">
+                            <mat-option *ngFor="let tournament of tournaments" [value]="tournament">
+                                {{ tournament.tournamentName }}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="(turnoverdifferentialForm.get('tournament').touched ||
+                                                         turnoverdifferentialForm.get('tournament').dirty) &&
+                                                         turnoverdifferentialForm.get('tournament').errors">
+                            <mat-error *ngIf="turnoverdifferentialForm.get('tournament').errors.required">
+                                {{ 'TOURNAMENT.TOURNAMENT_NAME_REQUIRED' | translate }}
+                            </mat-error>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field>
+                        <mat-select placeholder="{{ 'TEAM.TEAM' | translate }}" formControlName="team" id="teamId">
+                            <mat-option *ngFor="let team of teams" [value]="team">
+                                {{ team.teamName }}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="(turnoverdifferentialForm.get('team').touched ||
+                                                         turnoverdifferentialForm.get('team').dirty) &&
+                                                         turnoverdifferentialForm.get('team').errors">
+                            <mat-error *ngIf="turnoverdifferentialForm.get('team').errors.required">
+                                {{ 'TEAM.TEAM_REQUIRED' | translate }}
+                            </mat-error>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field class="example-full-width">
+                        <input matInput id="fumbleTakeawaysId"
+                               type="text"
+                               placeholder="{{ 'TURNOVERDIFFERENTIAL.FUMBLE_TAKEAWAYS' | translate }}"
+                               formControlName="fumbleTakeaways">
+                        <mat-error *ngIf="(turnoverdifferentialForm.get('fumbleTakeaways').touched ||
+                                                         turnoverdifferentialForm.get('fumbleTakeaways').dirty) &&
+                                                         turnoverdifferentialForm.get('fumbleTakeaways').errors">
+                            <mat-error *ngIf="turnoverdifferentialForm.get('fumbleTakeaways').errors.required">
+                                {{ 'TURNOVERDIFFERENTIAL.FUMBLE_TAKEAWAYS_REQUIRED' | translate }}
+                            </mat-error>
+                            <mat-error *ngIf="turnoverdifferentialForm.get('fumbleTakeaways').errors.pattern">
+                                {{ 'TURNOVERDIFFERENTIAL.FUMBLE_TAKEAWAYS_PATTERN' | translate }}
+                            </mat-error>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field class="example-full-width">
+                        <input matInput id="interceptionTakeawaysId"
+                               type="text"
+                               placeholder="{{ 'TURNOVERDIFFERENTIAL.INTERCEPTION_TAKEAWAYS' | translate }}"
+                               formControlName="interceptionTakeaways">
+                        <mat-error *ngIf="(turnoverdifferentialForm.get('interceptionTakeaways').touched ||
+                                                         turnoverdifferentialForm.get('interceptionTakeaways').dirty) &&
+                                                         turnoverdifferentialForm.get('interceptionTakeaways').errors">
+                            <mat-error *ngIf="turnoverdifferentialForm.get('interceptionTakeaways').errors.required">
+                                {{ 'TURNOVERDIFFERENTIAL.INTERCEPTION_TAKEAWAYS_REQUIRED' | translate }}
+                            </mat-error>
+                            <mat-error *ngIf="turnoverdifferentialForm.get('interceptionTakeaways').errors.pattern">
+                                {{ 'TURNOVERDIFFERENTIAL.INTERCEPTION_TAKEAWAYS_PATTERN' | translate }}
+                            </mat-error>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field class="example-full-width">
+                        <input matInput id="fumbleGiveawaysId"
+                               type="text"
+                               placeholder="{{ 'TURNOVERDIFFERENTIAL.FUMBLE_GIVEAWAYS' | translate }}"
+                               formControlName="fumbleGiveaways">
+                        <mat-error *ngIf="(turnoverdifferentialForm.get('fumbleGiveaways').touched ||
+                                                         turnoverdifferentialForm.get('fumbleGiveaways').dirty) &&
+                                                         turnoverdifferentialForm.get('fumbleGiveaways').errors">
+                            <mat-error *ngIf="turnoverdifferentialForm.get('fumbleGiveaways').errors.required">
+                                {{ 'TURNOVERDIFFERENTIAL.FUMBLE_GIVEAWAYS_REQUIRED' | translate }}
+                            </mat-error>
+                            <mat-error *ngIf="turnoverdifferentialForm.get('fumbleGiveaways').errors.pattern">
+                                {{ 'TURNOVERDIFFERENTIAL.FUMBLE_GIVEAWAYS_PATTERN' | translate }}
+                            </mat-error>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field class="example-full-width">
+                        <input matInput id="interceptionGiveawaysId"
+                               type="text"
+                               placeholder="{{ 'TURNOVERDIFFERENTIAL.INTERCEPTION_GIVEAWAYS' | translate }}"
+                               formControlName="interceptionGiveaways">
+                        <mat-error *ngIf="(turnoverdifferentialForm.get('interceptionGiveaways').touched ||
+                                                         turnoverdifferentialForm.get('interceptionGiveaways').dirty) &&
+                                                         turnoverdifferentialForm.get('interceptionGiveaways').errors">
+                            <mat-error *ngIf="turnoverdifferentialForm.get('interceptionGiveaways').errors.required">
+                                {{ 'TURNOVERDIFFERENTIAL.INTERCEPTION_GIVEAWAYS_REQUIRED' | translate }}
+                            </mat-error>
+                            <mat-error *ngIf="turnoverdifferentialForm.get('interceptionGiveaways').errors.pattern">
+                                {{ 'TURNOVERDIFFERENTIAL.INTERCEPTION_GIVEAWAYS_PATTERN' | translate }}
+                            </mat-error>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-4" style="width:100%;padding-left:0px;">
+                        <label class="control-label" for="rating">
+                            {{ 'TURNOVERDIFFERENTIAL.TURNOVERDIFFERENTIAL' | translate }} :
+                            {{ calculateTurnoverDifferential() }}
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-4" style="padding-left:0px;">
+                        <span>
+                            <button mat-raised-button color="primary" type="submit"
+                                    [disabled]="!turnoverdifferentialForm.valid">
+                                {{ 'FORM.SAVE' | translate }}
+                            </button>
+                        </span><br />
+                        <div *ngIf="isRequesting" style="margin-top:10px;">
+                            <mat-progress-spinner [color]="color" [diameter]="48" [strokeWidth]="6.4" [mode]="mode" [value]="spinnerValue">
+                            </mat-progress-spinner>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

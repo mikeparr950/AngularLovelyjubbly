@@ -1,0 +1,101 @@
+﻿@import "_variables.scss";
+@import "_config.scss";
+
+/** angular material */
+.mat-tab-label, .mat-tab-link, .mat-tab-group, .mat-form-field, .mat-error, .mat-raised-button, .mat-select, .mat-option, .mat-calendar, .mat-button, .mat-checkbox, .mat-checkbox-label, .mat-tooltip {
+    font-family: $fontName;
+}
+
+.mat-card-content, .mat-card-header .mat-card-title, .mat-card-subtitle {
+    font-family: $fontName;
+}
+
+.matcardtitle {
+    font-family: $fontName;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+}
+
+.mat-card:not([class*=mat-elevation-z]) {
+    box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 3px rgba(0,0,0,.12);
+}
+
+.mat-checkbox-layout .mat-checkbox-label {
+    font-weight: normal;
+}
+
+.snack-bar-warning {
+    background-color: #9e1716;
+}
+
+.snack-bar-success {
+    background-color: #128425;
+}
+
+.snack-bar-info {
+    background-color: black;
+}
+
+.mat-simple-snackbar {
+    font-family: $fontName;
+}
+
+.mat-form-field {
+    min-width: 300px;
+}
+
+.mat-form-field-infix {
+    display: block;
+    position: relative;
+    flex: auto;
+    min-width: 0;
+    width: 180px;
+    font-size: 14px;
+    line-height:20px;
+}
+
+.mat-form-field-placeholder {
+    height: 24px;
+}
+
+.mat-input-element {
+    height: 24px;
+}
+
+.mat-select {
+    height: 24px;
+}
+
+.mat-select-value {
+    height: 24px;
+}
+
+.mat-checkbox-layout .mat-checkbox-label {
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.mat-error{
+    height:24px;
+}
+
+/** tabs */
+.demo-tab-group {
+    border: 1px solid #e8e8e8;
+}
+
+.demo-tab-content {
+    padding: 16px;
+}
+
+/** https://github.com/angular/material2/issues/4035 */
+.mat-tab-body-content {
+    height: unset !important;
+}
+
+.mat-button-wrapper {
+    font-family: $fontName;
+}
+

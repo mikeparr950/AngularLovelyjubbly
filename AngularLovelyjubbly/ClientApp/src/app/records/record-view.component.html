@@ -1,0 +1,2380 @@
+﻿<div style="margin-bottom:20px;margin-top:-20px;">
+    <app-language-selector></app-language-selector>
+</div><br /><br />
+
+<div class="center-block" style="width:320px;padding-left:18px;padding-bottom:5px;">
+    <div class="button-row center-block">
+        <button mat-mini-fab color="primary" (click)="buttonClicked(1)">1</button>
+        <button mat-mini-fab color="primary" (click)="buttonClicked(2)">2</button>
+        <button mat-mini-fab color="primary" (click)="buttonClicked(3)">3</button>
+        <button mat-mini-fab color="primary" (click)="buttonClicked(4)">4</button>
+        <button mat-mini-fab color="primary" (click)="buttonClicked(5)">5</button>
+        <button mat-mini-fab color="primary" (click)="buttonClicked(6)">6</button>
+        <button mat-mini-fab color="primary" (click)="buttonClicked(7)">7</button>
+    </div>
+</div>
+<div class="center-block" style="width:320px;padding-left:98px;">
+    <div class="button-row center-block">
+        <button mat-mini-fab color="primary" (click)="buttonClicked(8)">8</button>
+        <button mat-mini-fab color="primary" (click)="buttonClicked(9)">9</button>
+        <button mat-mini-fab color="primary" (click)="buttonClicked(10)">10</button>
+    </div>
+</div><br />
+<div id="firstSet" *ngIf="firstSetSelected" style="padding-left:15px;padding-right:15px;" class="full-text">
+    <div class="row">
+        <div class="col" style="padding-left:0px;padding-right:10px;">
+            <mat-card>
+                <div *ngFor='let record of firstRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamName }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamName }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+        <div class="col" style="padding-left:0px;padding-right:10px;">
+            <mat-card>
+                <div *ngFor='let record of secondRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamName }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamName }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+        <div class="col" style="padding-left:0px;padding-right:0px;">
+            <mat-card>
+                <div *ngFor='let record of thirdRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;" matTooltip={{record.comments}} matTooltipPosition="above">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamName }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;" matTooltip={{record.comments}} matTooltipPosition="above">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamName }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>
+<div id="firstSet" *ngIf="firstSetSelected" style="padding-left:15px;padding-right:15px;" class="short-text">
+    <div class="row">
+        <div class="col" style="padding-left:0px;padding-right:10px;">
+            <mat-card>
+                <div *ngFor='let record of firstRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;width:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamNameShort }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamNameShort }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+        <div class="col" style="padding-left:0px;padding-right:10px;">
+            <mat-card>
+                <div *ngFor='let record of secondRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;width:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamNameShort }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamNameShort }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+        <div class="col" style="padding-left:0px;padding-right:0px;">
+            <mat-card>
+                <div *ngFor='let record of thirdRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;width:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;" matTooltip={{record.comments}} matTooltipPosition="above">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamNameShort }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;" matTooltip={{record.comments}} matTooltipPosition="above">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamNameShort }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>
+<div id="secondSet" *ngIf="secondSetSelected" style="padding-left:15px;padding-right:15px;" class="full-text">
+    <div class="row">
+        <div class="col" style="padding-left:0px;padding-right:10px;">
+            <mat-card>
+                <div *ngFor='let record of fourthRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamName }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamName }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+        <div class="col" style="padding-left:0px;padding-right:10px;">
+            <mat-card>
+                <div *ngFor='let record of fifthRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamName }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamName }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+        <div class="col" style="padding-left:0px;padding-right:0px;">
+            <mat-card>
+                <div *ngFor='let record of sixthRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;" matTooltip={{record.comments}} matTooltipPosition="above">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamName }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;" matTooltip={{record.comments}} matTooltipPosition="above">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamName }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>
+<div id="secondSet" *ngIf="secondSetSelected" style="padding-left:15px;padding-right:15px;" class="short-text">
+    <div class="row">
+        <div class="col" style="padding-left:0px;padding-right:10px;">
+            <mat-card>
+                <div *ngFor='let record of fourthRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;width:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamNameShort }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamNameShort }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+        <div class="col" style="padding-left:0px;padding-right:10px;">
+            <mat-card>
+                <div *ngFor='let record of fifthRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;width:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamNameShort }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamNameShort }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+        <div class="col" style="padding-left:0px;padding-right:0px;">
+            <mat-card>
+                <div *ngFor='let record of sixthRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;width:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;" matTooltip={{record.comments}} matTooltipPosition="above">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamNameShort }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;" matTooltip={{record.comments}} matTooltipPosition="above">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamNameShort }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>
+<div id="thirdSet" *ngIf="thirdSetSelected" style="padding-left:15px;padding-right:15px;" class="full-text">
+    <div class="row">
+        <div class="col" style="padding-left:0px;padding-right:10px;">
+            <mat-card>
+                <div *ngFor='let record of seventhRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;" matTooltip={{record.comments}} matTooltipPosition="above">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamName }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;" matTooltip={{record.comments}} matTooltipPosition="above">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamName }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+        <div class="col" style="padding-left:0px;padding-right:10px;">
+            <mat-card>
+                <div *ngFor='let record of eigthRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamName }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamName }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+        <div class="col" style="padding-left:0px;padding-right:0px;">
+            <mat-card>
+                <div *ngFor='let record of ninthRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamName }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamName }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>
+<div id="thirdSet" *ngIf="thirdSetSelected" style="padding-left:15px;padding-right:15px;" class="short-text">
+    <div class="row">
+        <div class="col" style="padding-left:0px;padding-right:10px;">
+            <mat-card>
+                <div *ngFor='let record of seventhRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;width:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;" matTooltip={{record.comments}} matTooltipPosition="above">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamNameShort }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;" matTooltip={{record.comments}} matTooltipPosition="above">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamNameShort }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+        <div class="col" style="padding-left:0px;padding-right:10px;">
+            <mat-card>
+                <div *ngFor='let record of eigthRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;width:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamNameShort }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamNameShort }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+        <div class="col" style="padding-left:0px;padding-right:0px;">
+            <mat-card>
+                <div *ngFor='let record of ninthRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;width:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamNameShort }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamNameShort }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>
+<div id="fourthSet" *ngIf="fourthSetSelected" style="padding-left:15px;padding-right:15px;" class="full-text">
+    <div class="row">
+        <div class="col" style="padding-left:0px;padding-right:10px;">
+            <mat-card>
+                <div *ngFor='let record of tenthRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamName }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamName }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+        <div class="col" style="padding-left:0px;padding-right:10px;">
+            <mat-card>
+                <div *ngFor='let record of eleventhRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamName }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamName }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+        <div class="col" style="padding-left:0px;padding-right:0px;">
+            <mat-card>
+                <div *ngFor='let record of twelfthRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamName }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamName }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>
+<div id="fourthSet" *ngIf="fourthSetSelected" style="padding-left:15px;padding-right:15px;" class="short-text">
+    <div class="row">
+        <div class="col" style="padding-left:0px;padding-right:10px;">
+            <mat-card>
+                <div *ngFor='let record of tenthRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;width:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamNameShort }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamNameShort }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+        <div class="col" style="padding-left:0px;padding-right:10px;">
+            <mat-card>
+                <div *ngFor='let record of eleventhRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;width:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamNameShort }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamNameShort }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+        <div class="col" style="padding-left:0px;padding-right:0px;">
+            <mat-card>
+                <div *ngFor='let record of twelfthRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;width:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamNameShort }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamNameShort }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>
+<div id="fifthSet" *ngIf="fifthSetSelected" style="padding-left:15px;padding-right:15px;" class="full-text">
+    <div class="row">
+        <div class="col" style="padding-left:0px;padding-right:10px;">
+            <mat-card>
+                <div *ngFor='let record of thirteenthRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;" matTooltip={{record.comments}} matTooltipPosition="above">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamName }}&nbsp;{{ 'WEEK.WEEK_LCASE' | translate }}&nbsp;{{ record.week.weekId }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;" matTooltip={{record.comments}} matTooltipPosition="above">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">
+                                        {{ record.season.seasonName }}&nbsp;{{ record.team.teamName }}&nbsp;{{ 'WEEK.WEEK_LCASE' | translate }}&nbsp;{{ record.week.weekId }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+        <div class="col" style="padding-left:0px;padding-right:10px;">
+            <mat-card>
+                <div *ngFor='let record of fourteenthRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamName }}&nbsp;{{ 'WEEK.WEEK_LCASE' | translate }}&nbsp;{{ record.week.weekId }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamName }}&nbsp;{{ 'WEEK.WEEK_LCASE' | translate }}&nbsp;{{ record.week.weekId }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+        <div class="col" style="padding-left:0px;padding-right:0px;">
+            <mat-card>
+                <div *ngFor='let record of fifteenthRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamName }}&nbsp;{{ 'WEEK.WEEK_LCASE' | translate }}&nbsp;{{ record.week.weekId }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamName }}&nbsp;{{ 'WEEK.WEEK_LCASE' | translate }}&nbsp;{{ record.week.weekId }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>
+<div id="fifthSet" *ngIf="fifthSetSelected" style="padding-left:15px;padding-right:15px;" class="short-text">
+    <div class="row">
+        <div class="col" style="padding-left:0px;padding-right:10px;">
+            <mat-card>
+                <div *ngFor='let record of thirteenthRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;width:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;" matTooltip={{record.comments}} matTooltipPosition="above">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamNameShort }}&nbsp;{{ 'WEEK.WEEK_LCASE_SHORT' | translate }}&nbsp;{{ record.week.weekId }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;" matTooltip={{record.comments}} matTooltipPosition="above">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamNameShort }}&nbsp;{{ 'WEEK.WEEK_LCASE_SHORT' | translate }}&nbsp;{{ record.week.weekId }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+        <div class="col" style="padding-left:0px;padding-right:10px;">
+            <mat-card>
+                <div *ngFor='let record of fourteenthRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;width:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamNameShort }}&nbsp;{{ 'WEEK.WEEK_LCASE_SHORT' | translate }}&nbsp;{{ record.week.weekId }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamNameShort }}&nbsp;{{ 'WEEK.WEEK_LCASE_SHORT' | translate }}&nbsp;{{ record.week.weekId }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+        <div class="col" style="padding-left:0px;padding-right:0px;">
+            <mat-card>
+                <div *ngFor='let record of fifteenthRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;width:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamNameShort }}&nbsp;{{ 'WEEK.WEEK_LCASE_SHORT' | translate }}&nbsp;{{ record.week.weekId }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamNameShort }}&nbsp;{{ 'WEEK.WEEK_LCASE_SHORT' | translate }}&nbsp;{{ record.week.weekId }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>
+<div id="sixthSet" *ngIf="sixthSetSelected" style="padding-left:15px;padding-right:15px;" class="full-text">
+    <div class="row">
+        <div class="col" style="padding-left:0px;padding-right:10px;">
+            <mat-card>
+                <div *ngFor='let record of sixteenthRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;" matTooltip={{record.comments}} matTooltipPosition="above">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamName }}&nbsp;{{ 'WEEK.WEEK_LCASE' | translate }}&nbsp;{{ record.week.weekId }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;" matTooltip={{record.comments}} matTooltipPosition="above">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">
+                                        {{ record.season.seasonName }}&nbsp;{{ record.team.teamName }}&nbsp;{{ 'WEEK.WEEK_LCASE' | translate }}&nbsp;{{ record.week.weekId }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+        <div class="col" style="padding-left:0px;padding-right:10px;">
+            <mat-card>
+                <div *ngFor='let record of seventeenthRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamName }}&nbsp;{{ 'WEEK.WEEK_LCASE' | translate }}&nbsp;{{ record.week.weekId }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamName }}&nbsp;{{ 'WEEK.WEEK_LCASE' | translate }}&nbsp;{{ record.week.weekId }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+        <div class="col" style="padding-left:0px;padding-right:0px;">
+            <mat-card>
+                <div *ngFor='let record of eighteenthRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamName }}&nbsp;{{ 'WEEK.WEEK_LCASE' | translate }}&nbsp;{{ record.week.weekId }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamName }}&nbsp;{{ 'WEEK.WEEK_LCASE' | translate }}&nbsp;{{ record.week.weekId }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>
+<div id="sixthSet" *ngIf="sixthSetSelected" style="padding-left:15px;padding-right:15px;" class="short-text">
+    <div class="row">
+        <div class="col" style="padding-left:0px;padding-right:10px;">
+            <mat-card>
+                <div *ngFor='let record of sixteenthRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;width:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;" matTooltip={{record.comments}} matTooltipPosition="above">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamNameShort }}&nbsp;{{ 'WEEK.WEEK_LCASE_SHORT' | translate }}&nbsp;{{ record.week.weekId }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;" matTooltip={{record.comments}} matTooltipPosition="above">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamNameShort }}&nbsp;{{ 'WEEK.WEEK_LCASE_SHORT' | translate }}&nbsp;{{ record.week.weekId }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+        <div class="col" style="padding-left:0px;padding-right:10px;">
+            <mat-card>
+                <div *ngFor='let record of seventeenthRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;width:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamNameShort }}&nbsp;{{ 'WEEK.WEEK_LCASE_SHORT' | translate }}&nbsp;{{ record.week.weekId }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamNameShort }}&nbsp;{{ 'WEEK.WEEK_LCASE_SHORT' | translate }}&nbsp;{{ record.week.weekId }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+        <div class="col" style="padding-left:0px;padding-right:0px;">
+            <mat-card>
+                <div *ngFor='let record of eighteenthRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;width:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamNameShort }}&nbsp;{{ 'WEEK.WEEK_LCASE_SHORT' | translate }}&nbsp;{{ record.week.weekId }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamNameShort }}&nbsp;{{ 'WEEK.WEEK_LCASE_SHORT' | translate }}&nbsp;{{ record.week.weekId }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>
+<div id="seventhSet" *ngIf="seventhSetSelected" style="padding-left:15px;padding-right:15px;" class="full-text">
+    <div class="row">
+        <div class="col" style="padding-left:0px;padding-right:10px;">
+            <mat-card>
+                <div *ngFor='let record of ninteenthRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;" matTooltip={{record.comments}} matTooltipPosition="above">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamName }}&nbsp;{{ 'WEEK.WEEK_LCASE' | translate }}&nbsp;{{ record.week.weekId }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;" matTooltip={{record.comments}} matTooltipPosition="above">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">
+                                        {{ record.season.seasonName }}&nbsp;{{ record.team.teamName }}&nbsp;{{ 'WEEK.WEEK_LCASE' | translate }}&nbsp;{{ record.week.weekId }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+        <div class="col" style="padding-left:0px;padding-right:10px;">
+            <mat-card>
+                <div *ngFor='let record of twentiethRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;" matTooltip={{record.comments}} matTooltipPosition="above">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamName }}&nbsp;{{ 'WEEK.WEEK_LCASE' | translate }}&nbsp;{{ record.week.weekId }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;" matTooltip={{record.comments}} matTooltipPosition="above">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamName }}&nbsp;{{ 'WEEK.WEEK_LCASE' | translate }}&nbsp;{{ record.week.weekId }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+        <div class="col" style="padding-left:0px;padding-right:0px;">
+            <mat-card>
+                <div *ngFor='let record of twentyfirstRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;" matTooltip={{record.comments}} matTooltipPosition="above">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamName }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;" matTooltip={{record.comments}} matTooltipPosition="above">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamName }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>
+<div id="seventhSet" *ngIf="seventhSetSelected" style="padding-left:15px;padding-right:15px;" class="short-text">
+    <div class="row">
+        <div class="col" style="padding-left:0px;padding-right:10px;">
+            <mat-card>
+                <div *ngFor='let record of ninteenthRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;width:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;" matTooltip={{record.comments}} matTooltipPosition="above">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamNameShort }}&nbsp;{{ 'WEEK.WEEK_LCASE_SHORT' | translate }}&nbsp;{{ record.week.weekId }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;" matTooltip={{record.comments}} matTooltipPosition="above">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamNameShort }}&nbsp;{{ 'WEEK.WEEK_LCASE_SHORT' | translate }}&nbsp;{{ record.week.weekId }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+        <div class="col" style="padding-left:0px;padding-right:10px;">
+            <mat-card>
+                <div *ngFor='let record of twentiethRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;width:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;" matTooltip={{record.comments}} matTooltipPosition="above">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamNameShort }}&nbsp;{{ 'WEEK.WEEK_LCASE_SHORT' | translate }}&nbsp;{{ record.week.weekId }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;" matTooltip={{record.comments}} matTooltipPosition="above">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamNameShort }}&nbsp;{{ 'WEEK.WEEK_LCASE_SHORT' | translate }}&nbsp;{{ record.week.weekId }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+        <div class="col" style="padding-left:0px;padding-right:0px;">
+            <mat-card>
+                <div *ngFor='let record of twentyfirstRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;width:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;" matTooltip={{record.comments}} matTooltipPosition="above">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamNameShort }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;" matTooltip={{record.comments}} matTooltipPosition="above">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamNameShort }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>
+<div id="eigthSet" *ngIf="eigthSetSelected" style="padding-left:15px;padding-right:15px;" class="full-text">
+    <div class="row">
+        <div class="col" style="padding-left:0px;padding-right:10px;">
+            <mat-card>
+                <div *ngFor='let record of twentysecondRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;" matTooltip={{record.comments}} matTooltipPosition="above">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamName }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;" matTooltip={{record.comments}} matTooltipPosition="above">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">
+                                        {{ record.season.seasonName }}&nbsp;{{ record.team.teamName }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+        <div class="col" style="padding-left:0px;padding-right:10px;">
+            <mat-card>
+                <div *ngFor='let record of twentythirdRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">&nbsp;&nbsp;</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">&nbsp;&nbsp;</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+        <div class="col" style="padding-left:0px;padding-right:0px;">
+            <mat-card>
+                <div *ngFor='let record of twentyfourthRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">&nbsp;&nbsp;</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">&nbsp;&nbsp;</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>
+<div id="eigthSet" *ngIf="eigthSetSelected" style="padding-left:15px;padding-right:15px;" class="short-text">
+    <div class="row">
+        <div class="col" style="padding-left:0px;padding-right:10px;">
+            <mat-card>
+                <div *ngFor='let record of twentysecondRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;width:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;" matTooltip={{record.comments}} matTooltipPosition="above">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamNameShort }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;" matTooltip={{record.comments}} matTooltipPosition="above">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.season.seasonName }}&nbsp;{{ record.team.teamNameShort }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+        <div class="col" style="padding-left:0px;padding-right:10px;">
+            <mat-card>
+                <div *ngFor='let record of twentythirdRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;width:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">&nbsp;&nbsp;</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">&nbsp;&nbsp;</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+        <div class="col" style="padding-left:0px;padding-right:0px;">
+            <mat-card>
+                <div *ngFor='let record of twentyfourthRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;width:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">&nbsp;&nbsp;</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">&nbsp;&nbsp;</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>
+<div id="ninthSet" *ngIf="ninthSetSelected" style="padding-left:15px;padding-right:15px;" class="full-text">
+    <div class="row">
+        <div class="col" style="padding-left:0px;padding-right:10px;">
+            <mat-card>
+                <div *ngFor='let record of twentyfifthRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;" matTooltip={{record.comments}} matTooltipPosition="above">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;" matTooltip={{record.comments}} matTooltipPosition="above">{{ record.season.seasonName }}&nbsp;{{ record.team.teamName }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;" matTooltip={{record.comments}} matTooltipPosition="above">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;" matTooltip={{record.comments}} matTooltipPosition="above">
+                                        {{ record.season.seasonName }}&nbsp;{{ record.team.teamName }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+        <div class="col" style="padding-left:0px;padding-right:10px;">
+            <mat-card>
+                <div *ngFor='let record of twentysixthRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">
+                                        {{ record.season.seasonName }}&nbsp;{{ record.team.teamName }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">
+                                        {{ record.season.seasonName }}&nbsp;{{ record.team.teamName }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+        <div class="col" style="padding-left:0px;padding-right:0px;">
+            <mat-card>
+                <div *ngFor='let record of twentyseventhRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;" matTooltip={{record.comments}} matTooltipPosition="above">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;" matTooltip={{record.comments}} matTooltipPosition="above">
+                                        {{ record.season.seasonName }}&nbsp;{{ record.team.teamName }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;" matTooltip={{record.comments}} matTooltipPosition="above">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;" matTooltip={{record.comments}} matTooltipPosition="above">
+                                        {{ record.season.seasonName }}&nbsp;{{ record.team.teamName }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachName }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>
+<div id="ninthSet" *ngIf="ninthSetSelected" style="padding-left:15px;padding-right:15px;" class="short-text">
+    <div class="row">
+        <div class="col" style="padding-left:0px;padding-right:10px;">
+            <mat-card>
+                <div *ngFor='let record of twentyfifthRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;width:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;" matTooltip={{record.comments}} matTooltipPosition="above">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;" matTooltip={{record.comments}} matTooltipPosition="above">{{ record.season.seasonName }}&nbsp;{{ record.team.teamNameShort }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;" matTooltip={{record.comments}} matTooltipPosition="above">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;" matTooltip={{record.comments}} matTooltipPosition="above">{{ record.season.seasonName }}&nbsp;{{ record.team.teamNameShort }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+        <div class="col" style="padding-left:0px;padding-right:10px;">
+            <mat-card>
+                <div *ngFor='let record of twentysixthRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;width:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">
+                                        {{ record.season.seasonName }}&nbsp;{{ record.team.teamNameShort }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">
+                                        {{ record.season.seasonName }}&nbsp;{{ record.team.teamNameShort }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+        <div class="col" style="padding-left:0px;padding-right:0px;">
+            <mat-card>
+                <div *ngFor='let record of twentyseventhRecord;'>
+                    <div style="margin: 0px auto;margin-top:40px;">
+                        <mat-card-content>
+                            <div *ngIf='record.rank<2'>
+                                <mat-card-title class="matcardtitle mx-auto">
+                                    {{ record.recordCategory.recordCategoryName }}
+                                </mat-card-title><br /><br />
+                                <div class="row">
+                                    <div class="cell mx-auto"><img style="height:140px;width:140px;" mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;" matTooltip={{record.comments}} matTooltipPosition="above">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;" matTooltip={{record.comments}} matTooltipPosition="above">
+                                        {{ record.season.seasonName }}&nbsp;{{ record.team.teamNameShort }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                            <div *ngIf='record.rank>1'>
+                                <div class="row">
+                                    <div class="cell mx-auto"><img mat-card-image class="center-block" src={{record.recordImage}} /></div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;" matTooltip={{record.comments}} matTooltipPosition="above">{{ record.recordAmount }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;" matTooltip={{record.comments}} matTooltipPosition="above">
+                                        {{ record.season.seasonName }}&nbsp;{{ record.team.teamNameShort }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell mx-auto" style="padding-left:5px;padding-right:5px;">{{ record.coach.coachNameShort }}</div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>
+<div id="tenthSet" *ngIf="tenthSetSelected">
+    <div style="padding-left:0px;padding-right:0px;padding-bottom:20px;">
+        <canvas baseChart
+                [data]="pieChartData"
+                [labels]="pieChartLabels"
+                [options]="pieChartOptions"
+                [chartType]="pieChartType"
+                [colors]="pieChartColors"
+                (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)"></canvas>
+    </div>
+    <div style="padding-left:0px;padding-right:0px;padding-bottom:20px;">
+        <div style="display: block">
+            <canvas baseChart
+                    [datasets]="barChartData"
+                    [labels]="barChartLabels"
+                    [options]="barChartOptions"
+                    [chartType]="barChartType"
+                    [colors]="barChartColors"
+                    (chartHover)="chartHovered($event)"
+                    (chartClick)="chartClicked($event)"></canvas>
+        </div>
+    </div>
+    <div style="padding-left:0px;padding-right:0px;padding-bottom:20px;">
+        <canvas baseChart
+                [data]="doughnutChartData"
+                [labels]="doughnutChartLabels"
+                [options]="doughnutChartOptions"
+                [chartType]="doughnutChartType"
+                (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)"></canvas>
+    </div>
+    <div style="padding-left:0px;padding-right:0px;padding-bottom:20px;">
+        <div style="display: block">
+            <canvas baseChart
+                    [datasets]="horizontalBarChartData"
+                    [labels]="horizontalBarChartLabels"
+                    [options]="horizontalBarChartOptions"
+                    [chartType]="horizontalBarChartType"
+                    [colors]="horizontalBarChartColors"
+                    (chartHover)="chartHovered($event)"
+                    (chartClick)="chartClicked($event)"></canvas>
+        </div>
+    </div>
+</div>
+<br /><br />

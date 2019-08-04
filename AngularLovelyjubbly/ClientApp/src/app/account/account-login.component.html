@@ -1,0 +1,69 @@
+﻿<div style="margin-bottom:20px;margin-top:-20px;">
+    <app-language-selector></app-language-selector>
+</div><br /><br />
+
+<div class='table-responsive' style="border:none;margin-left:0px;">
+    <div class="panel panel-primary" style="border:none;margin-left:0px;margin-bottom:10px;">
+        <div class="panel-heading" style="margin-bottom:15px;">
+            {{ 'LOGIN.TITLE' | translate }}
+        </div>
+        <div class="panel-body" style="padding-left:0px;">
+            <form novalidate
+                  (ngSubmit)="login()"
+                  #signupForm="ngForm"
+                  [formGroup]="loginForm">
+                <div class="form-group">
+                    <mat-form-field class="example-full-width">
+                        <input matInput id="emailId"
+                               type="text" tmFocus
+                               placeholder="{{ 'LOGIN.EMAIL' | translate }}"
+                               formControlName="email">
+                        <mat-error *ngIf="(loginForm.get('email').touched || loginForm.get('email').dirty) && loginForm.get('email').errors">
+                            <mat-error *ngIf="loginForm.get('email').errors.required">
+                                {{ 'LOGIN.EMAIL_REQUIRED' | translate }}
+                            </mat-error>
+                            <mat-error *ngIf="loginForm.get('email').errors.pattern">
+                                {{ 'LOGIN.EMAIL_PATTERN' | translate }}
+                            </mat-error>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="form-group">
+                    <mat-form-field class="example-full-width">
+                        <input matInput id="passwordId"
+                               type="password"
+                               placeholder="{{ 'LOGIN.PASSWORD' | translate }}"
+                               formControlName="password" />
+                        <mat-error *ngIf="(loginForm.get('password').touched || loginForm.get('password').dirty) && loginForm.get('password').errors">
+                            <mat-error *ngIf="loginForm.get('password').errors.required">
+                                {{ 'LOGIN.PASSWORD_REQUIRED' | translate }}
+                            </mat-error>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-4" style="padding-left:0px;">
+                        <span>
+                            <button mat-raised-button color="primary" type="submit"
+                                    [disabled]="!loginForm.valid">
+                                {{ 'LOGIN.TITLE' | translate }}
+                            </button>
+
+                        </span><br />
+                        <div *ngIf="isRequesting" style="margin-top:10px;">
+                            <mat-progress-spinner [color]="color" [diameter]="48" [strokeWidth]="6.4" [mode]="mode" [value]="spinnerValue">
+                            </mat-progress-spinner>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="form-group">
+                <p>
+                    <a [routerLink]="['/ForgotPassword']">{{ 'LOGIN.FORGOT_PASSWORD' | translate }}?</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

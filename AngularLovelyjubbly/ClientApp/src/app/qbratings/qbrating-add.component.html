@@ -1,0 +1,144 @@
+﻿<div style="margin-bottom:20px;">
+    <button color="primary" class="mat-raised-button mat-primary" (click)='onBack()'>{{ 'FORM.BACK' | translate }}</button>
+    <app-language-selector></app-language-selector>
+</div>
+
+<div class='table-responsive' style="border:none;margin-left:0px;">
+    <div class="panel panel-primary" style="border:none;margin-left:0px;">
+        <div class="panel-heading" style="margin-bottom:15px;">
+            {{ 'QBRATING.QBRATING_ADD' | translate }}
+        </div>
+        <div class="panel-body" style="padding-left:0px;">
+            <form novalidate
+                  (ngSubmit)="save()"
+                  [formGroup]="qbratingForm">
+                <div class="form-group">
+                    <mat-form-field>
+                        <mat-select placeholder="{{ 'TOURNAMENT.TOURNAMENT' | translate }}" formControlName="tournament" id="tournamentId">
+                            <mat-option *ngFor="let tournament of tournaments" [value]="tournament">
+                                {{ tournament.tournamentName }}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="(qbratingForm.get('tournament').touched ||
+                                                         qbratingForm.get('tournament').dirty) &&
+                                                         qbratingForm.get('tournament').errors">
+                            <mat-error *ngIf="qbratingForm.get('tournament').errors.required">
+                                {{ 'TOURNAMENT.TOURNAMENT_NAME_REQUIRED' | translate }}
+                            </mat-error>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field>
+                        <mat-select placeholder="{{ 'TEAM.TEAM' | translate }}" formControlName="team" id="teamId">
+                            <mat-option *ngFor="let team of teams" [value]="team">
+                                {{ team.teamName }}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="(qbratingForm.get('team').touched ||
+                                                         qbratingForm.get('team').dirty) &&
+                                                         qbratingForm.get('team').errors">
+                            <mat-error *ngIf="qbratingForm.get('team').errors.required">
+                                {{ 'TEAM.TEAM_REQUIRED' | translate }}
+                            </mat-error>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field class="example-full-width">
+                        <input matInput id="completionId"
+                               type="text"
+                               placeholder="{{ 'QBRATING.COMPLETION_PERCENTAGE' | translate }}"
+                               formControlName="completion">
+                        <mat-error *ngIf="(qbratingForm.get('completion').touched ||
+                                                         qbratingForm.get('completion').dirty) &&
+                                                         qbratingForm.get('completion').errors">
+                            <mat-error *ngIf="qbratingForm.get('completion').errors.required">
+                                {{ 'QBRATING.COMPLETION_PERCENTAGE_REQUIRED' | translate }}
+                            </mat-error>
+                            <mat-error *ngIf="qbratingForm.get('completion').errors.pattern">
+                                {{ 'QBRATING.COMPLETION_PERCENTAGE_PATTERN' | translate }}
+                            </mat-error>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field class="example-full-width">
+                        <input matInput id="gainId"
+                               type="text"
+                               placeholder="{{ 'QBRATING.AVERAGE_GAIN' | translate }}"
+                               formControlName="gain">
+                        <mat-error *ngIf="(qbratingForm.get('gain').touched ||
+                                                         qbratingForm.get('gain').dirty) &&
+                                                         qbratingForm.get('gain').errors">
+                            <mat-error *ngIf="qbratingForm.get('gain').errors.required">
+                                {{ 'QBRATING.AVERAGE_GAIN_REQUIRED' | translate }}
+                            </mat-error>
+                            <mat-error *ngIf="qbratingForm.get('gain').errors.pattern">
+                                {{ 'QBRATING.AVERAGE_GAIN_PATTERN' | translate }}
+                            </mat-error>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field class="example-full-width">
+                        <input matInput id="touchdownId"
+                               type="text"
+                               placeholder="{{ 'QBRATING.TOUCHDOWN_PERCENTAGE' | translate }}"
+                               formControlName="touchdown">
+                        <mat-error *ngIf="(qbratingForm.get('touchdown').touched ||
+                                                         qbratingForm.get('touchdown').dirty) &&
+                                                         qbratingForm.get('touchdown').errors">
+                            <mat-error *ngIf="qbratingForm.get('touchdown').errors.required">
+                                {{ 'QBRATING.TOUCHDOWN_PERCENTAGE_REQUIRED' | translate }}
+                            </mat-error>
+                            <mat-error *ngIf="qbratingForm.get('touchdown').errors.pattern">
+                                {{ 'QBRATING.TOUCHDOWN_PERCENTAGE_PATTERN' | translate }}
+                            </mat-error>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field class="example-full-width">
+                        <input matInput id="interceptionId"
+                               type="text"
+                               placeholder="{{ 'QBRATING.INTERCEPTION_PERCENTAGE' | translate }}"
+                               formControlName="interception">
+                        <mat-error *ngIf="(qbratingForm.get('interception').touched ||
+                                                         qbratingForm.get('interception').dirty) &&
+                                                         qbratingForm.get('interception').errors">
+                            <mat-error *ngIf="qbratingForm.get('interception').errors.required">
+                                {{ 'QBRATING.INTERCEPTION_PERCENTAGE_REQUIRED' | translate }}
+                            </mat-error>
+                            <mat-error *ngIf="qbratingForm.get('interception').errors.pattern">
+                                {{ 'QBRATING.INTERCEPTION_PERCENTAGE_PATTERN' | translate }}
+                            </mat-error>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-4" style="width:100%;padding-left:0px;">
+                        <label class="control-label" for="rating">
+                            {{ 'QBRATING.RATING' | translate }} :
+                            {{ calculateQBRating() }}
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-4" style="padding-left:0px;">
+                        <span>
+                            <button mat-raised-button color="primary" type="submit"
+                                    [disabled]="!qbratingForm.valid">
+                                {{ 'FORM.SAVE' | translate }}
+                            </button>
+                        </span><br />
+                        <div *ngIf="isRequesting" style="margin-top:10px;">
+                            <mat-progress-spinner [color]="color" [diameter]="48" [strokeWidth]="6.4" [mode]="mode" [value]="spinnerValue">
+                            </mat-progress-spinner>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

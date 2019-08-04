@@ -1,0 +1,67 @@
+﻿<div style="margin-bottom:20px;margin-top:-20px;">
+    <app-language-selector (languageChanged)='changeLanguage()'></app-language-selector>
+</div><br /><br />
+
+<div class='table-responsive' style="border:none;">
+    <div class="panel-primary" style="border:none;">
+        <div class="panel-body" style="text-align:center;width:100%;">
+            <form novalidate
+                  #signupForm="ngForm"
+                  [formGroup]="turnoverDifferentialViewForm">
+                <div class="form-group">
+                    <div style="width:100%;">
+                        <mat-form-field>
+                            <mat-select placeholder="{{ 'SEASON.SEASON' | translate }}"
+                                        formControlName="season" id="seasonId"
+                                        (selectionChange)="changeTurnoverDifferentialView()">
+                                <mat-option *ngFor="let season of seasons" [value]="season">
+                                    {{ season.seasonName }}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <br />
+        <div *ngIf="turnoverdifferentials && turnoverdifferentials.length && selectedSeason !== ''">
+            <ejs-grid #grid id='Grid' [allowPaging]="false" [allowSorting]="true"
+                      [sortSettings]='sortOptions' [allowExcelExport]='true'
+                      [dataSource]="turnoverdifferentials" [toolbar]='toolbar'
+                      class="turnoverdifferentiallist full-text" (toolbarClick)='toolbarClick($event)'
+                      width='100%' gridLines="Both">
+                <e-columns>
+                    <e-column field="team.teamName" headerText="{{ 'TEAM.TEAM_NAME' | translate }}"
+                              width="222" textAlign="right"></e-column>
+                    <e-column [columns]='takeawayColumns' headerText="Takeaways" width="131"
+                              textAlign="center"></e-column>
+                    <e-column [columns]='giveawayColumns' headerText="Giveaways" width="131"
+                              textAlign="center"></e-column>
+                    <e-column field="turnoverDifferential"
+                              headerText="{{ 'TURNOVERDIFFERENTIAL.TURNOVERDIFFERENTIAL' | translate }}"
+                              width="205" textAlign="right"></e-column>
+                </e-columns>
+            </ejs-grid>
+            <ejs-grid #gridSmall id='GridSmall' [allowPaging]="false" [allowSorting]="true"
+                      [sortSettings]='sortOptions' [allowExcelExport]='true'
+                      [dataSource]="turnoverdifferentials" [toolbar]='toolbar'
+                      class="turnoverdifferentiallist short-text" (toolbarClick)='toolbarClickSmall($event)'
+                      width='100%' gridLines="Both">
+                <e-columns>
+                    <e-column field="team.teamNameShort" 
+                              headerText="{{ 'TEAM.TEAM' | translate }}" 
+                              width="112" textAlign="right"></e-column>
+                    <e-column field="totalTakeaways" 
+                              headerText="{{ 'TURNOVERDIFFERENTIAL.TAKEAWAYS' | translate }}" 
+                              width="75" textAlign="right"></e-column>
+                    <e-column field="totalGiveaways" 
+                              headerText="{{ 'TURNOVERDIFFERENTIAL.GIVEAWAYS' | translate }}" 
+                              width="75" textAlign="right"></e-column>
+                    <e-column field="turnoverDifferential" 
+                              headerText="{{ 'TURNOVERDIFFERENTIAL.TURNOVERDIFFERENTIAL_SHORT' | translate }}" 
+                              width="75" textAlign="right"></e-column>
+                </e-columns>
+            </ejs-grid>
+        </div><br />
+    </div>
+</div>

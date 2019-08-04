@@ -1,0 +1,106 @@
+﻿@import "_variables.scss";
+@import "_config.scss";
+
+/** syncfusion grid */
+.e-grid .e-rowcell {
+    border-style: solid;
+    border-width: 1px 0 0 0;
+    display: table-cell;
+    color: white;
+    background-color: darkslategray;
+    font-size: 14px;
+    font-family: $fontName;
+    line-height: 20px;
+    overflow: hidden;
+    padding: 8px 21px;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: auto;
+}
+
+.e-grid .e-gridheader .e-sortfilter .e-headercelldiv, .e-grid .e-gridheader .e-stackedheadercelldiv, .e-grid .e-gridheader .e-headercell .e-headercelldiv.e-headerchkcelldiv {
+    padding: 0 8px 0 5px;
+}
+
+.superbowloddlist td.e-rowcell {
+    background-color: #33004D;
+}
+
+.afcstandings td.e-rowcell {
+    background-color: #4D0000;
+    color: white;
+    font-family: $fontName;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.nfcstandings td.e-rowcell {
+    background-color: #000066;
+    color: white;
+    font-family: $fontName;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.e-grid .e-rowcell:not(.e-editedbatchcell), .e-grid .e-detailrowcollapse:not(.e-editedbatchcell), .e-grid .e-detailrowexpand:not(.e-editedbatchcell), .e-grid .e-gridcontent .e-rowdragdrop:not(.e-editedbatchcell), .e-grid .e-emptyrow:not(.e-editedbatchcell) {
+    color: #fff;
+    opacity: 1.00;
+}
+
+.e-grid td.e-active, .e-grid .e-form-titlebar {
+    background: #74c3e7;
+    background: -moz-linear-gradient(top,#74c3e7,#179bd7);
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#74c3e7),color-stop(100%,#179bd7));
+    background: -webkit-linear-gradient(top,#74c3e7,#179bd7);
+    background: -o-linear-gradient(top,#74c3e7,#179bd7);
+    background: -ms-linear-gradient(top,#74c3e7,#179bd7);
+    background: linear-gradient(to bottom,#74c3e7,#179bd7);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#74c3e7',endColorstr='#179bd7',GradientType=0);
+}
+
+.e-grid .e-headercelldiv {
+    border: 0 none;
+    display: block;
+    font-family: $fontName;
+    font-size: 14px;
+    font-weight: bold;
+    height: 29px;
+    line-height: 30px;
+    margin: -7px;
+    overflow: hidden;
+    padding: 0 0.6em;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.e-pager {
+    background-color: #fff;
+    border-color: #e0e0e0;
+    color: #000;
+    opacity: 0.87;
+    font-family: $fontName;
+}
+
+.e-toolbar .e-tbar-btn .e-tbar-btn-text {
+    display: inline-block;
+    font-family: $fontName;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: inherit;
+    vertical-align: middle;
+    width: auto;
+}
+
+.e-input-group input.e-input, .e-input-group.e-control-wrapper input.e-input, .e-input-group textarea.e-input, .e-input-group.e-control-wrapper textarea.e-input {
+    font-size: 14px;
+    font-family: $fontName;
+}
+
+.e-grid .e-stackedheadercelldiv {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: $fontName;
+    font-size: 14px;
+}

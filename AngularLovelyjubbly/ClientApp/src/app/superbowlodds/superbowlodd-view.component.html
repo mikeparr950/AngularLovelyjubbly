@@ -1,0 +1,15 @@
+﻿<div style="margin-bottom:20px;margin-top:-20px;">
+    <app-language-selector (languageChanged)='changeLanguage()'></app-language-selector>
+</div><br /><br />
+
+<div class='table-responsive' style="border:none;">
+    <div *ngIf="superbowlodds && superbowlodds.length">
+        <ejs-grid #grid id='Grid' [allowPaging]="false" [allowSorting]="true" [sortSettings]='sortOptions' gridLines="Both"
+                  [dataSource]="superbowlodds" class="superbowloddlist" width='100%'>
+            <e-columns>
+                <e-column field="team.teamName" headerText="{{ 'TEAM.TEAM_NAME' | translate }}" width="190" textAlign="left"></e-column>
+                <e-column field="odds" headerText="{{ 'ODDS.TO_WIN_SUPERBOWL' | translate }}" width="140" textAlign="right"></e-column>
+            </e-columns>
+        </ejs-grid>
+    </div><br />
+</div>

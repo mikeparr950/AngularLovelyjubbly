@@ -1,0 +1,70 @@
+<div>
+    <div style="background-color:#337ab7">
+        <div class="btn-group" dropdown container="body">
+            <button dropdownToggle type="button" class="btn dropdownToggle"
+                    style="background-color:#337ab7;color:white;height:34px;padding-top:6px;padding-right:12px;padding-bottom:35px;padding-left:12px;">
+                <span [routerLink]="['/']" style="color:white;text-decoration:none;">
+                    <img src="assets/images/football.png" style="height: 34px; display: inline-block; margin-right: 10px;">
+                    Gameplan NFLC
+                </span>
+            </button>
+        </div>
+        <div class="btn-group" dropdown container="body">
+            <button dropdownToggle type="button" class="btn dropdownToggle" style="background-color:#337ab7;color:white;">
+                <span [routerLink]="['/']" style="color:white;text-decoration:none;">
+                    {{ 'MENU.HOME' | translate }}
+                </span>
+            </button>
+        </div>
+        <div class="btn-group" dropdown container="body">
+            <button dropdownToggle type="button" class="btn dropdownToggle" style="background-color:#337ab7;color:white;">
+                {{ 'MENU.MAIN' | translate }} <span class="caret"></span>
+            </button>
+            <ul *dropdownMenu class="dropdown-menu" role="menu">
+                <li role="menuitem"><a class="dropdown-item" [routerLink]="['/HallOfFame']">{{ 'MENU.HALL_OF_FAME' | translate }}</a></li>
+                <li role="menuitem"><a class="dropdown-item" [routerLink]="['/Record']">{{ 'MENU.RECORDS' | translate }}</a></li>
+                <li role="menuitem"><a class="dropdown-item" [routerLink]="['/SuperbowlOdds']">{{ 'MENU.SUPERBOWL_ODDS' | translate }}</a></li>
+                <li role="menuitem"><a class="dropdown-item" [routerLink]="['/SeasonPredictions']">{{ 'MENU.SEASON_PREDICTIONS' | translate }}</a></li>
+                <li role="menuitem"><a class="dropdown-item" [routerLink]="['/Links']">{{ 'MENU.LINKS' | translate }}</a></li>
+            </ul>
+        </div>
+        <div class="btn-group" dropdown container="body">
+            <button dropdownToggle type="button" class="btn dropdownToggle" style="background-color:#337ab7;color:white;">
+                {{ 'MENU.VIEWS' | translate }} <span class="caret"></span>
+            </button>
+            <ul *dropdownMenu class="dropdown-menu" role="menu">
+                <li role="menuitem"><a class="dropdown-item" [routerLink]="['/Team']">{{ 'MENU.TEAM' | translate }}</a></li>
+                <li role="menuitem"><a class="dropdown-item" [routerLink]="['/QBRating']">{{ 'MENU.QBRATING' | translate }}</a></li>
+                <li role="menuitem"><a class="dropdown-item" [routerLink]="['/TurnoverDifferential']">{{ 'MENU.TURNOVERDIFFERENTIAL' | translate }}</a></li>
+                <li role="menuitem"><a class="dropdown-item" [routerLink]="['/Yardage']">{{ 'MENU.YARDAGE_PER_GAME' | translate }}</a></li>
+                <li role="menuitem"><a class="dropdown-item" [routerLink]="['/PlayoffHistory']">{{ 'MENU.PLAYOFF_HISTORY' | translate }}</a></li>
+                <li role="menuitem"><a class="dropdown-item" [routerLink]="['/PowerRanking']">{{ 'MENU.POWER_RANKING' | translate }}</a></li>
+            </ul>
+        </div>
+        <div class="btn-group" dropdown container="body">
+            <button dropdownToggle type="button" class="btn dropdownToggle" style="background-color:#337ab7;color:white;">
+                Admin <span class="caret"></span>
+            </button>
+            <ul *dropdownMenu class="dropdown-menu" role="menu">
+                <li role="menuitem"><a class="dropdown-item" [routerLink]="['/Teams']">{{ 'MENU.TEAMS' | translate }}</a></li>
+                <li role="menuitem"><a class="dropdown-item" [routerLink]="['/Fixtures']">{{ 'MENU.FIXTURES' | translate }}</a></li>
+                <li role="menuitem"><a class="dropdown-item" [routerLink]="['/QBRatings']">{{ 'MENU.QBRATINGS' | translate }}</a></li>
+                <li role="menuitem"><a class="dropdown-item" [routerLink]="['/TurnoverDifferentials']">{{ 'MENU.TURNOVERDIFFERENTIALS' | translate }}</a></li>
+                <li role="menuitem"><a class="dropdown-item" [routerLink]="['/PowerRankings']">{{ 'MENU.POWER_RANKINGS' | translate }}</a></li>
+                <li role="menuitem" *ngIf="firstName"><a class="dropdown-item" [routerLink]="['/Users']">{{ 'MENU.USERS' | translate }}</a></li>
+            </ul>
+        </div>
+        <div class="btn-group" dropdown container="body">
+            <button dropdownToggle type="button" class="btn dropdownToggle" style="background-color:#337ab7;color:white;">
+                {{ 'MENU.USER' | translate }} <span class="caret"></span>
+            </button>
+            <ul *dropdownMenu class="dropdown-menu" role="menu">
+                <li role="menuitem" *ngIf="!firstName"><a class="dropdown-item" [routerLink]="['/Login']">{{ 'MENU.LOGIN' | translate }}</a></li>
+                <li role="menuitem" *ngIf="!firstName"><a class="dropdown-item" [routerLink]="['/Register']">{{ 'MENU.REGISTER' | translate }}</a></li>
+                <li role="menuitem" *ngIf="firstName"><a class="dropdown-item" [routerLink]="['/ChangePassword']">{{ 'MENU.CHANGE_PASSWORD' | translate }}</a></li>
+                <li role="menuitem" *ngIf="firstName"><a class="dropdown-item" [routerLink]="['/ViewProfile']">{{ 'MENU.VIEW_PROFILE' | translate }}</a></li>
+                <li role="menuitem" *ngIf="firstName"><a class="dropdown-item" (click)="logout()" href="#">{{ 'MENU.LOGOFF' | translate }}</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
