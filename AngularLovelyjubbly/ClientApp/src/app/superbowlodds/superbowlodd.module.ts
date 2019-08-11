@@ -1,8 +1,8 @@
 ﻿import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
 
 import { SharedModule } from '../shared/modules/shared.module';
 
+import { SuperbowlOddRoutingModule } from './superbowlodd-routing.module';
 import { SuperbowlOddViewComponent } from './superbowlodd-view.component';
 import { SuperbowlOddsService } from '../shared/services/superbowlodds.service';
 
@@ -11,10 +11,8 @@ import { SuperbowlOddsService } from '../shared/services/superbowlodds.service';
         SuperbowlOddViewComponent
     ],
     imports: [
-        RouterModule.forChild([
-            { path: 'SuperbowlOdds', component: SuperbowlOddViewComponent }
-        ]),
-        SharedModule /** includes CommonModule, FormsModule and HttpModule */
+        SharedModule, /** includes CommonModule, FormsModule and HttpModule */
+        SuperbowlOddRoutingModule
     ],
     /** service providers */
     providers: [

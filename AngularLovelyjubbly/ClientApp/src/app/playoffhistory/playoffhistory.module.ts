@@ -1,9 +1,9 @@
 ﻿import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
 
 import { SharedModule } from '../shared/modules/shared.module';
 import { MaterialModule } from '../shared/modules/material.module';
 
+import { PlayoffHistoryRoutingModule } from './playoffhistory-routing.module';
 import { PlayoffHistoryViewComponent } from './playoffhistory-view.component';
 
 @NgModule({
@@ -11,14 +11,9 @@ import { PlayoffHistoryViewComponent } from './playoffhistory-view.component';
         PlayoffHistoryViewComponent
     ],
     imports: [
-        RouterModule.forChild([
-            { path: 'PlayoffHistory', component: PlayoffHistoryViewComponent }
-        ]),
         SharedModule,
-        MaterialModule
-    ],
-    /** service providers */
-    providers: [
+        MaterialModule,
+        PlayoffHistoryRoutingModule
     ]
 })
 

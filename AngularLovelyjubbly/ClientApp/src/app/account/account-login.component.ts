@@ -95,7 +95,6 @@ export class LoginComponent implements OnInit, OnDestroy {
                             this.snackBar.open('Sisäänkirjautuminen onnistui', '', config);
                         }
 
-                        //this.router.navigate(['/Standings']);
                         this.router.navigate(['/']);
                     }
                     else {

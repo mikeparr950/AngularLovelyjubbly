@@ -17,7 +17,7 @@ export class TurnoverDifferentialEditGuard implements CanActivate {
         if (isNaN(id) || id < 1) {
             alert('invalid turnover differential id');
             /** start a new navigation to redirect to list page */
-            this.router.navigate(['TurnoverDifferentials']);
+            this.router.navigate(['/TurnoverDifferentials']);
             /** abort current navigation */
             return false;
         };

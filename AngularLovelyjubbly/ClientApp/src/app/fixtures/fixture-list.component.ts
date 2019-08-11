@@ -132,7 +132,7 @@ export class FixtureListComponent implements OnInit {
         switch (args.item.id) {
 
             case 'Grid_add':
-                this._router.navigate(['/FixtureAdd']);
+                this._router.navigate(['/Fixtures/Add']);
                 break;
 
             case 'Grid_excelexport': // 'Grid_excelexport' -> Grid component id + _ + toolbar item name

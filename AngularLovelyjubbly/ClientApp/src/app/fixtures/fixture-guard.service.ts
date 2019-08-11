@@ -17,7 +17,7 @@ export class FixtureEditGuard implements CanActivate {
         if (isNaN(id) || id < 1) {
             alert('invalid fixture id');
             /** start a new navigation to redirect to list page */
-            this.router.navigate(['Fixtures']);
+            this.router.navigate(['/Fixtures']);
             /** abort current navigation */
             return false;
         };

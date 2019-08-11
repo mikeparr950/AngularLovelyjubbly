@@ -11,7 +11,7 @@
             <e-columns>
                 <e-column width="143">
                     <ng-template #template let-data>
-                        <a class="gridlinks" [routerLink]="['/TeamUpdate', data.teamId]" style="color:#2796E1;">
+                        <a class="gridlinks" [routerLink]="['/Teams/Update', data.teamId]" style="color:#2796E1;">
                             {{ 'FORM.EDIT' | translate }}
                         </a>&nbsp;
                         <a class="gridlinks" (click)="clicked($event, data.teamId)" style="color:red;">

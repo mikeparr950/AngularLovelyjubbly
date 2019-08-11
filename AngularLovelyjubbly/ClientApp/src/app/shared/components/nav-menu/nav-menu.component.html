@@ -21,11 +21,11 @@
                 {{ 'MENU.MAIN' | translate }} <span class="caret"></span>
             </button>
             <ul *dropdownMenu class="dropdown-menu" role="menu">
-                <li role="menuitem"><a class="dropdown-item" [routerLink]="['/HallOfFame']">{{ 'MENU.HALL_OF_FAME' | translate }}</a></li>
-                <li role="menuitem"><a class="dropdown-item" [routerLink]="['/Record']">{{ 'MENU.RECORDS' | translate }}</a></li>
+                <li role="menuitem"><a class="dropdown-item" [routerLink]="['/Main/HallOfFame']">{{ 'MENU.HALL_OF_FAME' | translate }}</a></li>
+                <li role="menuitem"><a class="dropdown-item" [routerLink]="['/Records']">{{ 'MENU.RECORDS' | translate }}</a></li>
                 <li role="menuitem"><a class="dropdown-item" [routerLink]="['/SuperbowlOdds']">{{ 'MENU.SUPERBOWL_ODDS' | translate }}</a></li>
-                <li role="menuitem"><a class="dropdown-item" [routerLink]="['/SeasonPredictions']">{{ 'MENU.SEASON_PREDICTIONS' | translate }}</a></li>
-                <li role="menuitem"><a class="dropdown-item" [routerLink]="['/Links']">{{ 'MENU.LINKS' | translate }}</a></li>
+                <li role="menuitem"><a class="dropdown-item" [routerLink]="['/Main/SeasonPredictions']">{{ 'MENU.SEASON_PREDICTIONS' | translate }}</a></li>
+                <li role="menuitem"><a class="dropdown-item" [routerLink]="['/Main/Links']">{{ 'MENU.LINKS' | translate }}</a></li>
             </ul>
         </div>
         <div class="btn-group" dropdown container="body">
@@ -33,12 +33,12 @@
                 {{ 'MENU.VIEWS' | translate }} <span class="caret"></span>
             </button>
             <ul *dropdownMenu class="dropdown-menu" role="menu">
-                <li role="menuitem"><a class="dropdown-item" [routerLink]="['/Team']">{{ 'MENU.TEAM' | translate }}</a></li>
-                <li role="menuitem"><a class="dropdown-item" [routerLink]="['/QBRating']">{{ 'MENU.QBRATING' | translate }}</a></li>
-                <li role="menuitem"><a class="dropdown-item" [routerLink]="['/TurnoverDifferential']">{{ 'MENU.TURNOVERDIFFERENTIAL' | translate }}</a></li>
-                <li role="menuitem"><a class="dropdown-item" [routerLink]="['/Yardage']">{{ 'MENU.YARDAGE_PER_GAME' | translate }}</a></li>
-                <li role="menuitem"><a class="dropdown-item" [routerLink]="['/PlayoffHistory']">{{ 'MENU.PLAYOFF_HISTORY' | translate }}</a></li>
-                <li role="menuitem"><a class="dropdown-item" [routerLink]="['/PowerRanking']">{{ 'MENU.POWER_RANKING' | translate }}</a></li>
+                <li role="menuitem"><a class="dropdown-item" [routerLink]="['/Teams/View']">{{ 'MENU.TEAM' | translate }}</a></li>
+                <li role="menuitem"><a class="dropdown-item" [routerLink]="['/QBRatings/View']">{{ 'MENU.QBRATING' | translate }}</a></li>
+                <li role="menuitem"><a class="dropdown-item" [routerLink]="['/TurnoverDifferentials/View']">{{ 'MENU.TURNOVERDIFFERENTIAL' | translate }}</a></li>
+                <li role="menuitem"><a class="dropdown-item" [routerLink]="['/Yardages/View']">{{ 'MENU.YARDAGE_PER_GAME' | translate }}</a></li>
+                <li role="menuitem"><a class="dropdown-item" [routerLink]="['/PlayoffHistory/View']">{{ 'MENU.PLAYOFF_HISTORY' | translate }}</a></li>
+                <li role="menuitem"><a class="dropdown-item" [routerLink]="['/PowerRankings/View']">{{ 'MENU.POWER_RANKING' | translate }}</a></li>
             </ul>
         </div>
         <div class="btn-group" dropdown container="body">
@@ -59,8 +59,8 @@
                 {{ 'MENU.USER' | translate }} <span class="caret"></span>
             </button>
             <ul *dropdownMenu class="dropdown-menu" role="menu">
-                <li role="menuitem" *ngIf="!firstName"><a class="dropdown-item" [routerLink]="['/Login']">{{ 'MENU.LOGIN' | translate }}</a></li>
-                <li role="menuitem" *ngIf="!firstName"><a class="dropdown-item" [routerLink]="['/Register']">{{ 'MENU.REGISTER' | translate }}</a></li>
+                <li role="menuitem" *ngIf="!firstName"><a class="dropdown-item" [routerLink]="['/Accounts/Login']">{{ 'MENU.LOGIN' | translate }}</a></li>
+                <li role="menuitem" *ngIf="!firstName"><a class="dropdown-item" [routerLink]="['/Accounts/Register']">{{ 'MENU.REGISTER' | translate }}</a></li>
                 <li role="menuitem" *ngIf="firstName"><a class="dropdown-item" [routerLink]="['/ChangePassword']">{{ 'MENU.CHANGE_PASSWORD' | translate }}</a></li>
                 <li role="menuitem" *ngIf="firstName"><a class="dropdown-item" [routerLink]="['/ViewProfile']">{{ 'MENU.VIEW_PROFILE' | translate }}</a></li>
                 <li role="menuitem" *ngIf="firstName"><a class="dropdown-item" (click)="logout()" href="#">{{ 'MENU.LOGOFF' | translate }}</a></li>

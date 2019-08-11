@@ -17,7 +17,7 @@ export class QBRatingEditGuard implements CanActivate {
         if (isNaN(id) || id < 1) {
             alert('invalid qb rating id');
             /** start a new navigation to redirect to list page */
-            this.router.navigate(['QBRatings']);
+            this.router.navigate(['/QBRatings']);
             /** abort current navigation */
             return false;
         };

@@ -28,6 +28,7 @@ export function createTranslateLoader(http: HttpClient) {
     imports: [
         CommonModule,
         ReactiveFormsModule,
+        HttpClientModule,
         FormsModule,
         RouterModule,
         BsDropdownModule.forRoot(),

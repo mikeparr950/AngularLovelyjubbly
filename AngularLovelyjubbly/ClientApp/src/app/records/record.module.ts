@@ -1,10 +1,10 @@
 ﻿import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
 
 import { SharedModule } from '../shared/modules/shared.module';
 import { MaterialModule } from '../shared/modules/material.module';
 import { ChartsModule } from 'ng2-charts';
 
+import { RecordRoutingModule } from './record-routing.module';
 import { RecordViewComponent } from './record-view.component';
 import { RecordService } from '../shared/services/record.service';
 
@@ -15,9 +15,7 @@ import { RecordService } from '../shared/services/record.service';
     imports: [
         SharedModule,
         MaterialModule,
-        RouterModule.forChild([
-            { path: 'Record', component: RecordViewComponent }
-        ]),
+        RecordRoutingModule,
         ChartsModule
     ],
     /** service providers */

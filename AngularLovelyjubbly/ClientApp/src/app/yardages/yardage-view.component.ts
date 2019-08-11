@@ -1,7 +1,7 @@
 ﻿import { Component } from '@angular/core';
 
 @Component({
-    templateUrl: '../yardage/yardage-view.component.html'
+    templateUrl: '../yardages/yardage-view.component.html'
 })
 
 export class YardageViewComponent {

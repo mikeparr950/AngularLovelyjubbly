@@ -4,8 +4,9 @@ import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/modules/shared.module';
 import { MaterialModule } from '../shared/modules/material.module';
 
-import { UserService } from '../shared/services/user.service';
+import { AccountRoutingModule } from './account-routing.module';
 
+import { UserService } from '../shared/services/user.service';
 import { RegisterComponent } from './account-register.component';
 import { LoginComponent } from './account-login.component';
 //import { ChangePasswordComponent } from './account-changepassword.component';
@@ -26,17 +27,16 @@ import { ForgotPasswordComponent } from './account-forgotpassword.component';
 
 /** protect views with guard, protect api calls with [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)] */
 @NgModule({
+    declarations: [
+        LoginComponent,
+        RegisterComponent,
+        ForgotPasswordComponent
+    ],
     imports: [
         SharedModule,
         MaterialModule,
-        RouterModule.forChild([
-            { path: 'Login', component: LoginComponent },
-            { path: 'Register', component: RegisterComponent },
-            { path: 'ForgotPassword', component: ForgotPasswordComponent }
-
-        ])
+        AccountRoutingModule
     ],
-    declarations: [LoginComponent, RegisterComponent, ForgotPasswordComponent],
     providers: [UserService]
 })
 export class AccountModule {

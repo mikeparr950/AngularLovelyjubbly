@@ -1,9 +1,9 @@
 ﻿import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
 
 import { SharedModule } from '../shared/modules/shared.module';
 import { MaterialModule } from '../shared/modules/material.module';
 
+import { YardageRoutingModule } from './yardage-routing.module';
 import { YardageViewComponent } from './yardage-view.component';
 import { YardageService } from '../shared/services/yardage.service';
 
@@ -14,9 +14,7 @@ import { YardageService } from '../shared/services/yardage.service';
     imports: [
         SharedModule,
         MaterialModule,
-        RouterModule.forChild([
-            { path: 'Yardage', component: YardageViewComponent }
-        ])
+        YardageRoutingModule
     ],
     /** service providers */
     providers: [

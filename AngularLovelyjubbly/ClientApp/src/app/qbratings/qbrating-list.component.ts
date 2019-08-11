@@ -131,7 +131,7 @@ export class QBRatingListComponent implements OnInit {
         switch (args.item.id) {
 
             case 'Grid_add':
-                this._router.navigate(['/QBRatingAdd']);
+                this._router.navigate(['/QBRatings/Add']);
                 break;
 
             case 'Grid_excelexport': // 'Grid_excelexport' -> Grid component id + _ + toolbar item name

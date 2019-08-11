@@ -124,7 +124,7 @@ export class TeamListComponent implements OnInit {
         switch (args.item.id) {
 
             case 'Grid_add':
-                this._router.navigate(['/TeamAdd']);
+                this._router.navigate(['/Teams/Add']);
                 break;
 
             case 'Grid_pdfexport': // 'Grid_pdfexport' -> Grid component id + _ + toolbar item name

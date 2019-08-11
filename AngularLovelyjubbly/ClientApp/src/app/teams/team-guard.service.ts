@@ -17,7 +17,7 @@ export class TeamEditGuard implements CanActivate {
         if (isNaN(id) || id < 1) {
             alert('invalid team id');
             /** start a new navigation to redirect to list page */
-            this.router.navigate(['Teams']);
+            this.router.navigate(['/Teams']);
             /** abort current navigation */
             return false;
         };
