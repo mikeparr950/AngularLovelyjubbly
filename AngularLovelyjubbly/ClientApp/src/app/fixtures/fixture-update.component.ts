@@ -16,9 +16,10 @@ import { IWeek, Week } from '../shared/models/week';
 import { WeekService } from '../shared/services/week.service';
 import { ITeam, Team } from '../shared/models/team';
 import { TeamService } from '../shared/services/team.service';
-import { ICoach, Coach } from '../shared/models/coach';
-import { IDivision, Division } from '../shared/models/division';
+import { Coach } from '../shared/models/coach';
+import { Division } from '../shared/models/division';
 import { UserService } from '../shared/services/user.service';
+import { LogService } from '../shared/utils/log.service';
 
 import { NumberValidators } from '../shared/validators/number.validator';
 
@@ -41,8 +42,9 @@ export class FixtureUpdateComponent implements OnInit, OnDestroy {
 
     constructor(private fb: FormBuilder, private _route: ActivatedRoute, private _router: Router,
         private fixtureService: FixtureService, public tournamentService: TournamentService, public weekService: WeekService,
-        public teamService: TeamService, public snackBar: MatSnackBar, public _userService: UserService) {
-        console.log(this._route.snapshot.params['id']); /** param name here must match name specified in path */
+        public teamService: TeamService, public snackBar: MatSnackBar, public _userService: UserService,
+        private _logService: LogService) {
+        this._logService.log(this._route.snapshot.params['id']); /** param name here must match name specified in path */
     }
 
     ngOnInit(): void {
@@ -163,7 +165,7 @@ export class FixtureUpdateComponent implements OnInit, OnDestroy {
 
     save() {
         this.isRequesting = true;
-        console.log(this.fixtureForm.value);
+        this._logService.logObject(this.fixtureForm.value);
         this.fixtureService.updateFixture(this.fixtureForm.value).pipe(
             finalize(() => {
                 this.isRequesting = false
@@ -171,7 +173,7 @@ export class FixtureUpdateComponent implements OnInit, OnDestroy {
         )
             .subscribe(
                 data => {
-                    console.log('success:', data);
+                    this._logService.logObject('success:' + data);
                     let config = new MatSnackBarConfig();
                     config.politeness = 'assertive';
                     config.duration = 4000;
@@ -187,7 +189,7 @@ export class FixtureUpdateComponent implements OnInit, OnDestroy {
                     this.onSaveComplete();
                 },
                 err => {
-                    console.log('error:', err);
+                    this._logService.logObject('error:' + err);
                     let config = new MatSnackBarConfig();
                     config.politeness = 'assertive';
                     config.duration = 4000;

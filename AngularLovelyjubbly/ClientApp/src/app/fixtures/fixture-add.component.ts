@@ -16,6 +16,7 @@ import { TeamService } from '../shared/services/team.service';
 import { ICoach, Coach } from '../shared/models/coach';
 import { IDivision, Division } from '../shared/models/division';
 import { UserService } from '../shared/services/user.service';
+import { LogService } from '../shared/utils/log.service';
 
 import { NumberValidators } from '../shared/validators/number.validator';
 
@@ -40,7 +41,8 @@ export class FixtureAddComponent implements OnInit {
 
     constructor(private fixtureService: FixtureService, private router: Router, private fb: FormBuilder,
         public tournamentService: TournamentService, public weekService: WeekService,
-        public teamService: TeamService, public snackBar: MatSnackBar, public _userService: UserService) {
+        public teamService: TeamService, public snackBar: MatSnackBar, public _userService: UserService,
+        private _logService: LogService) {
     }
 
     ngOnInit(): void {
@@ -109,7 +111,7 @@ export class FixtureAddComponent implements OnInit {
 
     save() {
         this.isRequesting = true;
-        console.log(this.fixtureForm.value);
+        this._logService.logObject(this.fixtureForm.value);
         this.fixtureService.addFixture(this.fixtureForm.value).pipe(
             finalize(() => {
                 this.isRequesting = false
@@ -117,7 +119,7 @@ export class FixtureAddComponent implements OnInit {
         )
             .subscribe(
                 data => {
-                    console.log('success:', data);
+                    this._logService.logObject('success:' + data);
                     let config = new MatSnackBarConfig();
                     config.politeness = 'assertive';
                     config.duration = 4000;
@@ -133,7 +135,7 @@ export class FixtureAddComponent implements OnInit {
                     this.onSaveComplete();
                 },
                 err => {
-                    console.log('error:', err);
+                    this._logService.logObject('error:' + err);
                     let config = new MatSnackBarConfig();
                     config.politeness = 'assertive';
                     config.duration = 4000;

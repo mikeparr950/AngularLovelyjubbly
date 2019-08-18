@@ -11,6 +11,7 @@ import { AccountLogin } from '../shared/models/account.login';
 import { CookieService } from 'ngx-cookie-service';
 import { CommonService } from '../shared/utils/common.service';
 import { UserService } from '../shared/services/user.service';
+import { LogService } from '../shared/utils/log.service';
 
 @Component({
     selector: 'app-login-form',
@@ -36,7 +37,8 @@ export class LoginComponent implements OnInit, OnDestroy {
 
     constructor(private router: Router, private activatedRoute: ActivatedRoute,
         private fb: FormBuilder, public snackBar: MatSnackBar, public _userService: UserService,
-        private commonService: CommonService, private cookieService: CookieService) {
+        private commonService: CommonService, private cookieService: CookieService,
+        private logService: LogService) {
         //this.isLocalStorageAvailable = false;
         this.isLocalStorageAvailable = commonService.isLocalStorageAvailable();
     }
@@ -81,7 +83,7 @@ export class LoginComponent implements OnInit, OnDestroy {
             )
             .subscribe(
                 result => {
-                    console.log(result);
+                    this.logService.logObject(result);
                     if (result) {
                         let config = new MatSnackBarConfig();
                         config.politeness = 'assertive';

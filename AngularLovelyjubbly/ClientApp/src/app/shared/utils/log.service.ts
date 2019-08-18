@@ -14,4 +14,10 @@ export class LogService {
             console.log(text);
         }
     }
+
+    logObject(text: any) {
+        if (!environment.production) {
+            console.log(text);
+        }
+    }
 }

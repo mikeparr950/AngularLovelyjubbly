@@ -22,6 +22,7 @@ namespace AngularLovelyjubbly.Controller
 
         // protect views with guard, protect api calls with [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)] 
         //GET: api/Divisions
+        [ResponseCache(Duration = 2419200)] //cache 28 days
         [HttpGet("api/Divisions")]
         public IQueryable<Division> GetAllDivisions()
         {

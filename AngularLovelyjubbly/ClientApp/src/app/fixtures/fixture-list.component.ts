@@ -8,6 +8,7 @@ import { MatSnackBar, MatSnackBarConfig } from '@angular/material';
 import { IFixture } from '../shared/models/fixture';
 import { FixtureService } from '../shared/services/fixture.service';
 import { UserService } from '../shared/services/user.service';
+import { LogService } from '../shared/utils/log.service';
 
 @Component({
     selector: 'app-fixture-list',
@@ -29,7 +30,7 @@ export class FixtureListComponent implements OnInit {
     /**constructor */
     /** inject services */
     constructor(public _fixtureService: FixtureService, private _router: Router, public snackBar: MatSnackBar,
-        public _userService: UserService) {
+        public _userService: UserService, private _logService: LogService) {
         this.editSettings = { allowAdding: true };
         this.toolbar = ['Add', 'ExcelExport'];
         this.sortOptions = {
@@ -50,7 +51,7 @@ export class FixtureListComponent implements OnInit {
     clicked(e: any, test: any) {
         this._fixtureService.deleteFixture(test).subscribe(
             data => {
-                console.log('success:', data);
+                this._logService.logObject('success:' + data);
                 let config = new MatSnackBarConfig();
                 config.politeness = 'assertive';
                 config.duration = 4000;
@@ -66,7 +67,7 @@ export class FixtureListComponent implements OnInit {
                 this.refreshFixtureList();
             },
             err => {
-                console.log('error:', err);
+                this._logService.logObject('error:' + err);
                 let config = new MatSnackBarConfig();
                 config.politeness = 'assertive';
                 config.duration = 4000;
@@ -118,7 +119,7 @@ export class FixtureListComponent implements OnInit {
     }
 
     changeLanguage() {
-        console.log('language selector clicked');
+        this._logService.log('language selector clicked');
         //this.grid.refresh();
 
         this.refreshHeader();
@@ -126,8 +127,8 @@ export class FixtureListComponent implements OnInit {
 
     toolbarClick(args: ClickEventArgs): void {
 
-        console.log(args.item.id);
-        console.log(args.item);
+        this._logService.log(args.item.id);
+        this._logService.logObject(args.item);
 
         switch (args.item.id) {
 

@@ -117,6 +117,8 @@ namespace AngularLovelyjubbly
             services.AddScoped<ISqlUnitOfWork, SqlUnitOfWork>();
             //1 end
 
+            services.AddResponseCaching();
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             // In production, the Angular files will be served from this directory
@@ -145,6 +147,8 @@ namespace AngularLovelyjubbly
             //2 end
 
             app.UseHttpsRedirection();
+
+            app.UseResponseCaching();
 
             //cache static files for 24 hours 
             //https://andrewlock.net/adding-cache-control-headers-to-static-files-in-asp-net-core/

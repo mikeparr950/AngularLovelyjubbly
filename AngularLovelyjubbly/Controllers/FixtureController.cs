@@ -21,6 +21,7 @@ namespace AngularLovelyjubbly.Controller
         }
 
         //GET: api/Fixtures
+        [ResponseCache(Duration = 3600)] //cache 1 hour
         [HttpGet("api/Fixtures")]
         public IQueryable<Fixture> GetAllFixtures()
         {
@@ -65,6 +66,25 @@ namespace AngularLovelyjubbly.Controller
         public IQueryable<Fixture> GetFixturesByTeamAndTournament([FromRoute] int teamId, int tournamentId)
         {
             return _sqlServerUow.Fixtures.GetManyByParam(t => (t.HomeTeamId == teamId || t.AwayTeamId == teamId) && (t.Tournament.TournamentId == tournamentId)).OrderBy(t => t.Week);
+        }
+
+        //GET: api/CompletedFixturesByTournament/21
+        [ResponseCache(Duration = 3600)] //cache 1 hour
+        [HttpGet("api/CompletedFixturesByTournament/{tournamentId:int}")]
+        public IQueryable<Fixture> GetCompletedFixturesByTournament([FromRoute] int tournamentId)
+        {
+            return _sqlServerUow.Fixtures.GetManyByParam(t => t.TournamentId == tournamentId)
+                .Where(t => t.AwayTeamScore != null && t.WeekId < 17).OrderBy(t => t.Week);
+        }
+
+        //GET: api/CompletedFixturesByTournamentAndDivision/21/6
+        [ResponseCache(Duration = 3600)] //cache 1 hour
+        [HttpGet("api/CompletedFixturesByTournamentAndDivision/{tournamentId:int}/{divisionId:int}")]
+        public IQueryable<Fixture> GetCompletedFixturesByTournamentAndDivision([FromRoute] int tournamentId, int divisionId)
+        {
+            return _sqlServerUow.Fixtures.GetManyByParam(t => t.TournamentId == tournamentId)
+                .Where(t => t.AwayTeamScore != null && t.WeekId < 17 
+                && (t.AwayTeam.DivisionId == divisionId || t.HomeTeam.DivisionId == divisionId)).OrderBy(t => t.Week);
         }
 
         //POST : api/Fixtures/Add
