@@ -29,8 +29,11 @@
     <ejs-grid #gridAFCEastSmall id='GridAFCEastSmall' [allowPaging]="false" [allowSorting]="true" [dataSource]="standingsAFCEast"
               class="afcstandings short-text" width="100%" style="margin-bottom:20px;" gridLines="Both">
         <e-columns>
-            <e-column field="team.teamNameShort" headerText="{{ 'TEAM.TEAM' | translate }}"
-                      width="111" textAlign="left"></e-column>
+            <e-column headerText="{{ 'TEAM.TEAM' | translate }}" width="60">
+                <ng-template #template let-standingsAFCEast>
+                    <img src="{{standingsAFCEast.team.coachImage}}" width="30" height="30" />
+                </ng-template>
+            </e-column>
             <e-column field="team.coach.coachNameShort" headerText="{{ 'COACH.COACH' | translate }}"
                       width="101" textAlign="left"></e-column>
             <e-column field="won" headerText="{{ 'STANDING.WON_SHORT' | translate }}"
@@ -72,8 +75,11 @@
     <ejs-grid #gridAFCCentralSmall id='GridAFCCentralSmall' [allowPaging]="false" [allowSorting]="true" [dataSource]="standingsAFCCentral"
               class="afcstandings short-text" width="100%" style="margin-bottom:20px;" gridLines="Both">
         <e-columns>
-            <e-column field="team.teamNameShort" headerText="{{ 'TEAM.TEAM' | translate }}"
-                      width="106" textAlign="left"></e-column>
+            <e-column headerText="{{ 'TEAM.TEAM' | translate }}" width="60">
+                <ng-template #template let-standingsAFCCentral>
+                    <img src="{{standingsAFCCentral.team.coachImage}}" width="30" height="30" />
+                </ng-template>
+            </e-column>
             <e-column field="team.coach.coachNameShort" headerText="{{ 'COACH.COACH' | translate }}"
                       width="96" textAlign="left"></e-column>
             <e-column field="won" headerText="{{ 'STANDING.WON_SHORT' | translate }}"
@@ -115,8 +121,11 @@
     <ejs-grid #gridAFCWestSmall id='GridAFCWestSmall' [allowPaging]="false" [allowSorting]="true" [dataSource]="standingsAFCWest"
               class="afcstandings short-text" width="100%" style="margin-bottom:20px;" gridLines="Both">
         <e-columns>
-            <e-column field="team.teamNameShort" headerText="{{ 'TEAM.TEAM' | translate }}"
-                      width="106" textAlign="left"></e-column>
+            <e-column headerText="{{ 'TEAM.TEAM' | translate }}" width="60">
+                <ng-template #template let-standingsAFCWest>
+                    <img src="{{standingsAFCWest.team.coachImage}}" width="30" height="30" />
+                </ng-template>
+            </e-column>
             <e-column field="team.coach.coachNameShort" headerText="{{ 'COACH.COACH' | translate }}"
                       width="99" textAlign="left"></e-column>
             <e-column field="won" headerText="{{ 'STANDING.WON_SHORT' | translate }}"
@@ -158,8 +167,11 @@
     <ejs-grid #gridNFCEastSmall id='GridNFCEastSmall' [allowPaging]="false" [allowSorting]="true" [dataSource]="standingsNFCEast"
               class="nfcstandings short-text" width="100%" style="margin-bottom:20px;" gridLines="Both">
         <e-columns>
-            <e-column field="team.teamNameShort" headerText="{{ 'TEAM.TEAM' | translate }}"
-                      width="106" textAlign="left"></e-column>
+            <e-column headerText="{{ 'TEAM.TEAM' | translate }}" width="60">
+                <ng-template #template let-standingsNFCEast>
+                    <img src="{{standingsNFCEast.team.coachImage}}" width="30" height="30" />
+                </ng-template>
+            </e-column>
             <e-column field="team.coach.coachNameShort" headerText="{{ 'COACH.COACH' | translate }}"
                       width="99" textAlign="left"></e-column>
             <e-column field="won" headerText="{{ 'STANDING.WON_SHORT' | translate }}"
@@ -201,8 +213,11 @@
     <ejs-grid #gridNFCCentralSmall id='GridNFCCentralSmall' [allowPaging]="false" [allowSorting]="true" [dataSource]="standingsNFCCentral"
               class="nfcstandings short-text" width="100%" style="margin-bottom:20px;" gridLines="Both">
         <e-columns>
-            <e-column field="team.teamNameShort" headerText="{{ 'TEAM.TEAM' | translate }}"
-                      width="106" textAlign="left"></e-column>
+            <e-column headerText="{{ 'TEAM.TEAM' | translate }}" width="60">
+                <ng-template #template let-standingsNFCCentral>
+                    <img src="{{standingsNFCCentral.team.coachImage}}" width="30" height="30" />
+                </ng-template>
+            </e-column>
             <e-column field="team.coach.coachNameShort" headerText="{{ 'COACH.COACH' | translate }}"
                       width="99" textAlign="left"></e-column>
             <e-column field="won" headerText="{{ 'STANDING.WON_SHORT' | translate }}"
@@ -244,8 +259,11 @@
     <ejs-grid #gridNFCWestSmall id='GridNFCWestSmall' [allowPaging]="false" [allowSorting]="true" [dataSource]="standingsNFCWest"
               class="nfcstandings short-text" width="100%" style="margin-bottom:20px;" gridLines="Both">
         <e-columns>
-            <e-column field="team.teamNameShort" headerText="{{ 'TEAM.TEAM' | translate }}"
-                      width="117" textAlign="left"></e-column>
+            <e-column headerText="{{ 'TEAM.TEAM' | translate }}" width="60">
+                <ng-template #template let-standingsNFCWest>
+                    <img src="{{standingsNFCWest.team.coachImage}}" width="30" height="30" />
+                </ng-template>
+            </e-column>
             <e-column field="team.coach.coachNameShort" headerText="{{ 'COACH.COACH' | translate }}"
                       width="130" textAlign="left"></e-column>
             <e-column field="won" headerText="{{ 'STANDING.WON_SHORT' | translate }}"
