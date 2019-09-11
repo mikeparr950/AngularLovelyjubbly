@@ -2,9 +2,16 @@
 import { Routes, RouterModule } from '@angular/router';
 
 import { YardageViewComponent } from './yardage-view.component';
+import { GameplanLayoutComponent } from '../shared/components/gameplan-layout/gameplan-layout.component';
 
 const routes: Routes = [
-    { path: 'View', component: YardageViewComponent }
+    {
+        path: '',
+        component: GameplanLayoutComponent,
+        children: [
+            { path: 'View', component: YardageViewComponent, pathMatch: 'full' }
+        ]
+    }
 ];
 
 @NgModule({

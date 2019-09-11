@@ -17,6 +17,8 @@ import { NavMenuComponent } from '../components/nav-menu/nav-menu.component';
 import { SocialMediaButtonsComponent } from '../components/social-media-buttons/social-media-buttons.component';
 import { LanguageSelectorComponent } from '../components/language-selector/language-selector.component';
 import { ScoreTickerComponent } from '../components/score-ticker/score-ticker.component';
+import { GameplanLayoutComponent } from '../components/gameplan-layout/gameplan-layout.component';
+import { PortfolioLayoutComponent } from '../components/portfolio-layout/portfolio-layout.component';
 
 import { NumberValidators } from '../validators/number.validator';
 
@@ -47,7 +49,9 @@ export function createTranslateLoader(http: HttpClient) {
         NavMenuComponent,
         SocialMediaButtonsComponent,
         LanguageSelectorComponent,
-        ScoreTickerComponent
+        ScoreTickerComponent,
+        GameplanLayoutComponent,
+        PortfolioLayoutComponent
     ],
 
     exports: [
@@ -60,6 +64,8 @@ export function createTranslateLoader(http: HttpClient) {
         SocialMediaButtonsComponent,
         LanguageSelectorComponent,
         ScoreTickerComponent,
+        GameplanLayoutComponent,
+        PortfolioLayoutComponent,
         TranslatePipe
     ],
     providers: [

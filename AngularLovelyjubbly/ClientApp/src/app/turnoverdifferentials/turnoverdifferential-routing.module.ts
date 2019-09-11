@@ -7,13 +7,19 @@ import { TurnoverDifferentialUpdateComponent } from './turnoverdifferential-upda
 import { TurnoverDifferentialEditGuard } from './turnoverdifferential-guard.service';
 import { TurnoverDifferentialViewComponent } from './turnoverdifferential-view.component';
 import { AuthGuard } from '../shared/guards/auth.guard';
+import { GameplanLayoutComponent } from '../shared/components/gameplan-layout/gameplan-layout.component';
 
 const routes: Routes = [
-    { path: '', component: TurnoverDifferentialListComponent },
-    { path: 'View', component: TurnoverDifferentialViewComponent },
-    { path: 'Update/:id', component: TurnoverDifferentialUpdateComponent, canActivate: [AuthGuard, TurnoverDifferentialEditGuard] },
-    { path: 'Add', component: TurnoverDifferentialAddComponent, canActivate: [AuthGuard] },
-
+    {
+        path: '',
+        component: GameplanLayoutComponent,
+        children: [
+            { path: '', component: TurnoverDifferentialListComponent, pathMatch: 'full' },
+            { path: 'View', component: TurnoverDifferentialViewComponent, pathMatch: 'full' },
+            { path: 'Update/:id', component: TurnoverDifferentialUpdateComponent, canActivate: [AuthGuard, TurnoverDifferentialEditGuard], pathMatch: 'full' },
+            { path: 'Add', component: TurnoverDifferentialAddComponent, canActivate: [AuthGuard], pathMatch: 'full' }
+        ]
+    }
 ];
 
 @NgModule({

@@ -2,9 +2,16 @@
 import { Routes, RouterModule } from '@angular/router';
 
 import { PlayoffHistoryViewComponent } from './playoffhistory-view.component';
+import { GameplanLayoutComponent } from '../shared/components/gameplan-layout/gameplan-layout.component';
 
 const routes: Routes = [
-    { path: 'View', component: PlayoffHistoryViewComponent }
+    {
+        path: '',
+        component: GameplanLayoutComponent,
+        children: [
+            { path: 'View', component: PlayoffHistoryViewComponent, pathMatch: 'full' }
+        ]
+    }
 ];
 
 @NgModule({

@@ -12,7 +12,7 @@ export class ConfigService {
     constructor() {
         if (!environment.production) {
             this._apiURI = 'http://localhost:9220/api';
-            this._server = 'http://localhost:9220/';
+            this._server = 'http://localhost:9220';
         }
         else {
             this._apiURI = 'https://angularlovelyjubbly.azurewebsites.net/api';

@@ -1,5 +1,12 @@
 ﻿/* You can add global styles to this file, and also import other style files */
-@import url(../node_modules/@syncfusion/ej2/material.css);
-@import url(../node_modules/@ngx-share/button/themes/default/default-theme.css);
+/* syncfusion */
+@import url(../node_modules/@syncfusion/ej2/grid/material.css);
+@import url(../node_modules/@syncfusion/ej2/toolbar/material.css);
+@import url(../node_modules/@syncfusion/ej2/icons/material.css);
+@import url(../node_modules/@syncfusion/ej2/input/material.css);
+@import url(../node_modules/@syncfusion/ej2/pager/material.css);
+@import url(../node_modules/@syncfusion/ej2/dialog/material.css);
+/* ngx-share */
 @import url(../node_modules/@ngx-share/button/themes/modern/modern-dark-theme.css);
+/* material */
 @import url(../node_modules/@angular/material/prebuilt-themes/indigo-pink.css);

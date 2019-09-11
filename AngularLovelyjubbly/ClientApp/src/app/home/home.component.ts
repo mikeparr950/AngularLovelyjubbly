@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 import { GridComponent } from '@syncfusion/ej2-angular-grids';
@@ -8,7 +8,8 @@ import { UserService } from '../shared/services/user.service';
 
 @Component({
   selector: 'app-home',
-  templateUrl: './home.component.html',
+    templateUrl: './home.component.html',
+    changeDetection: ChangeDetectionStrategy.Default /** https://alligator.io/angular/change-detection-strategy/ */
 })
 export class HomeComponent implements OnInit {
     errorMessage: string;
@@ -51,7 +52,7 @@ export class HomeComponent implements OnInit {
     txtPointsAgainstFi: string;
 
 
-    constructor(public _fixtureService: FixtureService, public _userService: UserService) {
+    constructor(public _fixtureService: FixtureService, public _userService: UserService, private cd: ChangeDetectorRef) {
         
         this.txtTeamEn = 'Team';
         this.txtCoachEn = 'Coach';
@@ -104,6 +105,7 @@ export class HomeComponent implements OnInit {
     }
 
     refreshStandingList() {
+        //this.cd.reattach();
         this._fixtureService.getAFCEastStandingsByTournament(21)
             .subscribe(standingsAFCEast => this.standingsAFCEast = standingsAFCEast,
                 error => this.errorMessage = <any>error);
@@ -122,6 +124,7 @@ export class HomeComponent implements OnInit {
         this._fixtureService.getNFCWestStandingsByTournament(21)
             .subscribe(standingsNFCWest => this.standingsNFCWest = standingsNFCWest,
                 error => this.errorMessage = <any>error);
+        //this.cd.detach();
     }
 
     refreshHeader() {

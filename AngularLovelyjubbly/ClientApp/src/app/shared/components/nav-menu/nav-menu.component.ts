@@ -8,9 +8,11 @@ import { UserService } from '../../../shared/services/user.service';
 })
 
 export class NavMenuComponent implements OnInit {
+    hideLayoutHeader: boolean;
     firstName: string;
 
     constructor(public userService: UserService) {
+        this.hideLayoutHeader = false;
     }
 
     ngOnInit() {

@@ -1,6 +1,7 @@
 ﻿import { NgModule } from '@angular/core';
-import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
+import { Routes, RouterModule, PreloadAllModules, PreloadingStrategy, NoPreloading } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { GameplanLayoutComponent } from '././shared/components/gameplan-layout/gameplan-layout.component';
 
 /** lazy loading of modules */
 const routes: Routes = [
@@ -49,14 +50,21 @@ const routes: Routes = [
         loadChildren: './yardages/yardage.module#YardageModule'
     },
     {
+        path: 'Portfolio',
+        loadChildren: './portfolio/portfolio.module#PortfolioModule'
+    },
+    {
         path: '',
-        component: HomeComponent
+        component: GameplanLayoutComponent,
+        children: [
+            { path: '', component: HomeComponent, pathMatch: 'full' }
+        ]
     }
 ];
 
 @NgModule({
     imports: [
-        RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+        RouterModule.forRoot(routes, { preloadingStrategy: NoPreloading })
     ],
     exports: [RouterModule],
     providers: []

@@ -7,13 +7,18 @@ import { LoginComponent } from './account-login.component';
 //import { UserListComponent } from './account-list.component';
 //import { ConfirmEmailComponent } from './account-confirmemail.component';
 import { ForgotPasswordComponent } from './account-forgotpassword.component';
+import { GameplanLayoutComponent } from '../shared/components/gameplan-layout/gameplan-layout.component';
 
 const routes: Routes = [
-    //{ path: '', component: FixtureListComponent },
-    { path: 'Login', component: LoginComponent },
-    { path: 'Register', component: RegisterComponent },
-    { path: 'ForgotPassword', component: ForgotPasswordComponent }
-
+    {
+        path: '',
+        component: GameplanLayoutComponent,
+        children: [
+            { path: 'Login', component: LoginComponent, pathMatch: 'full' },
+            { path: 'Register', component: RegisterComponent, pathMatch: 'full' },
+            { path: 'ForgotPassword', component: ForgotPasswordComponent, pathMatch: 'full' }
+        ]
+    }
 ];
 
 @NgModule({

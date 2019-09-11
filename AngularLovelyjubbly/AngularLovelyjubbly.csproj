@@ -55,6 +55,10 @@
     <None Remove="ClientApp\src\app\playoffhistory\playoffhistory-routing.module.ts" />
     <None Remove="ClientApp\src\app\playoffhistory\playoffhistory-view.component.ts" />
     <None Remove="ClientApp\src\app\playoffhistory\playoffhistory.module.ts" />
+    <None Remove="ClientApp\src\app\portfolio\portfolio-routing.module.ts" />
+    <None Remove="ClientApp\src\app\portfolio\portfolio-screenshot.component.ts" />
+    <None Remove="ClientApp\src\app\portfolio\portfolio-view.component.ts" />
+    <None Remove="ClientApp\src\app\portfolio\portfolio.module.ts" />
     <None Remove="ClientApp\src\app\powerrankings\powerranking-list.component.ts" />
     <None Remove="ClientApp\src\app\powerrankings\powerranking-routing.module.ts" />
     <None Remove="ClientApp\src\app\powerrankings\powerranking-view.component.ts" />
@@ -69,7 +73,9 @@
     <None Remove="ClientApp\src\app\records\record-routing.module.ts" />
     <None Remove="ClientApp\src\app\records\record-view.component.ts" />
     <None Remove="ClientApp\src\app\records\record.module.ts" />
+    <None Remove="ClientApp\src\app\shared\components\gameplan-layout\gameplan-layout.component.ts" />
     <None Remove="ClientApp\src\app\shared\components\language-selector\language-selector.component.ts" />
+    <None Remove="ClientApp\src\app\shared\components\portfolio-layout\portfolio-layout.component.ts" />
     <None Remove="ClientApp\src\app\shared\components\score-ticker\score-ticker.component.ts" />
     <None Remove="ClientApp\src\app\shared\components\social-media-buttons\social-media-buttons.component.ts" />
     <None Remove="ClientApp\src\app\shared\guards\auth.guard.ts" />
@@ -170,6 +176,10 @@
     <TypeScriptCompile Include="ClientApp\src\app\playoffhistory\playoffhistory-routing.module.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\playoffhistory\playoffhistory-view.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\playoffhistory\playoffhistory.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\portfolio\portfolio-routing.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\portfolio\portfolio-screenshot.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\portfolio\portfolio-view.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\portfolio\portfolio.module.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\powerrankings\powerranking-list.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\powerrankings\powerranking-routing.module.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\powerrankings\powerranking-view.component.ts" />
@@ -184,7 +194,9 @@
     <TypeScriptCompile Include="ClientApp\src\app\records\record-routing.module.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\records\record-view.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\records\record.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\components\gameplan-layout\gameplan-layout.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\components\language-selector\language-selector.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\components\portfolio-layout\portfolio-layout.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\components\score-ticker\score-ticker.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\components\social-media-buttons\social-media-buttons.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\guards\auth.guard.ts" />
@@ -256,6 +268,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="ClientApp\src\assets\images\portfolio\camco\" />
+    <Folder Include="ClientApp\src\assets\images\portfolio\felix\" />
     <Folder Include="Models\" />
     <Folder Include="Helpers\" />
     <Folder Include="Auth\" />

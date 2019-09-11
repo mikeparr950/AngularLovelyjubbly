@@ -6,12 +6,18 @@ import { FixtureAddComponent } from './fixture-add.component';
 import { FixtureUpdateComponent } from './fixture-update.component';
 import { FixtureEditGuard } from './fixture-guard.service';
 import { AuthGuard } from '../shared/guards/auth.guard';
+import { GameplanLayoutComponent } from '../shared/components/gameplan-layout/gameplan-layout.component';
 
 const routes: Routes = [
-    { path: '', component: FixtureListComponent },
-    { path: 'Update/:id', component: FixtureUpdateComponent, canActivate: [AuthGuard, FixtureEditGuard] },
-    { path: 'Add', component: FixtureAddComponent, canActivate: [AuthGuard] },
-
+    {
+        path: '',
+        component: GameplanLayoutComponent,
+        children: [
+            { path: '', component: FixtureListComponent, pathMatch: 'full' },
+            { path: 'Update/:id', component: FixtureUpdateComponent, canActivate: [AuthGuard, FixtureEditGuard], pathMatch: 'full' },
+            { path: 'Add', component: FixtureAddComponent, canActivate: [AuthGuard], pathMatch: 'full' }
+        ]
+    }
 ];
 
 @NgModule({

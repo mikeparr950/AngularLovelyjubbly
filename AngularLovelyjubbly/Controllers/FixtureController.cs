@@ -84,7 +84,7 @@ namespace AngularLovelyjubbly.Controller
         {
             return _sqlServerUow.Fixtures.GetManyByParam(t => t.TournamentId == tournamentId)
                 .Where(t => t.AwayTeamScore != null && t.WeekId < 17 
-                && (t.AwayTeam.DivisionId == divisionId || t.HomeTeam.DivisionId == divisionId)).OrderBy(t => t.Week);
+                && (t.AwayTeam.DivisionId == divisionId || t.HomeTeam.DivisionId == divisionId));
         }
 
         //POST : api/Fixtures/Add

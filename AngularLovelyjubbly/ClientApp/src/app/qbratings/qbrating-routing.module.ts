@@ -7,12 +7,19 @@ import { QBRatingUpdateComponent } from './qbrating-update.component';
 import { QBRatingEditGuard } from './qbrating-guard.service';
 import { QBRatingViewComponent } from './qbrating-view.component';
 import { AuthGuard } from '../shared/guards/auth.guard';
+import { GameplanLayoutComponent } from '../shared/components/gameplan-layout/gameplan-layout.component';
 
 const routes: Routes = [
-    { path: '', component: QBRatingListComponent },
-    { path: 'View', component: QBRatingViewComponent },
-    { path: 'Update/:id', component: QBRatingUpdateComponent, canActivate: [AuthGuard, QBRatingEditGuard] },
-    { path: 'Add', component: QBRatingAddComponent, canActivate: [AuthGuard] }
+    {
+        path: '',
+        component: GameplanLayoutComponent,
+        children: [
+            { path: '', component: QBRatingListComponent, pathMatch: 'full' },
+            { path: 'View', component: QBRatingViewComponent, pathMatch: 'full' },
+            { path: 'Update/:id', component: QBRatingUpdateComponent, canActivate: [AuthGuard, QBRatingEditGuard], pathMatch: 'full' },
+            { path: 'Add', component: QBRatingAddComponent, canActivate: [AuthGuard], pathMatch: 'full' }
+        ]
+    }
 ];
 
 @NgModule({

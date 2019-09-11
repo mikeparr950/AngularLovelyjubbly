@@ -7,13 +7,19 @@ import { TeamUpdateComponent } from './team-update.component';
 import { TeamViewComponent } from './team-view.component';
 import { TeamEditGuard } from './team-guard.service';
 import { AuthGuard } from '../shared/guards/auth.guard';
+import { GameplanLayoutComponent } from '../shared/components/gameplan-layout/gameplan-layout.component';
 
 const routes: Routes = [
-    { path: '', component: TeamListComponent },
-    { path: 'View', component: TeamViewComponent },
-    { path: 'Update/:id', component: TeamUpdateComponent, canActivate: [AuthGuard, TeamEditGuard] },
-    { path: 'Add', component: TeamAddComponent, canActivate: [AuthGuard] },
-
+    {
+        path: '',
+        component: GameplanLayoutComponent,
+        children: [
+            { path: '', component: TeamListComponent, pathMatch: 'full' },
+            { path: 'View', component: TeamViewComponent, pathMatch: 'full' },
+            { path: 'Update/:id', component: TeamUpdateComponent, canActivate: [AuthGuard, TeamEditGuard], pathMatch: 'full' },
+            { path: 'Add', component: TeamAddComponent, canActivate: [AuthGuard], pathMatch: 'full' }
+        ]
+    }
 ];
 
 @NgModule({

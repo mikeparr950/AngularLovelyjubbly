@@ -21,6 +21,7 @@ namespace AngularLovelyjubbly.Controller
         }
 
         //GET: api/Scores
+        [ResponseCache(Duration = 3600)] //cache 1 hour
         [HttpGet("api/Scores")]
         public IQueryable<Score> GetAllScores()
         {
