@@ -1,11 +1,11 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'; /** Router used to route using code */
-import { FormGroup, FormBuilder, Validators, AbstractControl, ValidatorFn, FormArray } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatSnackBar, MatSnackBarConfig } from '@angular/material';
 
 import { finalize } from 'rxjs/operators';
 
-import { IFixture, Fixture } from '../shared/models/fixture';
+import { Fixture } from '../shared/models/fixture';
 import { FixtureService } from '../shared/services/fixture.service';
 import { ITournament, Tournament } from '../shared/models/tournament';
 import { TournamentService } from '../shared/services/tournament.service';
@@ -13,8 +13,8 @@ import { IWeek, Week } from '../shared/models/week';
 import { WeekService } from '../shared/services/week.service';
 import { ITeam, Team } from '../shared/models/team';
 import { TeamService } from '../shared/services/team.service';
-import { ICoach, Coach } from '../shared/models/coach';
-import { IDivision, Division } from '../shared/models/division';
+import { Coach } from '../shared/models/coach';
+import { Division } from '../shared/models/division';
 import { UserService } from '../shared/services/user.service';
 import { LogService } from '../shared/utils/log.service';
 

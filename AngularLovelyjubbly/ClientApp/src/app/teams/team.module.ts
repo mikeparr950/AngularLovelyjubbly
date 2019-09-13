@@ -2,6 +2,7 @@
 
 import { SharedModule } from '../shared/modules/shared.module';
 import { MaterialModule } from '../shared/modules/material.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { TeamRoutingModule } from './team-routing.module';
 import { TeamListComponent } from './team-list.component';
@@ -21,6 +22,7 @@ import { ChartsModule } from 'ng2-charts';
     imports: [
         SharedModule,
         MaterialModule,
+        ReactiveFormsModule,
         TeamRoutingModule,
         ChartsModule
     ],

@@ -1,10 +1,6 @@
 ﻿import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, CanDeactivate } from '@angular/router';
 
-import { IFixture, Fixture } from '../shared/models/fixture';
-import { FixtureAddComponent } from '../fixtures/fixture-add.component';
-import { FixtureUpdateComponent } from '../fixtures/fixture-update.component';
-
 @Injectable()
 export class FixtureEditGuard implements CanActivate {
 

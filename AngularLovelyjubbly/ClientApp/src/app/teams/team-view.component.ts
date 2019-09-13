@@ -3,13 +3,12 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 
 import { ITeam, Team } from '../shared/models/team';
 import { TeamService } from '../shared/services/team.service';
-import { IFixture, Fixture } from '../shared/models/fixture';
 import { IFixtureList, FixtureList } from '../shared/models/fixturelist';
 import { FixtureService } from '../shared/services/fixture.service';
-import { IRegularSeasonWins, RegularSeasonWins } from '../shared/models/regularseasonwins';
+import { IRegularSeasonWins } from '../shared/models/regularseasonwins';
 import { RegularSeasonWinsService } from '../shared/services/regularseasonwins.service';
-import { ICoach, Coach } from '../shared/models/coach';
-import { IDivision, Division } from '../shared/models/division';
+import { Coach } from '../shared/models/coach';
+import { Division } from '../shared/models/division';
 
 @Component({
     templateUrl: '../teams/team-view.component.html',

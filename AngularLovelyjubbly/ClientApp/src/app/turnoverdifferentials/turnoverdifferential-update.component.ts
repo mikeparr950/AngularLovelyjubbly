@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { finalize } from 'rxjs/operators';
 
-import { FormGroup, FormBuilder, Validators, AbstractControl, ValidatorFn, FormArray } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatSnackBar, MatSnackBarConfig } from '@angular/material';
 
 import { ITurnoverDifferential, TurnoverDifferential } from '../shared/models/turnoverdifferential';
@@ -13,11 +13,9 @@ import { ITournament, Tournament } from '../shared/models/tournament';
 import { TournamentService } from '../shared/services/tournament.service';
 import { ITeam, Team } from '../shared/models/team';
 import { TeamService } from '../shared/services/team.service';
-import { ICoach, Coach } from '../shared/models/coach';
-import { IDivision, Division } from '../shared/models/division';
+import { Coach } from '../shared/models/coach';
+import { Division } from '../shared/models/division';
 import { UserService } from '../shared/services/user.service';
-
-import { NumberValidators } from '../shared/validators/number.validator';
 
 @Component({
     templateUrl: '../turnoverdifferentials/turnoverdifferential-update.component.html'

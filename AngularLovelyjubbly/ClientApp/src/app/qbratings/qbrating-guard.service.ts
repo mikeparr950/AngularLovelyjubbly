@@ -1,10 +1,6 @@
 ﻿import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, CanDeactivate } from '@angular/router';
 
-import { IQBRating, QBRating } from '../shared/models/qbrating';
-import { QBRatingAddComponent } from '../qbratings/qbrating-add.component';
-import { QBRatingUpdateComponent } from '../qbratings/qbrating-update.component';
-
 @Injectable()
 export class QBRatingEditGuard implements CanActivate {
 

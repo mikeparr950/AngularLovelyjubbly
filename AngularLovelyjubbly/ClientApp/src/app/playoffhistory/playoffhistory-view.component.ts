@@ -1,9 +1,6 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 
-import { ITournament, Tournament } from '../shared/models/tournament';
-import { ITeam, Team } from '../shared/models/team';
-import { TeamService } from '../shared/services/team.service';
 import { ISeason, Season } from '../shared/models/season';
 import { SeasonService } from '../shared/services/season.service';
 

@@ -1,4 +1,4 @@
-﻿import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
+﻿import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { ScoreService } from '../../../shared/services/score.service';
 import { IScore } from '../../models/score';

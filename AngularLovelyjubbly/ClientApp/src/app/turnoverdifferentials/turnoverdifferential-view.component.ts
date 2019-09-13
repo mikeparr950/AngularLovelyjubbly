@@ -4,11 +4,8 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 import { GridComponent, ToolbarItems, ColumnModel } from '@syncfusion/ej2-angular-grids';
 import { ClickEventArgs } from '@syncfusion/ej2-angular-navigations';
 
-import { ITurnoverDifferential, TurnoverDifferential } from '../shared/models/turnoverdifferential';
+import { ITurnoverDifferential } from '../shared/models/turnoverdifferential';
 import { TurnoverDifferentialService } from '../shared/services/turnoverdifferential.service';
-import { ITournament, Tournament } from '../shared/models/tournament';
-import { ITeam, Team } from '../shared/models/team';
-import { TeamService } from '../shared/services/team.service';
 import { ISeason, Season } from '../shared/models/season';
 import { SeasonService } from '../shared/services/season.service';
 import { UserService } from '../shared/services/user.service';

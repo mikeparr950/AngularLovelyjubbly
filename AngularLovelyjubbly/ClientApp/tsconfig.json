@@ -15,6 +15,15 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    //specify which parts of node modules to load, rather than everything
+    "paths": {
+      "lodash": [
+        "node_modules/lodash-es"
+      ],
+      "moment": [
+        "node_modules/moment/min/moment.min.js"
+      ]
+    }
   }
 }

@@ -2,6 +2,7 @@
 
 import { SharedModule } from '../shared/modules/shared.module';
 import { MaterialModule } from '../shared/modules/material.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { QBRatingRoutingModule } from './qbrating-routing.module';
 import { QBRatingListComponent } from './qbrating-list.component';
@@ -10,8 +11,6 @@ import { QBRatingUpdateComponent } from './qbrating-update.component';
 import { QBRatingViewComponent } from './qbrating-view.component';
 ///** import { QBRatingFilterPipe } from './qbrating-filter.pipe'; */
 import { QBRatingService } from '../shared/services/qbrating.service';
-
-import { AuthGuard } from '../shared/guards/auth.guard';
 
 @NgModule({
     declarations: [
@@ -24,6 +23,7 @@ import { AuthGuard } from '../shared/guards/auth.guard';
     imports: [
         SharedModule,
         MaterialModule,
+        ReactiveFormsModule,
         QBRatingRoutingModule
     ],
     /** service providers */

@@ -2,7 +2,6 @@
 import { CommonModule } from '@angular/common'; /** used for ngFor and ngIf, these are imported by BrowserModule in root */
 import { RouterModule } from '@angular/router'; /** used for NavMenuComponent */
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { BsDropdownModule } from 'ngx-bootstrap';
 import { ShareButtonModule } from '@ngx-share/button';
@@ -20,8 +19,6 @@ import { ScoreTickerComponent } from '../components/score-ticker/score-ticker.co
 import { GameplanLayoutComponent } from '../components/gameplan-layout/gameplan-layout.component';
 import { PortfolioLayoutComponent } from '../components/portfolio-layout/portfolio-layout.component';
 
-import { NumberValidators } from '../validators/number.validator';
-
 // AoT requires an exported function for factories
 export function createTranslateLoader(http: HttpClient) {
     return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -29,9 +26,7 @@ export function createTranslateLoader(http: HttpClient) {
 @NgModule({
     imports: [
         CommonModule,
-        ReactiveFormsModule,
         HttpClientModule,
-        FormsModule,
         RouterModule,
         BsDropdownModule.forRoot(),
         ShareButtonModule,
@@ -56,8 +51,6 @@ export function createTranslateLoader(http: HttpClient) {
 
     exports: [
         CommonModule,
-        ReactiveFormsModule,
-        FormsModule,
         RouterModule,
         GridModule,
         NavMenuComponent,

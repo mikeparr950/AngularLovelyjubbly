@@ -1,15 +1,12 @@
 ﻿import { NgModule } from '@angular/core';
-
-//import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCheckboxModule, MatSelectModule, MatInputModule, MatSnackBarModule, MatProgressSpinnerModule,
-    MatCardModule, MatTooltipModule, MatTabsModule} from '@angular/material';
+    MatCardModule, MatTooltipModule, MatTabsModule } from '@angular/material';
 
 import { CookieService } from 'ngx-cookie-service';
 import { CommonService } from '../utils/common.service';
 
 @NgModule({
     imports: [
-        //BrowserAnimationsModule,
         MatButtonModule,
         MatCheckboxModule,
         MatSelectModule,
@@ -21,7 +18,6 @@ import { CommonService } from '../utils/common.service';
         MatTabsModule
     ],
     exports: [
-        //BrowserAnimationsModule,
         MatButtonModule,
         MatCheckboxModule,
         MatSelectModule,

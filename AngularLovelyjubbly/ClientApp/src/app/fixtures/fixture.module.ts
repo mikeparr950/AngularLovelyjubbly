@@ -2,6 +2,7 @@
 
 import { SharedModule } from '../shared/modules/shared.module';
 import { MaterialModule } from '../shared/modules/material.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { FixtureRoutingModule } from './fixture-routing.module';
 import { FixtureListComponent } from './fixture-list.component';
@@ -19,6 +20,7 @@ import { FixtureService } from '../shared/services/fixture.service';
     imports: [
         SharedModule,
         MaterialModule,
+        ReactiveFormsModule,
         FixtureRoutingModule
     ],
     /** service providers */

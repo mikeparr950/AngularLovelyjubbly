@@ -1,11 +1,11 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'; /** Router used to route using code */
-import { FormGroup, FormBuilder, Validators, AbstractControl, ValidatorFn, FormArray } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatSnackBar, MatSnackBarConfig } from '@angular/material';
 
 import { finalize } from 'rxjs/operators';
 
-import { ITeam, Team } from '../shared/models/team';
+import { Team } from '../shared/models/team';
 import { ICoach, Coach } from '../shared/models/coach';
 import { CoachService } from '../shared/services/coach.service';
 import { IDivision, Division } from '../shared/models/division';

@@ -9,10 +9,10 @@ import { CommonService } from '../utils/common.service';
 import { LogService } from '../utils/log.service';
 import { CookieService } from 'ngx-cookie-service';
 import { ITurnoverDifferential, TurnoverDifferential } from '../models/turnoverdifferential';
-import { ITournament, Tournament } from '../models/tournament';
-import { ITeam, Team } from '../models/team';
-import { ICoach, Coach } from '../models/coach';
-import { IDivision, Division } from '../models/division';
+import { Tournament } from '../models/tournament';
+import { Team } from '../models/team';
+import { Coach } from '../models/coach';
+import { Division } from '../models/division';
 
 @Injectable({
     providedIn: 'root',

@@ -2,6 +2,7 @@
 
 import { SharedModule } from '../shared/modules/shared.module';
 import { MaterialModule } from '../shared/modules/material.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { PlayoffHistoryRoutingModule } from './playoffhistory-routing.module';
 import { PlayoffHistoryViewComponent } from './playoffhistory-view.component';
@@ -13,6 +14,7 @@ import { PlayoffHistoryViewComponent } from './playoffhistory-view.component';
     imports: [
         SharedModule,
         MaterialModule,
+        ReactiveFormsModule,
         PlayoffHistoryRoutingModule
     ]
 })

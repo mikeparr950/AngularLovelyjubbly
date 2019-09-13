@@ -1,5 +1,5 @@
 ﻿import { NgModule } from '@angular/core';
-import { Routes, RouterModule, PreloadAllModules, PreloadingStrategy, NoPreloading } from '@angular/router';
+import { Routes, RouterModule, NoPreloading } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { GameplanLayoutComponent } from '././shared/components/gameplan-layout/gameplan-layout.component';
 

@@ -9,14 +9,14 @@ import { CommonService } from '../utils/common.service';
 import { LogService } from '../utils/log.service';
 import { CookieService } from 'ngx-cookie-service';
 
-import { AccountRegister } from '../models/account.register';
-import { AccountChangePassword } from '../models/account.changepassword';
-import { AccountProfile } from '../models/account.profile';
-import { AccountForgotPassword } from '../models/account.forgotpassword';
-import { AccountResetPassword } from '../models/account.resetpassword';
-import { AccountAddPhoneNumber } from '../models/account.addphonenumber';
-import { AccountEnableTwoFactorAuth } from '../models/account.enabletwofactorauth';
-import { ICountry } from '../models/country';
+//import { AccountRegister } from '../models/account.register';
+//import { AccountChangePassword } from '../models/account.changepassword';
+//import { AccountProfile } from '../models/account.profile';
+//import { AccountForgotPassword } from '../models/account.forgotpassword';
+//import { AccountResetPassword } from '../models/account.resetpassword';
+//import { AccountAddPhoneNumber } from '../models/account.addphonenumber';
+//import { AccountEnableTwoFactorAuth } from '../models/account.enabletwofactorauth';
+//import { ICountry } from '../models/country';
 
 @Injectable({
     providedIn: 'root',

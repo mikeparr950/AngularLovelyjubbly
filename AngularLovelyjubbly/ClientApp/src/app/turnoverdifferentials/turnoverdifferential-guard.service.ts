@@ -1,9 +1,5 @@
 ﻿import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, Router, CanDeactivate } from '@angular/router';
-
-import { ITurnoverDifferential, TurnoverDifferential } from '../shared/models/turnoverdifferential';
-import { TurnoverDifferentialAddComponent } from '../turnoverdifferentials/turnoverdifferential-add.component';
-import { TurnoverDifferentialUpdateComponent } from '../turnoverdifferentials/turnoverdifferential-update.component';
+import { ActivatedRouteSnapshot, CanActivate, Router } from '@angular/router';
 
 @Injectable()
 export class TurnoverDifferentialEditGuard implements CanActivate {

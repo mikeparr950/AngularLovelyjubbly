@@ -1,6 +1,4 @@
 ﻿import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
-
 import { GridComponent } from '@syncfusion/ej2-angular-grids';
 
 import { ISuperbowlOdds } from '../shared/models/superbowlodds';

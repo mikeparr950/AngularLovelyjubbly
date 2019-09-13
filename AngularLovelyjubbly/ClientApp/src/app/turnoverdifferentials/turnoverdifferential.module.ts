@@ -2,6 +2,7 @@
 
 import { SharedModule } from '../shared/modules/shared.module';
 import { MaterialModule } from '../shared/modules/material.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { TurnoverDifferentialRoutingModule } from './turnoverdifferential-routing.module';
 import { TurnoverDifferentialViewComponent } from './turnoverdifferential-view.component';
@@ -20,6 +21,7 @@ import { TurnoverDifferentialService } from '../shared/services/turnoverdifferen
     imports: [
         SharedModule,
         MaterialModule,
+        ReactiveFormsModule,
         TurnoverDifferentialRoutingModule
     ],
     /** service providers */

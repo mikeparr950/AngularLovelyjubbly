@@ -1,10 +1,6 @@
 ﻿import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, CanDeactivate } from '@angular/router';
 
-import { ITeam, Team } from '../shared/models/team';
-import { TeamAddComponent } from '../teams/team-add.component';
-import { TeamUpdateComponent } from '../teams/team-update.component';
-
 @Injectable()
 export class TeamEditGuard implements CanActivate {
 

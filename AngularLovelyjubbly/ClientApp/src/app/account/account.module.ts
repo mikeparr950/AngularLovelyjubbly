@@ -1,8 +1,8 @@
 ﻿import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
 
 import { SharedModule } from '../shared/modules/shared.module';
 import { MaterialModule } from '../shared/modules/material.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AccountRoutingModule } from './account-routing.module';
 
@@ -35,7 +35,8 @@ import { ForgotPasswordComponent } from './account-forgotpassword.component';
     imports: [
         SharedModule,
         MaterialModule,
-        AccountRoutingModule
+        AccountRoutingModule,
+        ReactiveFormsModule
     ],
     providers: [UserService]
 })
