@@ -6,7 +6,7 @@
     <div *ngIf="teams && teams.length">
         <ejs-grid #grid id='Grid' [dataSource]="teams" [editSettings]='editSettings' [toolbar]='toolbar' [allowFiltering]='true'
                   [allowPaging]='true' [allowSorting]='true' [sortSettings]='sortOptions' [allowMultiSorting]='true' 
-                  [allowPdfExport]='true' [allowExcelExport]='true' (toolbarClick)='toolbarClick($event)'
+                  [allowExcelExport]='true' (toolbarClick)='toolbarClick($event)'
                   width='100%' [pageSettings]='pageSettings' gridLines="Both">
             <e-columns>
                 <e-column width="143">

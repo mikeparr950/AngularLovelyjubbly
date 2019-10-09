@@ -2,6 +2,7 @@
 
 import { SharedModule } from '../shared/modules/shared.module';
 import { MaterialModule } from '../shared/modules/material.module';
+import { SyncfusionModule } from '../shared/modules/syncfusion.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { TeamRoutingModule } from './team-routing.module';
@@ -22,6 +23,7 @@ import { ChartsModule } from 'ng2-charts';
     imports: [
         SharedModule,
         MaterialModule,
+        SyncfusionModule,
         ReactiveFormsModule,
         TeamRoutingModule,
         ChartsModule

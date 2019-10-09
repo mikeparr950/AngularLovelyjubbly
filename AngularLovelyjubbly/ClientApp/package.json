@@ -59,6 +59,7 @@
     "@angular/language-service": "^7.2.13",
     "@types/jasmine": "~3.3.12",
     "@types/jasminewd2": "~2.0.6",
+    "@types/lodash-es": "^4.17.3",
     "@types/node": "~11.13.4",
     "codelyzer": "^5.0.0",
     "jasmine-core": "~3.4.0",
@@ -72,8 +73,8 @@
     "ts-node": "~8.0.3",
     "tslint": "~5.15.0",
     "typescript": "3.2.4",
-    "webpack-cli": "^3.3.0",
-    "webpack-bundle-analyzer": "3.4.1"
+    "webpack-bundle-analyzer": "3.4.1",
+    "webpack-cli": "^3.3.0"
   },
   "optionalDependencies": {
     "node-sass": "^4.11.0"

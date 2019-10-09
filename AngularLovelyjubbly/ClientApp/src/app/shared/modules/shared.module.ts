@@ -8,8 +8,6 @@ import { ShareButtonModule } from '@ngx-share/button';
 import { CommonService } from '../utils/common.service';
 import { TranslateModule, TranslateLoader, TranslateService, TranslatePipe } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { GridModule, EditService, ToolbarService, SortService, GroupService, PageService, FilterService, PdfExportService,
-    ExcelExportService, ResizeService, RowDDService, SelectionService } from '@syncfusion/ej2-angular-grids';
 import { CookieService } from 'ngx-cookie-service';
 
 import { NavMenuComponent } from '../components/nav-menu/nav-menu.component';
@@ -30,7 +28,6 @@ export function createTranslateLoader(http: HttpClient) {
         RouterModule,
         BsDropdownModule.forRoot(),
         ShareButtonModule,
-        GridModule,
         TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,
@@ -52,7 +49,6 @@ export function createTranslateLoader(http: HttpClient) {
     exports: [
         CommonModule,
         RouterModule,
-        GridModule,
         NavMenuComponent,
         SocialMediaButtonsComponent,
         LanguageSelectorComponent,
@@ -60,21 +56,7 @@ export function createTranslateLoader(http: HttpClient) {
         GameplanLayoutComponent,
         PortfolioLayoutComponent,
         TranslatePipe
-    ],
-    providers: [
-        EditService,
-        ToolbarService,
-        SortService,
-        PageService, 
-        FilterService,
-        PdfExportService,
-        ExcelExportService,
-        GroupService,
-        ResizeService,
-        RowDDService,
-        SelectionService
     ]
-    
 })
 
 export class SharedModule {

@@ -101,6 +101,7 @@
     <None Remove="ClientApp\src\app\shared\models\yardage.ts" />
     <None Remove="ClientApp\src\app\shared\modules\material.module.ts" />
     <None Remove="ClientApp\src\app\shared\modules\shared.module.ts" />
+    <None Remove="ClientApp\src\app\shared\modules\syncfusion.module.ts" />
     <None Remove="ClientApp\src\app\shared\services\coach.service.ts" />
     <None Remove="ClientApp\src\app\shared\services\country.service.ts" />
     <None Remove="ClientApp\src\app\shared\services\division.service.ts" />
@@ -222,6 +223,7 @@
     <TypeScriptCompile Include="ClientApp\src\app\shared\models\yardage.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\modules\material.module.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\modules\shared.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\modules\syncfusion.module.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\services\coach.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\services\country.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\services\division.service.ts" />

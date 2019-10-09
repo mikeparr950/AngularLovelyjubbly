@@ -1,6 +1,7 @@
 ﻿import { NgModule } from '@angular/core';
 
 import { SharedModule } from '../shared/modules/shared.module';
+import { SyncfusionModule } from '../shared/modules/syncfusion.module';
 import { MaterialModule } from '../shared/modules/material.module';
 
 import { PowerRankingRoutingModule } from './powerranking-routing.module';
@@ -16,6 +17,7 @@ import { PowerRankingService } from '../shared/services/powerranking.service';
     imports: [
         SharedModule,
         MaterialModule,
+        SyncfusionModule,
         PowerRankingRoutingModule
     ],
     /** service providers */

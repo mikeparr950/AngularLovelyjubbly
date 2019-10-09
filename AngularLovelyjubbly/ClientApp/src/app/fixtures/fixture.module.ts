@@ -1,6 +1,7 @@
 ﻿import { NgModule } from '@angular/core';
 
 import { SharedModule } from '../shared/modules/shared.module';
+import { SyncfusionModule } from '../shared/modules/syncfusion.module';
 import { MaterialModule } from '../shared/modules/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -20,6 +21,7 @@ import { FixtureService } from '../shared/services/fixture.service';
     imports: [
         SharedModule,
         MaterialModule,
+        SyncfusionModule,
         ReactiveFormsModule,
         FixtureRoutingModule
     ],

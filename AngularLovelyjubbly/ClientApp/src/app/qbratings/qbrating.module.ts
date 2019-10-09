@@ -2,6 +2,7 @@
 
 import { SharedModule } from '../shared/modules/shared.module';
 import { MaterialModule } from '../shared/modules/material.module';
+import { SyncfusionModule } from '../shared/modules/syncfusion.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { QBRatingRoutingModule } from './qbrating-routing.module';
@@ -23,6 +24,7 @@ import { QBRatingService } from '../shared/services/qbrating.service';
     imports: [
         SharedModule,
         MaterialModule,
+        SyncfusionModule,
         ReactiveFormsModule,
         QBRatingRoutingModule
     ],

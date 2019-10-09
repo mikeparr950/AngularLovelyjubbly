@@ -15,9 +15,9 @@ export class RecordViewComponent implements OnInit {
     public horizontalBarChartType = 'horizontalBar';
 
     //pie
-    public pieChartLabels: string[] = ['Rams', 'Colts', 'Chargers', '49ers', 'Broncos', 'Bears', 'Oilers', 'Browns', 'Texans',
-        'Dolphins', 'Packers', 'Chiefs', 'Giants'];
-    public pieChartData: number[] = [3, 3, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1];
+    public pieChartLabels: string[] = ['Rams', 'Colts', 'Chargers', '49ers', 'Broncos', 'Packers', 'Bears', 'Oilers', 'Browns', 
+        'Texans', 'Dolphins', 'Chiefs', 'Giants'];
+    public pieChartData: number[] = [3, 3, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1];
     private pieChartOptions = {
         title: {
             text: 'Superbowl Wins By Team',
@@ -37,12 +37,12 @@ export class RecordViewComponent implements OnInit {
                 'rgba(255, 184, 28, 1)',
                 'rgba(230, 190, 138, 1)',
                 'rgba(251, 79, 20, 1)',
+                'rgba(36, 66, 60, 1)',
                 'rgba(0, 0, 51, 1)',
                 'rgba(65, 143, 222, 1)',
                 'rgba(81, 47, 45, 1)',
                 'rgba(0, 0, 102, 1)',
                 'rgba(0, 141, 151, 1)',
-                'rgba(36, 66, 60, 1)',
                 'rgba(178, 0, 50, 1)',
                 'rgba(25, 47, 107, 1)'
             ]
@@ -50,9 +50,9 @@ export class RecordViewComponent implements OnInit {
     ];
 
     //doughnut
-    public doughnutChartLabels: string[] = ['Williams', 'Gorner', 'Parr', 'Thorpe', 'Cross', 'Goetz', 'Dawson', 'Whittingham',
-        'Richards', 'Stones', 'Hennes', 'Flesfader', 'Thorp-Potter', 'Smith', 'Risson', 'Edwards'];
-    public doughnutChartData: number[] = [3, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+    public doughnutChartLabels: string[] = ['Williams', 'Gorner', 'Parr', 'Flesfader', 'Thorpe', 'Cross', 'Goetz', 'Dawson', 
+        'Whittingham', 'Richards', 'Stones', 'Hennes', 'Thorp-Potter', 'Smith', 'Risson', 'Edwards'];
+    public doughnutChartData: number[] = [3, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
     private doughnutChartOptions = {
         title: {
             text: 'Superbowl Wins By Coach',
@@ -98,7 +98,7 @@ export class RecordViewComponent implements OnInit {
     public barChartLegend: boolean = true;
 
     public barChartData: any[] = [
-        { data: [7, 4, 3, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2] }
+        { data: [7, 5, 4, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2] }
     ];
 
     //horizontal bar
@@ -132,7 +132,7 @@ export class RecordViewComponent implements OnInit {
     public horizontalBarChartLabels: string[] = ['Williams', 'Parr', 'Flesfader', 'Gorner', 'Dawson', 'Stones', 'Smith'];
     public horizontalBarChartData: any[] = [
         {
-            data: [7, 5, 5, 2, 2, 2, 2]
+            data: [7, 6, 6, 2, 2, 2, 2]
         }
     ];
 

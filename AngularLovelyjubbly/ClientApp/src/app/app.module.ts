@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { CookieService } from 'ngx-cookie-service';
 import { SharedModule } from './shared/modules/shared.module';
+import { SyncfusionModule } from './shared/modules/syncfusion.module';
 //import { QBRatingModule } from './qbratings/qbrating.module';
 //import { TurnoverDifferentialModule } from './turnoverdifferentials/turnoverdifferential.module';
 //import { PowerRankingModule } from './powerrankings/powerranking.module';
@@ -31,7 +32,8 @@ import { CounterComponent } from './counter/counter.component';
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     BrowserAnimationsModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    SyncfusionModule
   ],
   providers: [ConfigService, CommonService, LogService, CookieService],
   bootstrap: [AppComponent]

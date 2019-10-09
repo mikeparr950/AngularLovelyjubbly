@@ -38,7 +38,7 @@ export class TeamListComponent implements OnInit {
     constructor(public _teamService: TeamService, private _router: Router, public snackBar: MatSnackBar,
         public _userService: UserService) {
         this.editSettings = { allowAdding: true };
-        this.toolbar = ['Add', 'PdfExport', 'ExcelExport'];
+        this.toolbar = ['Add', 'ExcelExport'];
         this.sortOptions = { columns: [{ field: 'teamName', direction: 'Ascending' }] };
         this.pageSettings = { pageSize: 12 };
     }
@@ -127,9 +127,9 @@ export class TeamListComponent implements OnInit {
                 this._router.navigate(['/Teams/Add']);
                 break;
 
-            case 'Grid_pdfexport': // 'Grid_pdfexport' -> Grid component id + _ + toolbar item name
-                this.grid.pdfExport();
-                break;
+            //case 'Grid_pdfexport': // 'Grid_pdfexport' -> Grid component id + _ + toolbar item name
+            //    this.grid.pdfExport();
+            //    break;
 
             case 'Grid_excelexport': // 'Grid_excelexport' -> Grid component id + _ + toolbar item name
                 this.grid.excelExport();

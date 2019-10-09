@@ -18,7 +18,7 @@
     "forin": true,
     "import-blacklist": [
       true,
-      "rxjs/Rx"
+      "rxjs/Rx", "lodash", "@syncfusion/ej2-pdf-export"
     ],
     "import-spacing": true,
     "indent": [

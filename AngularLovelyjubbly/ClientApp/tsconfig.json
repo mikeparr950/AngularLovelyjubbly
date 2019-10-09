@@ -1,29 +1,30 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "outDir": "./dist/out-tsc",
-    "sourceMap": true,
+    "baseUrl": "./",
     "declaration": false,
-    //"module": "esnext", // add this line
-    "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "target": "es5",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
     "lib": [
       "es2017",
       "dom"
     ],
+    //"module": "esnext", // add this line
+    "moduleResolution": "node",
+    "outDir": "./dist/out-tsc",
     //specify which parts of node modules to load, rather than everything
     "paths": {
       "lodash": [
-        "node_modules/lodash-es"
+        "node_modules/lodash-es/*"
       ],
       "moment": [
         "node_modules/moment/min/moment.min.js"
       ]
-    }
+    },
+    "sourceMap": true,
+    "target": "es5",
+    "typeRoots": [
+      "node_modules/@types"
+    ]
   }
 }
