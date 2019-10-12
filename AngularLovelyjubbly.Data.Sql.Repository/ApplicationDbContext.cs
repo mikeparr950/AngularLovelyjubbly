@@ -36,6 +36,7 @@ namespace AngularLovelyjubbly.Data.Sql.Repository
         public DbSet<Formation> Formations { get; set; }
         public DbSet<OffensivePlay> OffensivePlays { get; set; }
         public DbSet<DefensivePlay> DefensivePlays { get; set; }
+        public DbSet<PlayResult> PlayResults { get; set; }
         public DbSet<UserProfile> UserProfiles { get; set; }
         public DbSet<RefreshToken> RefreshTokens { get; set; }
 
@@ -215,6 +216,20 @@ namespace AngularLovelyjubbly.Data.Sql.Repository
             builder.Entity<DefensivePlay>().ToTable("DefensivePlays");
             builder.Entity<DefensivePlay>().HasKey(d => d.DefensivePlayId);
             builder.Entity<DefensivePlay>().Property(d => d.DefensivePlayName).IsRequired().HasMaxLength(2).IsFixedLength();
+
+            //PlayResult
+            builder.Entity<PlayResult>().ToTable("PlayResults");
+            builder.Entity<PlayResult>().HasKey(p => p.PlayResultId);
+            builder.Entity<PlayResult>().Property(p => p.FormationId).IsRequired();
+            builder.Entity<PlayResult>().Property(p => p.OffensivePlayId).IsRequired();
+            builder.Entity<PlayResult>().Property(p => p.DefensivePlayId).IsRequired();
+            builder.Entity<PlayResult>().Property(p => p.Yards).IsRequired();
+            builder.Entity<PlayResult>().Property(p => p.IsOffensivePenalty).IsRequired().HasDefaultValueSql("0");
+            builder.Entity<PlayResult>().Property(p => p.IsDefensivePenalty).IsRequired().HasDefaultValueSql("0");
+            builder.Entity<PlayResult>().Property(p => p.IsSack).IsRequired().HasDefaultValueSql("0");
+            builder.Entity<PlayResult>().Property(p => p.IsFumble).IsRequired().HasDefaultValueSql("0");
+            builder.Entity<PlayResult>().Property(p => p.IsInterception).IsRequired().HasDefaultValueSql("0");
+            builder.Entity<PlayResult>().Property(p => p.ReturnYards).IsRequired();
 
             //UserProfile
             builder.Entity<UserProfile>().ToTable("AspNetUserProfiles");

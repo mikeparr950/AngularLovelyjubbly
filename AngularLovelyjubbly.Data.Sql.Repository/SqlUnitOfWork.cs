@@ -29,6 +29,7 @@ namespace AngularLovelyjubbly.Data.Sql.Repository
         private FormationRepository _formation = null;
         private OffensivePlayRepository _offensivePlay = null;
         private DefensivePlayRepository _defensivePlay = null;
+        private PlayResultRepository _playResult = null;
         private UserProfileRepository _userProfile = null;
         private RefreshTokenRepository _refreshToken = null;
 
@@ -58,6 +59,7 @@ namespace AngularLovelyjubbly.Data.Sql.Repository
             _formation = new FormationRepository(DbContext);
             _offensivePlay = new OffensivePlayRepository(DbContext);
             _defensivePlay = new DefensivePlayRepository(DbContext);
+            _playResult = new PlayResultRepository(DbContext);
             _userProfile = new UserProfileRepository(DbContext);
             _refreshToken = new RefreshTokenRepository(DbContext);
         }
@@ -345,6 +347,19 @@ namespace AngularLovelyjubbly.Data.Sql.Repository
                 }
 
                 return this._defensivePlay;
+            }
+        }
+
+        public IPlayResultRepository PlayResults
+        {
+            get
+            {
+                if (this._playResult == null)
+                {
+                    _playResult = new PlayResultRepository(DbContext);
+                }
+
+                return this._playResult;
             }
         }
 
