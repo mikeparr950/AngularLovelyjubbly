@@ -4,14 +4,16 @@ using AngularLovelyjubbly.Data.Sql.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AngularLovelyjubbly.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20191012181951_AddFormationOffensivePlayDefensivePlayTables")]
+    partial class AddFormationOffensivePlayDefensivePlayTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -140,6 +142,7 @@ namespace AngularLovelyjubbly.Migrations
 
                     b.Property<string>("DefensivePlayName")
                         .IsRequired()
+                        .HasConversion(new ValueConverter<string, string>(v => default(string), v => default(string), new ConverterMappingHints(size: 1)))
                         .IsFixedLength(true)
                         .HasMaxLength(2);
 
@@ -253,6 +256,7 @@ namespace AngularLovelyjubbly.Migrations
 
                     b.Property<string>("OffensivePlayName")
                         .IsRequired()
+                        .HasConversion(new ValueConverter<string, string>(v => default(string), v => default(string), new ConverterMappingHints(size: 1)))
                         .IsFixedLength(true)
                         .HasMaxLength(2);
 

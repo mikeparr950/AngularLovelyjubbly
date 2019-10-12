@@ -33,6 +33,9 @@ namespace AngularLovelyjubbly.Data.Sql.Repository
         public DbSet<RecordCategory> RecordCategories { get; set; }
         public DbSet<Record> Records { get; set; }
         public DbSet<Score> Scores { get; set; }
+        public DbSet<Formation> Formations { get; set; }
+        public DbSet<OffensivePlay> OffensivePlays { get; set; }
+        public DbSet<DefensivePlay> DefensivePlays { get; set; }
         public DbSet<UserProfile> UserProfiles { get; set; }
         public DbSet<RefreshToken> RefreshTokens { get; set; }
 
@@ -197,6 +200,21 @@ namespace AngularLovelyjubbly.Data.Sql.Repository
             builder.Entity<Score>().HasKey(s => s.ScoreId);
             builder.Entity<Score>().Property(s => s.WeekId).IsRequired();
             builder.Entity<Score>().Property(s => s.ScoreDescription).IsRequired().HasMaxLength(75);
+
+            //Formation
+            builder.Entity<Formation>().ToTable("Formations");
+            builder.Entity<Formation>().HasKey(f => f.FormationId);
+            builder.Entity<Formation>().Property(f => f.FormationName).IsRequired().HasMaxLength(1).IsFixedLength();
+
+            //OffensivePlay
+            builder.Entity<OffensivePlay>().ToTable("OffensivePlays");
+            builder.Entity<OffensivePlay>().HasKey(o => o.OffensivePlayId);
+            builder.Entity<OffensivePlay>().Property(o => o.OffensivePlayName).IsRequired().HasMaxLength(2).IsFixedLength();
+
+            //DefensivePlay
+            builder.Entity<DefensivePlay>().ToTable("DefensivePlays");
+            builder.Entity<DefensivePlay>().HasKey(d => d.DefensivePlayId);
+            builder.Entity<DefensivePlay>().Property(d => d.DefensivePlayName).IsRequired().HasMaxLength(2).IsFixedLength();
 
             //UserProfile
             builder.Entity<UserProfile>().ToTable("AspNetUserProfiles");

@@ -26,6 +26,9 @@ namespace AngularLovelyjubbly.Data.Sql.Repository
         private RecordCategoryRepository _recordCategory = null;
         private RecordRepository _record = null;
         private ScoreRepository _score = null;
+        private FormationRepository _formation = null;
+        private OffensivePlayRepository _offensivePlay = null;
+        private DefensivePlayRepository _defensivePlay = null;
         private UserProfileRepository _userProfile = null;
         private RefreshTokenRepository _refreshToken = null;
 
@@ -52,6 +55,9 @@ namespace AngularLovelyjubbly.Data.Sql.Repository
             _recordCategory = new RecordCategoryRepository(DbContext);
             _record = new RecordRepository(DbContext);
             _score = new ScoreRepository(DbContext);
+            _formation = new FormationRepository(DbContext);
+            _offensivePlay = new OffensivePlayRepository(DbContext);
+            _defensivePlay = new DefensivePlayRepository(DbContext);
             _userProfile = new UserProfileRepository(DbContext);
             _refreshToken = new RefreshTokenRepository(DbContext);
         }
@@ -300,6 +306,45 @@ namespace AngularLovelyjubbly.Data.Sql.Repository
                 }
 
                 return this._score;
+            }
+        }
+
+        public IFormationRepository Formations
+        {
+            get
+            {
+                if (this._formation == null)
+                {
+                    _formation = new FormationRepository(DbContext);
+                }
+
+                return this._formation;
+            }
+        }
+
+        public IOffensivePlayRepository OffensivePlays
+        {
+            get
+            {
+                if (this._offensivePlay == null)
+                {
+                    _offensivePlay = new OffensivePlayRepository(DbContext);
+                }
+
+                return this._offensivePlay;
+            }
+        }
+
+        public IDefensivePlayRepository DefensivePlays
+        {
+            get
+            {
+                if (this._defensivePlay == null)
+                {
+                    _defensivePlay = new DefensivePlayRepository(DbContext);
+                }
+
+                return this._defensivePlay;
             }
         }
 

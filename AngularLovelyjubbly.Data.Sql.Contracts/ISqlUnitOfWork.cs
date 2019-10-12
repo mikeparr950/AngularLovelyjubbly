@@ -24,6 +24,9 @@ namespace AngularLovelyjubbly.Data.Sql.Contracts
         IRecordCategoryRepository RecordCategories { get; }
         IRecordRepository Records { get; }
         IScoreRepository Scores { get; }
+        IFormationRepository Formations { get; }
+        IOffensivePlayRepository OffensivePlays { get; }
+        IDefensivePlayRepository DefensivePlays { get; }
         IUserProfileRepository UserProfiles { get; }
         IRefreshTokenRepository RefreshTokens { get; }
 
