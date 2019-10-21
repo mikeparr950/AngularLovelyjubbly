@@ -55,6 +55,10 @@
     <None Remove="ClientApp\src\app\playoffhistory\playoffhistory-routing.module.ts" />
     <None Remove="ClientApp\src\app\playoffhistory\playoffhistory-view.component.ts" />
     <None Remove="ClientApp\src\app\playoffhistory\playoffhistory.module.ts" />
+    <None Remove="ClientApp\src\app\playresults\playresult-add.component.ts" />
+    <None Remove="ClientApp\src\app\playresults\playresult-list.component.ts" />
+    <None Remove="ClientApp\src\app\playresults\playresult-routing.module.ts" />
+    <None Remove="ClientApp\src\app\playresults\playresult.module.ts" />
     <None Remove="ClientApp\src\app\portfolio\portfolio-routing.module.ts" />
     <None Remove="ClientApp\src\app\portfolio\portfolio-screenshot.component.ts" />
     <None Remove="ClientApp\src\app\portfolio\portfolio-view.component.ts" />
@@ -81,9 +85,13 @@
     <None Remove="ClientApp\src\app\shared\guards\auth.guard.ts" />
     <None Remove="ClientApp\src\app\shared\models\coach.ts" />
     <None Remove="ClientApp\src\app\shared\models\country.ts" />
+    <None Remove="ClientApp\src\app\shared\models\defensiveplay.ts" />
     <None Remove="ClientApp\src\app\shared\models\division.ts" />
     <None Remove="ClientApp\src\app\shared\models\fixture.ts" />
     <None Remove="ClientApp\src\app\shared\models\fixturelist.ts" />
+    <None Remove="ClientApp\src\app\shared\models\formation.ts" />
+    <None Remove="ClientApp\src\app\shared\models\offensiveplay.ts" />
+    <None Remove="ClientApp\src\app\shared\models\playresult.ts" />
     <None Remove="ClientApp\src\app\shared\models\powerranking.ts" />
     <None Remove="ClientApp\src\app\shared\models\qbrating.ts" />
     <None Remove="ClientApp\src\app\shared\models\record.ts" />
@@ -104,8 +112,12 @@
     <None Remove="ClientApp\src\app\shared\modules\syncfusion.module.ts" />
     <None Remove="ClientApp\src\app\shared\services\coach.service.ts" />
     <None Remove="ClientApp\src\app\shared\services\country.service.ts" />
+    <None Remove="ClientApp\src\app\shared\services\defensiveplay.service.ts" />
     <None Remove="ClientApp\src\app\shared\services\division.service.ts" />
     <None Remove="ClientApp\src\app\shared\services\fixture.service.ts" />
+    <None Remove="ClientApp\src\app\shared\services\formation.service.ts" />
+    <None Remove="ClientApp\src\app\shared\services\offensiveplay.service.ts" />
+    <None Remove="ClientApp\src\app\shared\services\playresult.service.ts" />
     <None Remove="ClientApp\src\app\shared\services\powerranking.service.ts" />
     <None Remove="ClientApp\src\app\shared\services\qbrating.service.ts" />
     <None Remove="ClientApp\src\app\shared\services\record.service.ts" />
@@ -177,6 +189,16 @@
     <TypeScriptCompile Include="ClientApp\src\app\playoffhistory\playoffhistory-routing.module.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\playoffhistory\playoffhistory-view.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\playoffhistory\playoffhistory.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\playresults\playresult-add.component.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\playresults\playresult-list.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\playresults\playresult-routing.module.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\playresults\playresult.module.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="ClientApp\src\app\portfolio\portfolio-routing.module.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\portfolio\portfolio-screenshot.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\portfolio\portfolio-view.component.ts" />
@@ -203,9 +225,15 @@
     <TypeScriptCompile Include="ClientApp\src\app\shared\guards\auth.guard.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\models\coach.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\models\country.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\defensiveplay.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\models\division.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\playresult.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="ClientApp\src\app\shared\models\fixture.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\models\fixturelist.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\formation.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\offensiveplay.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\models\powerranking.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\models\qbrating.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\models\record.ts" />
@@ -226,8 +254,14 @@
     <TypeScriptCompile Include="ClientApp\src\app\shared\modules\syncfusion.module.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\services\coach.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\services\country.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\services\defensiveplay.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\services\division.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\services\playresult.service.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="ClientApp\src\app\shared\services\fixture.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\services\formation.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\services\offensiveplay.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\services\powerranking.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\services\qbrating.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\services\record.service.ts" />

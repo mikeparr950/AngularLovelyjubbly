@@ -53,23 +53,23 @@ namespace AngularLovelyjubbly.Controller
         //    return _sqlServerUow.Fixtures.GetManyByParam(t => t.HomeTeamId == teamId || t.AwayTeamId == teamId);
         //}
 
-        ////POST : api/Fixtures/Add
+        //POST : api/PlayResults/Add
         //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-        //[HttpPost("api/Fixtures/Add")]
-        //public async Task<bool> AddFixture([FromBody] Fixture fixture)
-        //{
-        //    bool fixtureAdded = false;
+        [HttpPost("api/PlayResults/Add")]
+        public async Task<bool> AddPlayResult([FromBody] PlayResult playResult)
+        {
+            bool playResultAdded = false;
 
-        //    try
-        //    {
-        //        fixtureAdded = await _sqlServerUow.Fixtures.AddAsync(fixture);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //    }
+            try
+            {
+                playResultAdded = await _sqlServerUow.PlayResults.AddAsync(playResult);
+            }
+            catch (Exception ex)
+            {
+            }
 
-        //    return fixtureAdded;
-        //}
+            return playResultAdded;
+        }
 
         //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         //[HttpPut("api/Fixtures/Update")]

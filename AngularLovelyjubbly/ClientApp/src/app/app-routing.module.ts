@@ -54,6 +54,10 @@ const routes: Routes = [
         loadChildren: './portfolio/portfolio.module#PortfolioModule'
     },
     {
+        path: 'PlayResults',
+        loadChildren: './playresults/playresult.module#PlayResultModule'
+    },
+    {
         path: '',
         component: GameplanLayoutComponent,
         children: [

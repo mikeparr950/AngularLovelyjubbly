@@ -102,7 +102,7 @@ export class TeamViewComponent implements OnInit {
                 this.coachImage = team.coachImage;
                 this.cheerleaderImage = team.cheerleaderImage;
 
-                this._fixtureService.getFixturesByTeamAndTournament(team.teamId, 21)
+                this._fixtureService.getFixturesByTeamAndTournament(team.teamId, 22)
                     .subscribe(fixtures => {
                         this.fixtures = new Array<FixtureList>();
 

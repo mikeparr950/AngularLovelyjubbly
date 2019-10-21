@@ -106,22 +106,22 @@ export class HomeComponent implements OnInit {
 
     refreshStandingList() {
         //this.cd.reattach();
-        this._fixtureService.getAFCEastStandingsByTournament(21)
+        this._fixtureService.getAFCEastStandingsByTournament(22)
             .subscribe(standingsAFCEast => this.standingsAFCEast = standingsAFCEast,
                 error => this.errorMessage = <any>error);
-        this._fixtureService.getAFCCentralStandingsByTournament(21)
+        this._fixtureService.getAFCCentralStandingsByTournament(22)
             .subscribe(standingsAFCCentral => this.standingsAFCCentral = standingsAFCCentral,
                 error => this.errorMessage = <any>error);
-        this._fixtureService.getAFCWestStandingsByTournament(21)
+        this._fixtureService.getAFCWestStandingsByTournament(22)
             .subscribe(standingsAFCWest => this.standingsAFCWest = standingsAFCWest,
                 error => this.errorMessage = <any>error);
-        this._fixtureService.getNFCEastStandingsByTournament(21)
+        this._fixtureService.getNFCEastStandingsByTournament(22)
             .subscribe(standingsNFCEast => this.standingsNFCEast = standingsNFCEast,
                 error => this.errorMessage = <any>error);
-        this._fixtureService.getNFCCentralStandingsByTournament(21)
+        this._fixtureService.getNFCCentralStandingsByTournament(22)
             .subscribe(standingsNFCCentral => this.standingsNFCCentral = standingsNFCCentral,
                 error => this.errorMessage = <any>error);
-        this._fixtureService.getNFCWestStandingsByTournament(21)
+        this._fixtureService.getNFCWestStandingsByTournament(22)
             .subscribe(standingsNFCWest => this.standingsNFCWest = standingsNFCWest,
                 error => this.errorMessage = <any>error);
         //this.cd.detach();

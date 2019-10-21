@@ -28,5 +28,6 @@ namespace AngularLovelyjubbly.Data.Sql.Models
         public Boolean IsFumble { get; set; }
         public Boolean IsInterception { get; set; }
         public int ReturnYards { get; set; } //(fumble or int yards returned - yards gained)
+        public string Notes { get; set; }
     }
 }

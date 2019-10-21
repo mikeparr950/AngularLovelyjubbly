@@ -17,7 +17,6 @@ namespace AngularLovelyjubbly.Data.Sql.Repository
 
         public override IQueryable<PlayResult> GetAll()
         {
-            //AsNoTracking for none CUD operations
             return DbSet.Include(p => p.Formation)
                 .Include(p => p.OffensivePlay)
                 .Include(p => p.DefensivePlay);
@@ -29,6 +28,21 @@ namespace AngularLovelyjubbly.Data.Sql.Repository
                 .Include(p => p.OffensivePlay)
                 .Include(p => p.DefensivePlay)
                 .SingleAsync(match);
+        }
+
+        public override async Task<bool> AddAsync(PlayResult entity)
+        {
+            //map formation,offensiveplay and defensiveplay
+            entity.FormationId = DbContext.Formations.FirstOrDefault
+                (f => f.FormationId == entity.Formation.FormationId).FormationId;
+            entity.OffensivePlayId = DbContext.OffensivePlays.FirstOrDefault
+                (o => o.OffensivePlayId == entity.OffensivePlay.OffensivePlayId).OffensivePlayId;
+            entity.DefensivePlayId = DbContext.DefensivePlays.FirstOrDefault
+                (d => d.DefensivePlayId == entity.DefensivePlay.DefensivePlayId).DefensivePlayId;
+
+            DbSet.Add(entity);
+
+            return await DbContext.SaveChangesAsync() > 0;
         }
     }
 }

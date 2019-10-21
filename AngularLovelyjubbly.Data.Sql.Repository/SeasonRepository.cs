@@ -14,6 +14,12 @@ namespace AngularLovelyjubbly.Data.Sql.Repository
 
         public override IQueryable<Season> GetAll()
         {
+            Season season2027 = new Season
+            {
+                SeasonId = 2027,
+                SeasonName = "2027"
+            };
+
             Season season2026 = new Season
             {
                 SeasonId = 2026,
@@ -142,6 +148,7 @@ namespace AngularLovelyjubbly.Data.Sql.Repository
 
             List<Season> lstSeasons = new List<Season>
             {
+                season2027,
                 season2026,
                 season2025,
                 season2024,
