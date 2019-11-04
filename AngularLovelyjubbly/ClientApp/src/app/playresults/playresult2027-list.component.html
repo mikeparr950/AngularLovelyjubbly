@@ -1,0 +1,28 @@
+﻿<div class='table-responsive' style="border:none;">
+    <div *ngIf="playResults && playResults.length">
+        <ejs-grid #grid id='Grid' [dataSource]="playResults" [toolbar]='toolbar' [allowFiltering]='true'
+                  [allowPaging]='true' [allowSorting]='true' [sortSettings]='sortOptions' [allowMultiSorting]='true'
+                  [allowExcelExport]='true'
+                  width='100%' [pageSettings]='pageSettings' gridLines="Both">
+            <e-columns>
+                <e-column field="playResultId" headerText="Id" width="106" textAlign="left"></e-column>
+                <e-column field="formation.formationName" headerText="Formation" width="136" textAlign="right"></e-column>
+                <e-column field="offensivePlay.offensivePlayName" headerText="Offensive Play" width="125" textAlign="right"></e-column>
+                <e-column field="defensivePlay.defensivePlayName" headerText="Defensive Play"
+                          width="125" textAlign="right"></e-column>
+                <e-column field="yards" headerText="Yards" width="108" textAlign="right"></e-column>
+                <e-column field="isOffensivePenalty" headerText="Off Pen"
+                          width="108" textAlign="right"></e-column>
+                <e-column field="isDefensivePenalty" headerText="Def Pen"
+                          width="108" textAlign="right"></e-column>
+                <e-column field="isSack" headerText="Sack"
+                          width="108" textAlign="right"></e-column>
+                <e-column field="isFumble" headerText="Fumble"
+                          width="108" textAlign="right"></e-column>
+                <e-column field="isInterception" headerText="Int"
+                          width="108" textAlign="right"></e-column>
+                <e-column field="returnYards" headerText="Return Yards" width="108" textAlign="right"></e-column>
+            </e-columns>
+        </ejs-grid>
+    </div><br />
+</div>

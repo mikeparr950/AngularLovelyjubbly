@@ -59,6 +59,7 @@
     <None Remove="ClientApp\src\app\playresults\playresult-list.component.ts" />
     <None Remove="ClientApp\src\app\playresults\playresult-routing.module.ts" />
     <None Remove="ClientApp\src\app\playresults\playresult.module.ts" />
+    <None Remove="ClientApp\src\app\playresults\playresult2027-list.component.ts" />
     <None Remove="ClientApp\src\app\portfolio\portfolio-routing.module.ts" />
     <None Remove="ClientApp\src\app\portfolio\portfolio-screenshot.component.ts" />
     <None Remove="ClientApp\src\app\portfolio\portfolio-view.component.ts" />
@@ -190,6 +191,9 @@
     <TypeScriptCompile Include="ClientApp\src\app\playoffhistory\playoffhistory-view.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\playoffhistory\playoffhistory.module.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\playresults\playresult-add.component.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\playresults\playresult2027-list.component.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="ClientApp\src\app\playresults\playresult-list.component.ts" />

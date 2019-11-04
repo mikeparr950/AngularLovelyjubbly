@@ -46,12 +46,12 @@ namespace AngularLovelyjubbly.Controller
             return Ok(playResult);
         }
 
-        ////GET: api/FixturesByTeam/1
-        //[HttpGet("api/FixturesByTeam/{teamId:int}")]
-        //public IQueryable<Fixture> GetFixturesByTeam([FromRoute] int teamId)
-        //{
-        //    return _sqlServerUow.Fixtures.GetManyByParam(t => t.HomeTeamId == teamId || t.AwayTeamId == teamId);
-        //}
+        //GET: api/PlayResultsBySeasonName/2027
+        [HttpGet("api/PlayResultsBySeasonName/{seasonName}")]
+        public IQueryable<PlayResult> GetPlayResultBySeasonName([FromRoute] string seasonName)
+        {
+            return _sqlServerUow.PlayResults.GetManyByParam(t => t.Notes.Contains(seasonName));
+        }
 
         //POST : api/PlayResults/Add
         //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]

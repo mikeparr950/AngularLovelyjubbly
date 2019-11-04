@@ -30,6 +30,14 @@ namespace AngularLovelyjubbly.Data.Sql.Repository
                 .SingleAsync(match);
         }
 
+        public IQueryable<PlayResult> GetManyByParam(Expression<Func<PlayResult, bool>> match)
+        {
+            return DbSet.Include(p => p.Formation)
+                .Include(p => p.OffensivePlay)
+                .Include(p => p.DefensivePlay)
+                .Where(match).AsQueryable();
+        }
+
         public override async Task<bool> AddAsync(PlayResult entity)
         {
             //map formation,offensiveplay and defensiveplay
