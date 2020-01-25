@@ -594,7 +594,7 @@ export class FixtureService {
 
                 let countHou = 0;
                 let countCin = 0;
-                let countPit = 0;
+                let countJax = 0;
                 let countCle = 0;
 
                 const fxHou = fixtures.filter(f => f.awayTeam.teamId === 32 || f.homeTeam.teamId === 32);
@@ -735,62 +735,62 @@ export class FixtureService {
                 pointsAgainst = 0;
                 pointsDifference = 0;
 
-                const fxPit = fixtures.filter(f => f.awayTeam.teamId === 46 || f.homeTeam.teamId === 46);
+                const fxJax = fixtures.filter(f => f.awayTeam.teamId === 34 || f.homeTeam.teamId === 34);
 
-                for (let j = 0; j < fxPit.length; j++) {
+                for (let j = 0; j < fxJax.length; j++) {
 
-                    if (fxPit[j].homeTeam.teamId === 46) {
-                        teamName = fxPit[j].homeTeam.teamName;
-                        teamNameShort = fxPit[j].homeTeam.teamNameShort;
-                        coachId = fxPit[j].homeTeam.coach.coachId;
-                        coachName = fxPit[j].homeTeam.coach.coachName;
-                        coachNameShort = fxPit[j].homeTeam.coach.coachNameShort;
-                        coachImage = fxPit[j].homeTeam.coachImage;
-                        divisionId = fxPit[j].homeTeam.division.divisionId;
-                        divisionName = fxPit[j].homeTeam.division.divisionName;
-                        if (fxPit[j].homeTeamScore > fxPit[j].awayTeamScore) {
+                    if (fxJax[j].homeTeam.teamId === 34) {
+                        teamName = fxJax[j].homeTeam.teamName;
+                        teamNameShort = fxJax[j].homeTeam.teamNameShort;
+                        coachId = fxJax[j].homeTeam.coach.coachId;
+                        coachName = fxJax[j].homeTeam.coach.coachName;
+                        coachNameShort = fxJax[j].homeTeam.coach.coachNameShort;
+                        coachImage = fxJax[j].homeTeam.coachImage;
+                        divisionId = fxJax[j].homeTeam.division.divisionId;
+                        divisionName = fxJax[j].homeTeam.division.divisionName;
+                        if (fxJax[j].homeTeamScore > fxJax[j].awayTeamScore) {
                             won++;
                         }
-                        if (fxPit[j].homeTeamScore === fxPit[j].awayTeamScore) {
+                        if (fxJax[j].homeTeamScore === fxJax[j].awayTeamScore) {
                             tied++;
                         }
-                        if (fxPit[j].homeTeamScore < fxPit[j].awayTeamScore) {
+                        if (fxJax[j].homeTeamScore < fxJax[j].awayTeamScore) {
                             lost++;
                         }
-                        pointsFor = pointsFor + fxPit[j].homeTeamScore;
-                        pointsAgainst = pointsAgainst + fxPit[j].awayTeamScore;
+                        pointsFor = pointsFor + fxJax[j].homeTeamScore;
+                        pointsAgainst = pointsAgainst + fxJax[j].awayTeamScore;
                     }
 
-                    if (fxPit[j].awayTeam.teamId === 46) {
-                        teamName = fxPit[j].awayTeam.teamName;
-                        teamNameShort = fxPit[j].awayTeam.teamNameShort;
-                        coachId = fxPit[j].awayTeam.coach.coachId;
-                        coachName = fxPit[j].awayTeam.coach.coachName;
-                        coachNameShort = fxPit[j].awayTeam.coach.coachNameShort;
-                        coachImage = fxPit[j].awayTeam.coachImage;
-                        divisionId = fxPit[j].awayTeam.division.divisionId;
-                        divisionName = fxPit[j].awayTeam.division.divisionName;
-                        if (fxPit[j].awayTeamScore > fxPit[j].homeTeamScore) {
+                    if (fxJax[j].awayTeam.teamId === 34) {
+                        teamName = fxJax[j].awayTeam.teamName;
+                        teamNameShort = fxJax[j].awayTeam.teamNameShort;
+                        coachId = fxJax[j].awayTeam.coach.coachId;
+                        coachName = fxJax[j].awayTeam.coach.coachName;
+                        coachNameShort = fxJax[j].awayTeam.coach.coachNameShort;
+                        coachImage = fxJax[j].awayTeam.coachImage;
+                        divisionId = fxJax[j].awayTeam.division.divisionId;
+                        divisionName = fxJax[j].awayTeam.division.divisionName;
+                        if (fxJax[j].awayTeamScore > fxJax[j].homeTeamScore) {
                             won++;
                         }
-                        if (fxPit[j].awayTeamScore === fxPit[j].homeTeamScore) {
+                        if (fxJax[j].awayTeamScore === fxJax[j].homeTeamScore) {
                             tied++;
                         }
-                        if (fxPit[j].awayTeamScore < fxPit[j].homeTeamScore) {
+                        if (fxJax[j].awayTeamScore < fxJax[j].homeTeamScore) {
                             lost++;
                         }
-                        pointsFor = pointsFor + fxPit[j].awayTeamScore;
-                        pointsAgainst = pointsAgainst + fxPit[j].homeTeamScore;
+                        pointsFor = pointsFor + fxJax[j].awayTeamScore;
+                        pointsAgainst = pointsAgainst + fxJax[j].homeTeamScore;
                     }
 
-                    countPit++;
+                    countJax++;
 
-                    if (countPit === fxPit.length) {
+                    if (countJax === fxJax.length) {
 
                         pointsDifference = pointsFor - pointsAgainst;
 
                         standingsAFCCentral.push
-                            (new Standing(new Team(46, teamName, teamNameShort,
+                            (new Standing(new Team(34, teamName, teamNameShort,
                                 new Coach(coachId, coachName, coachNameShort),
                                 new Division(divisionId, divisionName), '', coachImage, '', '', '', null, null, null),
                                 won, lost, tied, pointsFor, pointsAgainst, pointsDifference));
