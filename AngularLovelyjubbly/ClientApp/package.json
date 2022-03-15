@@ -44,7 +44,7 @@
     "chartjs-plugin-annotation": "^0.5.7",
     "core-js": "2.6.5",
     "jquery": "^3.4.0",
-    "lodash-es": "^4.17.15",
+    "lodash-es": "^4.17.21",
     "ng2-charts": "2.2.2",
     "ngx-bootstrap": "^4.2.0",
     "ngx-cookie-service": "^2.2.0",
